@@ -1,0 +1,130 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 4.1: Advanced features of git"
+---
+
+## Amending Commits
+
+- Modify the last commit: Change commit message or content
+- `git commit --amend`
+- **DANGER: Never do this if you already pushed the commit**
+
+## Staging Parts Instead of full Files
+
+Instead of staging complete files, you can also stage just parts of them.
+
+- CLI
+  - `git add --patch <file>`
+  - `git add -p <file>`
+- VSCode: "Stage selected range"
+  - Demo
+
+# Tags
+
+## What is a tag? 🏷️
+
+You can *tag* a single commit in git.
+
+- Creates a named reference to this commit
+- Useful for versioning / releases e.g. `v1.2.3`
+  - Course material: `SS23`, `WS23`
+- You can create a specific **release** for a tag
+  - Attach changelog or artifacts
+- Can be useful for deployments if CD is not feasible
+
+## Creating a tag
+
+- CLI: `git tag -a v1.2.3`
+- VSCode: Demo
+
+Note: Tags need to be pushed *explicitly* via `git push --tags`
+
+<!-- Optional: Practical - Creating a tag & release -->
+<!-- Optional: Practical: learngitbranching > "A Mixed Bag" > #4: Tags -->
+
+# Patches 🩹
+
+## Patches 🩹
+
+Before platforms like GitLab/Hub existed, people collaborated by sending around **patches** via email. A patch is essentially a commit exported as a file.
+
+- Create: `git format-patch <commit/branch>`
+  - Will create `.patch` files for all commits till target
+- Apply: `git apply <patch-file>`
+
+## Example Patch
+
+```diff
+From 265f0c1119113f0f84ebfc047c26ef39f5532e57 Mon Sep 17 00:00:00 2001
+From: Jan Simson <git@simson.io>
+Date: Wed, 15 Nov 2023 20:10:36 +0100
+Subject: [PATCH 1/8] Update slogans
+
+---
+ docs/.vuepress/config.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docs/.vuepress/config.js b/docs/.vuepress/config.js
+index 6c61bba..53a76bd 100644
+--- a/docs/.vuepress/config.js
++++ b/docs/.vuepress/config.js
+@@ -1,6 +1,6 @@
+ module.exports = {
+-    title: 'GitLab ❤️ VuePress',
+-    description: 'Vue-powered static site generator running on GitLab Pages',
++    title: 'Advanced Git & Gitlab',
++    description: 'An interactive course where you get publish your own website',
+     base: '/',
+     dest: 'public'
+ }
+\ No newline at end of file
+-- 
+2.39.2 (Apple Git-143)
+```
+
+## Practical: Creating Patches {background-color="black"}
+
+1. Navigate to a local git repository of your choice
+2. Get the latest commit hash
+3. Use `git format-patch <id>` to create a patch for it
+4. Examine the generated patch
+
+## Working with Large Files / Data: git LFS
+
+Git struggles with large binary files.
+
+- One possible solution: git lfs (large-file-storage)
+- Extension that needs to be installed separately
+  - Install git lfs
+  - Initialize once in each repository you want to use it in
+  - Configure a pattern to specify which files should use it
+
+# Stashing
+
+## What is Stashing?
+
+- **Stashing** allows you to temporarily store changes that are not ready to be committed yet.
+- Useful when you need to switch branches or perform other operations without committing half-done work.
+
+## How to Use Stashes?
+
+```bash
+git stash         # Stash changes
+git stash list    # List stashes
+git stash apply   # Apply the latest stash
+git stash pop     # Apply and remove the latest stash
+```
+
+# Cherry Picking
+
+## Cherry Picking
+
+- Select specific commits
+- Apply to current branch
+- `git cherry-pick <commit-hash>`
+
+<!--
+  If extra time: https://learngitbranching.js.org/
+  Section 2 "Ramping up"
+  Section 3: Moving Work around #1 (cherry pick)
+-->

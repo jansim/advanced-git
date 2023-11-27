@@ -1,0 +1,117 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 1.1: Reviewing git Basics"
+---
+
+::: attribution
+Background: https://unsplash.com/photos/842ofHC6MaI
+:::
+
+## What is git?
+
+- Version Control System (VCS)
+  - Looks at the changes in your files
+  - Records all changes over time to give you a full history
+  - Similar to "track changes" in Microsoft Word / LibreOffice
+
+:::
+
+![Git only looks at and tracks the *changes* in a file](images/carpentries/play-changes.svg)
+
+:::
+
+## What is git? *Strengths* & Weaknesses
+
+- Strengths 💪
+  - Very hard to lose files with git
+  - Great for collaboration
+  - Fast (like, really fast)
+  - History allows you to go back and understand changes or revert when there are problems
+  - Reproducibility
+
+## What is git? Strengths & *Weaknesses*
+
+- Weaknesses 😢
+  - Can be a bit complicated to use (esp. at first)
+  - History takes up file space (but only little)
+  - Struggles with binary (i.e. non-text) files
+  - Struggles with large files
+    - Not good for storing data!
+  - You do need to *explicitly* use it i.e. it doesn't just work in the background
+
+## CLI vs. GUI: `git`
+
+- `git` itself is a CLI program
+- But, many GUIs are available
+  - Sourcetree
+  - Visual Studio Code*
+  - Rstudio*
+  - Github Desktop
+  - ... (full list: <https://git-scm.com/downloads/guis>)
+
+::: {.fragment}
+
+*: These programs have a different main purpose, but also offer the option of using git via their GUI.
+
+:::
+
+## `git` commands  {background-color="black"}
+
+Which of these git commands / actions are have you used already? Have you used any that are not on this list?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- `git status`
+- `git init`
+- `git add`
+- `git commit`
+- `git restore`
+- `git stash`
+:::
+
+::: {.column width="50%"}
+- `git checkout` n 
+- `git branch`
+- `git switch`
+- `git merge`
+- `git pull / push`
+- `git cherry-pick`
+:::
+
+::::
+
+# The Classic Git Flow
+
+## The 3 Levels of Changes in git
+
+![Changes can be either unstaged, staged or commited.](images/carpentries/git-staging-area.svg)
+
+- When we first make a change it is *unstaged*
+- Once we `add` the change to the staging area it is *staged*
+- We can then `commit` all *staged* changes
+- We can `restore` the commited version (and remove any *unstaged* changes)
+
+## Practical: git Command Library (1) {background-color="black"}
+
+1. Create an ew directory called `git-example`
+2. Create a new file `library.txt` in your `git-example` directory
+3. Run `git init -h` and copy the output into your `library.txt`
+4. Commit the changes
+5. Delete the `library.txt` and restore it
+
+## Demo: Tracking Changes in VSCode
+
+![Since VSCode is primarily a text editor, git functionality is hidden in the sidebar](images/screenshots/vscode-git.png)
+
+- Demo!
+- Feature: staging partial changes
+
+## Practical: git Command Library (2) {background-color="black"}
+
+1. Run `git <command> -h` and copy the output into your `library.txt`
+2. Explore the repo status *using the VSCode*
+3. Commit the changes (with a good commit message)
+4. Repeat steps 2. - 4. for **2 of the commands** we learned so far, using separate commits each time
+5. Delete the `library.txt` and restore it
+

@@ -1,0 +1,201 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 3.1: GitLab CI / CD"
+---
+
+## From before: CI / CD
+
+- Continuous Integration (CI)
+  - Integration of changes from multiple developers into shared repository with automated testing.
+- Continuous Delivery / Deployment (CD)
+  - Automated deployment of changes if previous tests pass.
+
+## Continuous Integration (CI)
+
+Ensuring the quality of all code that makes it into the main branch.
+
+- Automatically check
+  - different forms of tests
+  - formatting
+  - building / compilation
+  - ...
+- Only allow merging if tests pass
+
+## Continuous Delivery / Deployment (CD)
+
+Automatically deploy the latest state upon merge.
+
+- Build & deploy the latest version
+  - If tests pass
+- Helps streamlining deployment
+- Easier to roll-back changes
+
+## Artifacts
+
+Save / export files from your CI / CD pipeline.
+
+- Typically more related to CD, but not necessarily
+- Build, package and release your software
+- Can help to debug failing tests
+  - e.g. upload a plot from a failed test as artifact
+
+# CI / CD on GitLab
+
+## CI / CD on GitLab: Pipelines & Jobs
+
+GitLab's CI/CD system is organized into pipelines which contain one or more jobs.
+
+- Each job performs a task
+- Multiple jobs can be chained / combined in a pipeline
+- There is no clear distinction between CI/CD, it's all jobs
+
+## CI / CD on GitLab: Pipelines & Jobs
+
+![Part of the pipeline that's being run for gitlab itself.](images/screenshots/gitlab/gl-pipeline.png)
+
+::: attribution
+Repository: <https://gitlab.com/gitlab-org/gitlab>
+:::
+
+## CI / CD on GitLab: Runners
+
+- Jobs run in Docker containers (more later)
+- These need to run *somewhere*: runners
+- Runners are separate from the gitlab instance itself
+  - We'll use gitlab.com here, which provides a certain amount of free "minutes"
+- KIT does not provide runners by default
+  - But you can provide your own
+
+## Testing CI / CD Pipelines
+
+- Option 1: Make changes, push, repeat ♻️
+- Option 2: Use tools to test locally
+  - [`gitlab-runner exec`](https://docs.gitlab.com/runner/install/)
+  - [`gitlab-ci-local`](https://github.com/firecow/gitlab-ci-local)
+
+## Practical: Deploying a Website {background-color="black"}
+
+You can deploy your own website on gitlab.com using GitLab Pages.
+
+1. Go to the fork of the website template ([jansim/website-template](https://gitlab.com/jansim/website-template)) you made earlier.
+2. Make at least one commit to let the CI run (should have happened already)
+3. Go to `Build` > `Pipelines` on the left to check whether everything ran correctly
+4. Go to `Deploy` > `Pages` to check whether the configuration for deployments was correct
+5. The deployment should look roughly like [this](https://jansim.gitlab.io/website-template).
+
+# Going Deeper: <br> `.gitlab-ci.yml`
+
+## Detour: (Docker) Containers 🐋
+
+- Collection of software and its dependencies
+- Kind of like a mini-virtual machine
+- Identified by an image name e.g. `ubuntu:20.04`, `postgres:14`, `...`
+- Docker is the biggest company in the space, but open-source implementations exist
+
+## The magic file: `.gitlab-ci.yml` ✨
+
+```yml
+# .gitlab-ci.yml
+stages: # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+build-job: # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+unit-test-job: # This job runs in the test stage.
+  stage: test  # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+
+lint-test-job: # This job also runs in the test stage.
+  stage: test # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
+
+deploy-job: # This job runs in the deploy stage.
+  stage: deploy # It only runs when *both* jobs in the test stage complete successfully.
+  environment: production
+  script:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
+```
+
+## A more complicated example
+
+```yml
+# .gitlab-ci.yml
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  image: node
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - "build/"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+lint-markdown:
+  stage: test
+  image: node
+  dependencies: []
+  script:
+    - npm install markdownlint-cli2 --global
+    - markdownlint-cli2 -v
+    - markdownlint-cli2 "blog/**/*.md" "docs/**/*.md"
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+test-html:
+  stage: test
+  image: node
+  dependencies:
+    - build-job
+  script:
+    - npm install --save-dev htmlhint
+    - npx htmlhint --version
+    - npx htmlhint build/
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+pages:
+  stage: deploy
+  dependencies:
+    - build-job
+  script:
+    - mv build/ public/
+  artifacts:
+    paths:
+      - "public/"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+## Major Practical: Creating your own real-world Pipeline{background-color="black"}
+
+1. Build teams of 3 or more people
+2. Create a new repository and set up a sample CI/CD pipeline in a language you work with on a day-to-day basis
+3. Ideally, this is a stepping stone for a CI/CD you'll use in production
+
+- Reference: https://docs.gitlab.com/ee/ci/yaml/
+- Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates

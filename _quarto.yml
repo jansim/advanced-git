@@ -1,0 +1,19 @@
+project:
+  title: "Advanced git"
+  output-dir: "output"
+  render:
+    - "/*.qmd"
+    - "resources/*/*.qmd"
+
+editor: visual
+
+author: "Jan Simson"
+format:
+  revealjs:
+    incremental: true
+revealjs-plugins:
+  - attribution
+title-slide-attributes:
+    data-background-image: images/backgrounds/pankaj-patel-ZV_64LdGoao-unsplash.jpg
+    data-background-color: black
+    data-background-opacity: "0.3"

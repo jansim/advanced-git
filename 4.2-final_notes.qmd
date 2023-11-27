@@ -1,0 +1,48 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 4.2: Final Bits"
+---
+
+## Making your Repository Citeable
+
+- You can assign a doi (digital object identifier) to your repository using [Zenodo](https://zenodo.org/about)
+  - Steps are outlined in this [guide](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content)
+- You can also add an official `CITATION` file, so people know how to cite the repository
+  - Steps are outlined in this [guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files)
+
+## Advanced GitLab
+
+- You can easily start an in-browser version of VSCode on gitlab
+  - Just press the `.` key, inside a repository
+  - Also works on GitHub
+
+## Final Summary
+
+- Initialize a repository with `git init`
+- Stage your files with `git add`
+- Whenever you made a substantial change, put it into the history with `git commit`
+- See your history with `git log`
+- Move around (history and branches!) with `git checkout`
+- Create new branches with `git checkout -b`
+- To collaborate, first `git pull` others changes, then `git push` yours
+
+# Outlook
+
+## Guides to Re-Visit
+
+Most of the information in these guides, we already covered, but they can be great if you want to re-visit anything.
+
+- https://github.com/git-guides
+- [Introduction to RStudio Git & GitHub](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/)
+- [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- https://gitimmersion.com
+
+## Further Reading
+
+- Popular Workflow: [Trunk Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
+- Using git with data
+  - [git lfs](https://git-lfs.github.com/)
+  - [dvc](https://dvc.org/): Data Version Control
+- If you have a problem
+  - [ohshitgit.com](https://ohshitgit.com/) [(🇩🇪)](https://ohshitgit.com/de)
+  - Google
