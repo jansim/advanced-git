@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jan Simson">
+
+<title>Authenticating to GitLab via SSH</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="how-to-setup-gitlab-ssh_files/libs/clipboard/clipboard.min.js"></script>
+<script src="how-to-setup-gitlab-ssh_files/libs/quarto-html/quarto.js"></script>
+<script src="how-to-setup-gitlab-ssh_files/libs/quarto-html/popper.min.js"></script>
+<script src="how-to-setup-gitlab-ssh_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="how-to-setup-gitlab-ssh_files/libs/quarto-html/anchor.min.js"></script>
+<link href="how-to-setup-gitlab-ssh_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="how-to-setup-gitlab-ssh_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="how-to-setup-gitlab-ssh_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="how-to-setup-gitlab-ssh_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="how-to-setup-gitlab-ssh_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#secure-the-connection-between-your-computer-and-gitlab" id="toc-secure-the-connection-between-your-computer-and-gitlab" class="nav-link active" data-scroll-target="#secure-the-connection-between-your-computer-and-gitlab">Secure the connection between your computer and GitLab</a>
+  <ul class="collapse">
+  <li><a href="#checking-for-existing-ssh-key-pair" id="toc-checking-for-existing-ssh-key-pair" class="nav-link" data-scroll-target="#checking-for-existing-ssh-key-pair">Checking for existing SSH key pair</a></li>
+  <li><a href="#generating-an-ssh-key-pair" id="toc-generating-an-ssh-key-pair" class="nav-link" data-scroll-target="#generating-an-ssh-key-pair">Generating an SSH key pair</a></li>
+  <li><a href="#adding-a-new-ssh-key-to-your-gitlab-account" id="toc-adding-a-new-ssh-key-to-your-gitlab-account" class="nav-link" data-scroll-target="#adding-a-new-ssh-key-to-your-gitlab-account">Adding a new SSH key to your GitLab account</a></li>
+  <li><a href="#adding-your-key-to-the-ssh-agent-optional" id="toc-adding-your-key-to-the-ssh-agent-optional" class="nav-link" data-scroll-target="#adding-your-key-to-the-ssh-agent-optional">Adding your key to the ssh-agent (optional)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Authenticating to GitLab via SSH</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jan Simson </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This document was orginially part of a course titled <a href="https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/">Introduction to version Control in R with RStudio, Git, and GitHub</a>.</p>
+<p>The course was originally created by <a href="https://gitlub.com/mikecroucher">Mike Croucher</a> from <a href="https://gitlab.com/RSE-Sheffield">RSE-Sheffield</a> under a <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">Creative Commons Attribution Share Alike 4.0 International</a>. It was subsequently adapted by <a href="https://ox.ukrn.org/people/#MalikaIhle">Malika Ihle</a> from <a href="https://ox.ukrn.org/">Reproducible Research Oxford</a>. The overview image is from <a href="https://duzun.me/tips/git">Dumitru Uzun</a>. You are free to use this work in your own projects.</p>
+<p>Minor changes have been made to the document by Jan Simson from LMU Munich to make it available offline &amp; adapt it for GitLab.</p>
+</div>
+</div>
+<section id="secure-the-connection-between-your-computer-and-gitlab" class="level1">
+<h1>Secure the connection between your computer and GitLab</h1>
+<p>When working with a GitLab repository, you’ll often need to identify yourself to GitLab using your username and password. There are several ways to secure this connection further. Establishing a secure connection is mandatory since August 2021.</p>
+<p>Today we will use <strong>SSH Keys</strong> to secure your identification to GitLab as this is a common way to secure connections, which you may encounter again in other contexts in the future. An SSH key is also an alternate way to identify yourself that doesn’t require you to enter you username and password every time.</p>
+<p>SSH keys come in pairs, a public key that gets shared with services like GitLab, and a private key that is stored only on your computer. If the keys match, you’re granted access.</p>
+<p>The procedure below only need to be executed once per GitLab account and for each computer you will use to connect to GitLab.</p>
+<section id="checking-for-existing-ssh-key-pair" class="level2">
+<h2 class="anchored" data-anchor-id="checking-for-existing-ssh-key-pair">Checking for existing SSH key pair</h2>
+<p>The first step in using SSH authorization with GitLab is to generate your own key pair. However, you might already have an SSH key pair on your machine. You can check to see if one exists by moving to your <code>.ssh</code> directory and listing the contents.</p>
+<p>On windows, open <strong>Git Bash</strong> (start menu -&gt; Git Bash). On MacOS, open the <strong>Terminal</strong> app. On Linux, open your distribution’s (or any other) terminal emulator. Enter the following commands one after the other (hitting ENTER after each command).</p>
+<pre><code>ls ~/.ssh</code></pre>
+<p>The <code>ls</code> command lists the content of a directory, here <code>~/.ssh</code>. Check the directory listing to see if you already have a public SSH key. By default, the filenames of the public keys are one of the following:</p>
+<p><em>id_rsa.pub</em> <em>id_ecdsa.pub</em> <em>id_ed25519.pub</em></p>
+<p>If you do you, can skip the section that generate a SSH key pair, and go to the section ‘Adding a new SSH key to your GitLab account’.</p>
+<p><strong>If you don’t have an existing public and private key pair (which is to be expected!), or if you receive an error that ~/.ssh doesn’t exist, that this file location doesn’t exist, or that you can’t access this folder, go ahead and generate a new SSH key pair!</strong></p>
+</section>
+<section id="generating-an-ssh-key-pair" class="level2">
+<h2 class="anchored" data-anchor-id="generating-an-ssh-key-pair">Generating an SSH key pair</h2>
+<p>In the command line, type the following by replacing your_email@email.com with your own email address. Pay attention to spaces and capital letter!</p>
+<pre><code>ssh-keygen -t ed25519 -C "your_email@email.com"</code></pre>
+<p>This creates a new SSH key pair, using the provided email as a label.</p>
+<p>When you’re prompted to “Enter a file in which to save the key,” press ENTER. This accepts the default file location. This is the promt that will appear:</p>
+<pre><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/username/.ssh/id_ed25519):</code></pre>
+<p>You will then be asked to provide a passphrase. Protecting your keys with a password is optional but highly recommended. Note: when you type passwords in the command line, nothing is displayed, not even ***. This is the promt that will appear:</p>
+<pre><code>Enter passphrase (empty for no passphrase):
+Enter same passphrase again:</code></pre>
+<p>When the key generation is complete, you should see the following confirmation:</p>
+<pre><code>Your identification has been saved in /Users/username/.ssh/id_ed25519.
+Your public key has been saved in /Users/username/.ssh/id_ed25519.pub.
+The key fingerprint is:
+SHA256:6nr/zo0g7Bz7WMRwy34maBhQy1UZyX47gT+egRdlIhs your_email@email.com
+The key's randomart image is:
++--[ED25519 256]--+
+|    .o++         |
+|   o oF . o      |
+|  . o+ =.+.      |
+|   .  + += .     |
+|    .  +S++      |
+|   . ..oB=       |
+|    . ++*=.      |
+|     o.==* o     |
+|    .o.o+** .    |
++----[SHA256]-----+</code></pre>
+</section>
+<section id="adding-a-new-ssh-key-to-your-gitlab-account" class="level2">
+<h2 class="anchored" data-anchor-id="adding-a-new-ssh-key-to-your-gitlab-account">Adding a new SSH key to your GitLab account</h2>
+<p>We now need to tell GitLab about your public key. Display the contents of your new public key file with <code>cat</code>. <strong>Be careful</strong>: do not copy the content of your <em>private</em> key, but your <em>public</em> key. Your public key ends with <code>.pub</code>. Please type the command below exactly as it is, in its entirety:</p>
+<pre><code>cat ~/.ssh/id_ed25519.pub</code></pre>
+<p>The output should look something like this:</p>
+<pre><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFEKiimOpcayfHhlbjmnIBAUX74FY/o20k9yFA16XOLm your_email@email.com</code></pre>
+<p>Copy the contents of the output to your clipboard.</p>
+<p>Login to gitlab.com and bring up your account preferences by clicking on your profile photo (top left) and selecting <strong>Preferences</strong>. Click on <strong>SSH keys</strong> (left sidebar), and then click on the button ‘<strong>Add new key</strong>’.</p>
+<p><img src="./ssh-key.png" class="img-fluid"></p>
+<p>In the “Title” field, add a descriptive label for the new key. For example, if you’re using a personal laptop, you might call this key “Personal MacBook Air”. Finally, paste the contents of your clipboard into the Key text box and hit the green ‘Add key’ button to save. Enter your GitLab password if prompted.</p>
+<p><img src="./add-ssh-key.png" class="img-fluid"></p>
+<p>That’s it ! Going forward, you can use the SSH clone URL when copying a repo to your local machine (we will cover this in the second tutorial).</p>
+</section>
+<section id="adding-your-key-to-the-ssh-agent-optional" class="level2">
+<h2 class="anchored" data-anchor-id="adding-your-key-to-the-ssh-agent-optional">Adding your key to the ssh-agent (optional)</h2>
+<p>Read the following to type your passphrase only once.</p>
+<p>If you protected your key with a passphrase, you will be prompted for it every time time you use your key. To save you some typing, it is possible to use a piece of software called <code>ssh-agent</code> to ask your system to “remember” your key. In practice, this means you only have to type your passphrase once.</p>
+<p>Depending on your system, the following might not be necessary. On most GNU/Linux distributions, your key will be automatically added to the <code>ssh-agent</code> after the first time you enter it. If you keep getting asked for your key each time you want to clone or push to a GitLab repository, you can follow the following instructions.</p>
+<p>In the command line, start the ssh-agent with this command:</p>
+<pre><code>eval "$(ssh-agent -s)"</code></pre>
+<p>which should display an output similar to something like this:</p>
+<pre><code>Agent pid 59566</code></pre>
+<p>Then, add your key to the ssh-agent by typing the entirety of this command:</p>
+<pre><code>ssh-add ~/.ssh/id_ed25519</code></pre>
+<p>That’s it! You are completely done with the setting up part, which you will need to repeat only if you change computer. Let the fun begin!</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
