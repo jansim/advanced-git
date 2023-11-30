@@ -25,17 +25,17 @@ subtitle: "Block 2.1: Collaboration & Merge Requests"
 
 # Connecting git and GitLab
 
-## Authenticating with GitLab 🗝️ {background-color="black"}
+## Authenticating with GitLab.com 🗝️ {background-color="black"}
+
+::: {.nonincremental}
 
 - We will use a guide to set up the authentication with GitHub
-- Please go to the [website](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html) and follow the steps to authenticate with GitHub
+- Please go to the [website](https://simson.io/advanced-git/output/resources/ssh/how-to-setup-gitlab-ssh.html) and follow the steps to authenticate with GitHub
 - A PDF version of the guide can be found [here](./resources/ssh/how-to-setup-github-ssh.pdf)
 
-![https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html](images/qr_code-malikaihle-ssh.svg)
-
-::: attribution
-External Guide by Mike Croucher & Malika Ihle
 :::
+
+![https://simson.io/advanced-git/output/resources/ssh/how-to-setup-gitlab-ssh.html](images/qr-codes/qr-code-ssh-guide.svg)
 
 # Remotes {background-color="black" background-opacity="0.3" background-image="images/backgrounds/glenn-carstens-peters-EOQhsfFBhRk-unsplash.jpg"}
 
@@ -160,19 +160,19 @@ Repository: <https://gitlab.com/gitlab-org/gitlab>
 Repository: <https://gitlab.com/gitlab-org/gitlab>
 :::
 
-## When Should you Start using Issues & MRs?
+## When Should you start using Issues & MRs?
 
 - Maybe your project doesn't need these features yet
-- Often it makes sense to use pull requests even when collaborating with just a few people
+- Often it makes sense to use PR / MRs even when collaborating with just a few people
   - To avoid merge conflicts
   - Also for reviewing each others changes
 - Many companies require code reviews and using MRs
 
-# Questions?
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
 
 ## Practical: Collaborating via GitLab {background-color="black"}
 
-1. Fork the Website Template Repository: https://gitlab.com/jansim/website-template
+1. Fork the Website Template Repository: <https://gitlab.com/jansim/website-template>
 2. Clone your forked repository
 3. Add an alumni page by following the instructions in `docs/alumni/index.md`
 4. Push your changes to GitLab and create a MR to add yourself as an alumni

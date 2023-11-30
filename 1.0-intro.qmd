@@ -13,29 +13,21 @@ subtitle: "Course Introduction"
 
 :::
 
-## What is the course about?
-
-- **Goal**: Learn everything that is necessary to effectively...
-  - use `git` to track your own work
-  - use `git` to collaborate with others
-- **Format**: Mix of theory & practicals
-  - Feel free to always ask questions any time!
-
-## Agenda & Timeline
+## Agenda & Timeline [^1]
 
 ::: {.nonincremental}
 
 - 10:00 - 11:30 **Block 1:** Intro, Recap & Merging (1:30)
 - 11:30 - 11:45 *Pause* ☕️
-- 11:45 - 13:00 **Block 2:** Best Practices: Pull / Merge Requests, Trunk-Based Development (1:15)
+- 11:45 - 13:00 **Block 2:** Best Practices: MR/PRs, TBD (1:15)
 - 13:00 - 14:00 *Lunchbreak* 🍲
 - 14:00 - 15:15 **Block 3:** CI / CD with gitlab (1:15)
 - 15:15 - 15:30 *Pause* ☕️
-- 15:30 - 17:00 **Block 4:** Stashes, Cherry Picking, Patches & more (1:30)
+- 15:30 - 17:00 **Block 4:** Stashes, Patches & more (1:30)
 
 :::
 
-The speed of the class is always a bit variable, so the number of covered topics may differ a bit.
+[^1]: The speed of the class is always a bit variable, so the number of covered topics may differ a bit
 
 ## Introductions: Who am I? 🙋🏼‍♂️
 
@@ -45,7 +37,7 @@ The speed of the class is always a bit variable, so the number of covered topics
   - Computer Science (Ausbildung)
   - BSc Psychology (Konstanz)
   - MSc Behavioural Data Science (Amsterdam)
-  - Worked at research lab & startup before
+  - Worked in research & startup before
 - Worked with `git` for a couple of years
 
 ## Introductions: Who are you? 🙋🏻‍♀️🙋🏽‍♂️🙋  {background-color="black"}
@@ -56,7 +48,7 @@ Quick Round of Introductions
 
 - Your name
 - What do you wish to learn from this course?
-- How much experience do you have with git?
+- How much experience do you have with `git`?
 
 :::
 
@@ -67,4 +59,4 @@ Quick Round of Introductions
   - *Visual Studio Code*: A text editor, which also allows using git via its GUI
   - *gitLens*: An extension for VS Code enhancing it's git capabilities
 
-- *gitlab.com*: SaaS version of GitLab
+- *gitlab.com Account*: SaaS version of GitLab

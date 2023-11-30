@@ -1,6 +1,6 @@
 ---
 title: "Advanced `git`"
-subtitle: "Block 1.1: Reviewing git Basics"
+subtitle: "Block 1.1: Reviewing `git` Basics"
 ---
 
 ::: attribution
@@ -14,7 +14,7 @@ Background: https://unsplash.com/photos/842ofHC6MaI
   - Records all changes over time to give you a full history
   - Similar to "track changes" in Microsoft Word / LibreOffice
 
-:::
+::: {.fragment}
 
 ![Git only looks at and tracks the *changes* in a file](images/carpentries/play-changes.svg)
 
@@ -57,7 +57,7 @@ Background: https://unsplash.com/photos/842ofHC6MaI
 
 ## `git` commands  {background-color="black"}
 
-Which of these git commands / actions are have you used already? Have you used any that are not on this list?
+Which of these git commands / actions have you used already? Have you used any that are not on this list?
 
 :::: {.columns}
 
@@ -71,7 +71,7 @@ Which of these git commands / actions are have you used already? Have you used a
 :::
 
 ::: {.column width="50%"}
-- `git checkout` n 
+- `git checkout`
 - `git branch`
 - `git switch`
 - `git merge`
@@ -85,27 +85,36 @@ Which of these git commands / actions are have you used already? Have you used a
 
 ## The 3 Levels of Changes in git
 
-![Changes can be either unstaged, staged or commited.](images/carpentries/git-staging-area.svg)
+![Changes can be either unstaged, staged or commited.](images/drawings/git-areas.png)
 
 - When we first make a change it is *unstaged*
 - Once we `add` the change to the staging area it is *staged*
 - We can then `commit` all *staged* changes
+
+
+## The 3 Levels of Changes in git
+
+![Changes can be either unstaged, staged or commited.](images/drawings/git-areas.png)
+
+::: {.nonincremental}
 - We can `restore` the commited version (and remove any *unstaged* changes)
+:::
 
 ## Practical: git Command Library (1) {background-color="black"}
 
-1. Create an ew directory called `git-example`
-2. Create a new file `library.txt` in your `git-example` directory
-3. Run `git init -h` and copy the output into your `library.txt`
-4. Commit the changes
-5. Delete the `library.txt` and restore it
+1. Create a new directory called `git-example`
+2. Initialize a git repository in the new directory
+3. Create a new file `library.txt` in your `git-example` directory
+4. Run `git init -h` and copy the output into your `library.txt`
+5. Commit the changes
+6. Delete the `library.txt` and restore it
 
 ## Demo: Tracking Changes in VSCode
 
 ![Since VSCode is primarily a text editor, git functionality is hidden in the sidebar](images/screenshots/vscode-git.png)
 
-- Demo!
-- Feature: staging partial changes
+- Demo: Default git features in VSCode
+- Demo: Advanced features via gitLens
 
 ## Practical: git Command Library (2) {background-color="black"}
 

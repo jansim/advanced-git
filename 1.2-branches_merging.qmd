@@ -89,13 +89,17 @@ Background: https://giphy.com/gifs/berlin-demo-govid-loAFGkJxYzgxu3NKnZ
 
 ## Practical: Branches and merging {background-color="black"}
 
+::: {.nonincremental}
+
 1. Go back to your Terminal in `git-exercise`
 2. Create a new branch called `new-feature`
-  - Make sure to also checkout that branch, you can check whether you're on it with `git status`
+    - Make sure to also checkout that branch, you can check whether you're on it with `git status`
 3. Add a commit on that new branch
 4. Go back to `main`
-6. Merge the `new-feature` branch into `main`
-7. Repeat all the above steps (with a different branch name & commit) using a GUI
+5. Merge the `new-feature` branch into `main`
+6. Repeat all the above steps (with a different branch name & commit) using a GUI
+
+:::
 
 # The Ugly Side of `git`: Merge Conflicts {background-color="black" background-opacity="0.5" background-image="images/backgrounds/git-merge-cFkiFMDg3iFoI.gif"}
 
@@ -132,11 +136,17 @@ And how to avoid it.
 - Picking a solution is easiest to do by using GUI tools
   - Both Sourcetree and VSCode have great UIs for this
 
-# DEMO: Resolving merge conflicts in VS Code
+# *OPTIONAL DEMO:* Resolving merge conflicts in VS Code {background-color="black" background-opacity="0.5" background-image="images/backgrounds/iontelevision-fire-chicago-hose-qkTA7B5umJaEwnQ3bW.gif"}
+
+::: attribution
+Background: https://giphy.com/gifs/iontelevision-fire-chicago-hose-qkTA7B5umJaEwnQ3bW
+:::
 
 # *Practical:* Creating & Resolving a Merge Conflict {background-color="black"}
 
 ## Practical: Setup {background-color="black"}
+
+::: {.nonincremental}
 
 1. Create a new file called `guessing_conflict.txt`
 2. Write the "Question" with the letters A to D into the file, with empty lines in between e.g.
@@ -152,11 +162,17 @@ Question D
 
 ```
 
+:::
+
 ## Practical: Setup {background-color="black"}
+
+::: {.nonincremental}
 
 3. Create a new branch called `guesses` and check it out
     - Double check whether you checked out the correct branch with `git status`
 4. We're done with the preparations
+
+:::
 
 ## Practical: Guessing Game {background-color="black"}
 
@@ -165,10 +181,13 @@ Write your guess below the line with the matching letter.
 a) How many liters of Beer have been drunken at the Oktoberfest in Munich in 2019? 🍻
 b) How many people live in Karlsruhe? (Exactly) 🏘️
 c) What percentage of Americans asked in a survey in 2017, indicated that they believe in Astrology? 🌟
+
 ## Practical: Guessing Game Answers {background-color="black"}
 
 5. Check out the `main` branch again
 6. Write down the actual answers below the letters in the now empty file again
+
+::: {.fragment}
 
 ```text
 Question A 🍻 Liters of beer [^1]
@@ -178,6 +197,8 @@ Question B 🏘️ People in Karlsruhe
 Question C 🌟 % believing in Astrology [^2]
 29%
 ```
+
+:::
 
 [^1]: https://opendata.muenchen.de/tr/dataset/oktoberfest
 [^2]: https://www.pewresearch.org/fact-tank/2018/10/01/new-age-beliefs-common-among-both-religious-and-nonreligious-americans/
@@ -189,7 +210,7 @@ https://opendata.muenchen.de/tr/dataset/oktoberfest
 8. Explore the files in the resulting merge conflict
 9. Resolve the merge conflict
 
-## Practical: *learngitbranching* {background-color="black"}
+## Optional Practical: *learngitbranching* {background-color="black"}
 
 1. Go to https://learngitbranching.js.org/
 2. Finish Lessons 1, 2 and 3 on the website
@@ -202,27 +223,29 @@ https://opendata.muenchen.de/tr/dataset/oktoberfest
   - Leads to a single history
 - Use with caution
 
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
 ::: attribution
 More Info: <https://www.atlassian.com/git/tutorials/merging-vs-rebasing>
 :::
 
-## Rebasing: The Alternative to Merging
+## Rebasing: The Alternative to Merging {background-color="#5cbcfc"}
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 
 Merging
 
-![Example of a merged repository history](images/screenshots/learngitbranching/merged.png)
+![](images/screenshots/learngitbranching/merged.png){width=65%}
 
 :::
 
-::: {.column width="50%"}
+::: {.column .fragment width="50%"}
 
 Rebasing
 
-![Example of a rebased repository history](images/screenshots/learngitbranching/rebased.png)
+![](images/screenshots/learngitbranching/rebased.png){width=65%}
 
 :::
 
@@ -230,4 +253,8 @@ Rebasing
 
 ## Practical: *learngitbranching* {background-color="black"}
 
-1. Finish Lessons 4 on https://learngitbranching.js.org/
+1. Go to https://learngitbranching.js.org/
+2. *Merging* (If not yet done)
+      - Finish Lessons 1, 2 and 3 on the website
+3. *Rebasing*
+      - Finish Lesson 4 on the website

@@ -5,7 +5,7 @@ subtitle: "Course Outro"
 
 ## Evaluation / Feedback
 
-![](images/qr-code-feedback.svg)
+![](images/qr-codes/qr-code-feedback.svg)
 
 https://forms.gle/aYESK8xXLWqGkESx8
 
@@ -19,9 +19,11 @@ https://forms.gle/aYESK8xXLWqGkESx8
 
 This course uses materials from, builds upon and is inspired by the following resources
 
+- git documentation
 - [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/
-- https://github.com/edunford/git-scavenger-hunt
 - https://gitimmersion.com
+- https://trunkbaseddevelopment.com
+- Atlassian git guides
 
 # The End, Thank You!

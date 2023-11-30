@@ -1,36 +1,45 @@
 ---
 title: "Advanced `git`"
 subtitle: "Block 3.1: GitLab CI / CD"
+title-slide-attributes:
+    # Background by <https://giphy.com/gifs/ralph-80s-cartoons-richie-rich-1nR6fu93A17vWZbO9c>
+    data-background-image: images/backgrounds/ralph-80s-cartoons-richie-rich-1nR6fu93A17vWZbO9c.gif
+    data-background-color: black
+    data-background-opacity: "0.4"
 ---
 
-## From before: CI / CD
+## From before: CI / CD 🤖
 
-- Continuous Integration (CI)
+::: {.nonincremental}
+
+- **Continuous Integration (CI)**
   - Integration of changes from multiple developers into shared repository with automated testing.
-- Continuous Delivery / Deployment (CD)
+- **Continuous Delivery / Deployment (CD)**
   - Automated deployment of changes if previous tests pass.
 
-## Continuous Integration (CI)
+:::
 
-Ensuring the quality of all code that makes it into the main branch.
+## Continuous Integration (CI) ✅
 
-- Automatically check
+Ensuring the quality of all code that makes it into the `main` branch.
+
+- Automatically check...
   - different forms of tests
   - formatting
   - building / compilation
-  - ...
+  - ... anything!
 - Only allow merging if tests pass
 
-## Continuous Delivery / Deployment (CD)
+## Continuous Delivery / Deployment (CD) 🚀
 
 Automatically deploy the latest state upon merge.
 
 - Build & deploy the latest version
-  - If tests pass
+  - If tests in CI pass ✅
 - Helps streamlining deployment
 - Easier to roll-back changes
 
-## Artifacts
+## Artifacts 🏺
 
 Save / export files from your CI / CD pipeline.
 
@@ -38,18 +47,25 @@ Save / export files from your CI / CD pipeline.
 - Build, package and release your software
 - Can help to debug failing tests
   - e.g. upload a plot from a failed test as artifact
+- Example: *JOSS* renders & exports papers via artifacts 📜
+
+:::{.fragment}
+:::{.callout-note}
+Be mindful when exporting / storing artifacts as they usually count towards a storage allowance.
+:::
+:::
 
 # CI / CD on GitLab
 
-## CI / CD on GitLab: Pipelines & Jobs
+## CI / CD on GitLab: Pipelines & Jobs 🚰
 
-GitLab's CI/CD system is organized into pipelines which contain one or more jobs.
+GitLab's CI/CD system is organized into `pipelines` which contain one or more `jobs`.
 
-- Each job performs a task
-- Multiple jobs can be chained / combined in a pipeline
-- There is no clear distinction between CI/CD, it's all jobs
+- Each `job` performs a *task*
+- Multiple `jobs` can be chained / combined in a `pipeline`
+- There is no clear distinction between CI/CD, it's all `jobs`
 
-## CI / CD on GitLab: Pipelines & Jobs
+## CI / CD on GitLab: Pipelines & Jobs 🚰
 
 ![Part of the pipeline that's being run for gitlab itself.](images/screenshots/gitlab/gl-pipeline.png)
 
@@ -57,40 +73,59 @@ GitLab's CI/CD system is organized into pipelines which contain one or more jobs
 Repository: <https://gitlab.com/gitlab-org/gitlab>
 :::
 
-## CI / CD on GitLab: Runners
+## CI / CD on GitLab: Runners 🏃
 
-- Jobs run in Docker containers (more later)
+- Jobs run in Docker containers (more later ⏲️)
 - These need to run *somewhere*: runners
 - Runners are separate from the gitlab instance itself
-  - We'll use gitlab.com here, which provides a certain amount of free "minutes"
+  - We'll use gitlab.com here, which provides a certain amount of free "runner minutes"
 - KIT does not provide runners by default
-  - But you can provide your own
+  - But you can provide / configure your own
 
-## Testing CI / CD Pipelines
+## Developing CI / CD Pipelines
 
 - Option 1: Make changes, push, repeat ♻️
-- Option 2: Use tools to test locally
+- Option 2: Use tools to test locally 🏡
   - [`gitlab-runner exec`](https://docs.gitlab.com/runner/install/)
   - [`gitlab-ci-local`](https://github.com/firecow/gitlab-ci-local)
 
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
 ## Practical: Deploying a Website {background-color="black"}
 
-You can deploy your own website on gitlab.com using GitLab Pages.
+You can deploy your own website on gitlab.com using GitLab Pages and powered by GitLab CI / CD.
 
 1. Go to the fork of the website template ([jansim/website-template](https://gitlab.com/jansim/website-template)) you made earlier.
-2. Make at least one commit to let the CI run (should have happened already)
+2. Make at least one commit to let the CI run
 3. Go to `Build` > `Pipelines` on the left to check whether everything ran correctly
 4. Go to `Deploy` > `Pages` to check whether the configuration for deployments was correct
 5. The deployment should look roughly like [this](https://jansim.gitlab.io/website-template).
 
-# Going Deeper: <br> `.gitlab-ci.yml`
+# Going Deeper: <br> `.gitlab-ci.yml` {background-color="black" background-opacity="0.4" background-image="images/backgrounds/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi.gif" background-position="top"}
+
+::: attribution
+Background: https://giphy.com/gifs/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi
+:::
 
 ## Detour: (Docker) Containers 🐋
 
 - Collection of software and its dependencies
 - Kind of like a mini-virtual machine
-- Identified by an image name e.g. `ubuntu:20.04`, `postgres:14`, `...`
-- Docker is the biggest company in the space, but open-source implementations exist
+- Identified by an image name (+ version) e.g. `ubuntu:20.04`, `postgres:14`, `...`
+- Docker is the biggest company in the space, but open-source alternatives exist
+- Really useful for reproducible environments & deployments
+
+:::{.fragment}
+➡️ GitLab CI / CD jobs run in Docker containers
+:::
+
+## The magic file ✨
+
+GitLab CI / CD pipelines are almost completely configured via a single file called `.gitlab-ci.yml`.
+
+- `.gitlab-ci.yml` is just a normal file in the repository and tracked via `git`
+- Only a few administrative settings are made outside of this
+- The GitLab UI has some helpful UI to create one from a template
 
 ## The magic file: `.gitlab-ci.yml` ✨
 
@@ -130,7 +165,7 @@ deploy-job: # This job runs in the deploy stage.
     - echo "Application successfully deployed."
 ```
 
-## A more complicated example
+## A more complicated example 🧙
 
 ```yml
 # .gitlab-ci.yml
@@ -193,9 +228,13 @@ pages:
 
 ## Major Practical: Creating your own real-world Pipeline{background-color="black"}
 
-1. Build teams of 3 or more people
+::: {.nonincremental}
+
+1. Build teams of ~ 3 people
 2. Create a new repository and set up a sample CI/CD pipeline in a language you work with on a day-to-day basis
 3. Ideally, this is a stepping stone for a CI/CD you'll use in production
 
 - Reference: https://docs.gitlab.com/ee/ci/yaml/
 - Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates
+
+:::

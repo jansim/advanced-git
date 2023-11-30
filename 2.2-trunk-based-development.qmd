@@ -1,46 +1,62 @@
 ---
 title: "Advanced `git`"
 subtitle: "Block 2.2: Trunk Based Development"
+title-slide-attributes:
+    # Background by <https://unsplash.com/@tahamazandarani>
+    data-background-image: images/backgrounds/taha-mazandarani-eLTEuvma_vw-unsplash.jpg
+    data-background-color: black
+    data-background-opacity: "0.8"
+    data-background-position: bottom
 ---
 
 ## What is Trunk-Based Development?
 
-A source-control branching model, where developers collaborate on code in a single branch called ‘trunk’, resist any pressure to create other long-lived development branches by employing documented techniques. They therefore avoid merge hell, do not break the build, and live happily ever after.
+> A source-control branching model, where developers collaborate on code in a single branch called ‘trunk’, resist any pressure to create other long-lived development branches by employing documented techniques. They therefore avoid merge hell, do not break the build, and live happily ever after.
 
-::: attribution
-https://trunkbaseddevelopment.com/
-:::
+From <https://trunkbaseddevelopment.com/>
+
+
+## What is Trunk-Based Development?
+
+> A source-control branching model, where developers collaborate on code in a **single branch** called ‘trunk’, **resist any pressure to create other long-lived development branches** by employing documented techniques.
+> 
+> They therefore avoid merge hell, do not break the build, and **live happily ever after**.
+
+From <https://trunkbaseddevelopment.com/>
 
 ## What is Trunk-Based Development?
 
 - Development happens on a single main branch (trunk)
-  - At most short-lived feature branches
+    - At most short-lived feature branches
 - Developers commit changes directly to the main / master branch
 - Integrates with continuous integration and continuous delivery
 
-## Brief Detour: CI / CD
+## Brief Detour: CI / CD 🤖
 
-- Continuous Integration (CI)
-  - Integration of changes from multiple developers into shared repository with automated testing.
-- Continuous Delivery / Deployment (CD)
+- **Continuous Integration (CI)**
+    - Integration of changes from multiple developers into shared repository with automated testing.
+- **Continuous Delivery / Deployment (CD)**
   - Automated deployment of changes if previous tests pass.
 
-- More on these later
+::: {.fragment}
+More on these later... ⏲️
+:::
 
 ## How to Get Started with Trunk-Based Development
 
 - Avoid long-lived branches
+  - Use a single `trunk` instead (doesn't need to be called so)
 - Use feature-branches
 - Merge / pull / push often and regularly
-- Make sure that any changes you merge can run (!)
-- Set up a CI/CD pipeline
+- Make sure that any changes you merge can build / run (!)
+- Set up a CI/CD pipeline (⏲️)
 
 ## Advantages of Trunk-Based Development
 
-1. **Faster Feedback**: Immediate integration identifies conflicts early.
-2. **Reduced Merge Issues**: Smaller, more frequent merges minimize conflicts.
-3. **Promotes Collaboration**: Encourages teamwork and shared code ownership.
-4. **Simplified Deployment**: Continuous integration allows for quicker releases.
+1. **Faster Feedback**: Immediate integration identifies conflicts early
+2. **Reduced Merge Issues**: Smaller, more frequent merges minimize conflicts
+3. **Promotes Collaboration**: Encourages teamwork and shared code ownership
+4. **Simplified Deployment**: Continuous integration allows for quicker releases
 
 ## Best Practices: feature-branches
 
@@ -52,18 +68,19 @@ https://trunkbaseddevelopment.com/
 
 ## Best Practices
 
-- **Feature Toggles**: Enable features selectively without affecting the main branch.
-- **Code Reviews**: Ensure high-quality code before merging to trunk.
-- **Automated Testing**: Comprehensive test suites to maintain code stability.
-- **Monitoring and Rollbacks**: Quickly identify issues and revert changes if necessary.
+- **Feature Toggles**: Enable features selectively without affecting the main branch
+- **Code Reviews**: Ensure high-quality code before merging to trunk
+- **Automated Testing**: Comprehensive test suites to maintain code stability
+- **Monitoring and Rollbacks**: Quickly identify issues and revert changes if necessary
 
-## Further Reading
+## Further Reading 📚️
 
-- https://trunkbaseddevelopment.com/
+- <https://trunkbaseddevelopment.com/>
+- <https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development>
 
-## gitflow
+## gitflow 🌊
 
-Has fallen a bit out of fashion.
+Formerly highly popular workflow, now a bit out of fashion.
 
 - Development happens in `develop` branch
 - Only releases e.g. `v1.2.1` in main / master
@@ -71,3 +88,5 @@ Has fallen a bit out of fashion.
 - Branches are much longer lived
   - Can lead to difficulties with merges
 - Many more active branches in general
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}

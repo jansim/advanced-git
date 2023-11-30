@@ -3,31 +3,45 @@ title: "Advanced `git`"
 subtitle: "Block 4.1: Advanced features of git"
 ---
 
-## Amending Commits
+## Amending Commits ⏳️
 
-- Modify the last commit: Change commit message or content
+- Modify the last commit
+  - Modify the commit message
+  - Modify the commited changes
 - `git commit --amend`
-- **DANGER: Never do this if you already pushed the commit**
+- VSCode: Possible via GitLens
+  - *Demo*
 
-## Staging Parts Instead of full Files
+::: {.fragment}
+::: {.callout-caution}
+Never do this if you already pushed the commit, as it will re-write history
+:::
+:::
 
-Instead of staging complete files, you can also stage just parts of them.
+## Staging Parts Instead of Full Files 🧩
 
-- CLI
+Instead of staging complete files, you can also stage just a section or selection of your changes.
+
+- CLI: Interactive Staging
   - `git add --patch <file>`
   - `git add -p <file>`
-- VSCode: "Stage selected range"
-  - Demo
+- VSCode: "Stage selected ranges"
+  - *Demo*
 
-# Tags
+# Tags 🏷️ {background-opacity="0.6" background-image="images/backgrounds/stop-motion-experience-3oriNYjm7cl8MjpszK.gif" background-position="center"}
+
+::: attribution
+Background: https://giphy.com/gifs/stop-motion-experience-3oriNYjm7cl8MjpszK
+:::
 
 ## What is a tag? 🏷️
 
 You can *tag* a single commit in git.
 
 - Creates a named reference to this commit
-- Useful for versioning / releases e.g. `v1.2.3`
-  - Course material: `SS23`, `WS23`
+  - Useful for versioning / releases e.g. `v1.2.3`
+  - also e.g. course material: `SS23`, `WS23`
+- Can be checked out via `git checkout <tag>`
 - You can create a specific **release** for a tag
   - Attach changelog or artifacts
 - Can be useful for deployments if CD is not feasible
@@ -35,22 +49,41 @@ You can *tag* a single commit in git.
 ## Creating a tag
 
 - CLI: `git tag -a v1.2.3`
-- VSCode: Demo
+- VSCode: Commit > Create Tag (GitLens)
+  - *Demo*
 
-Note: Tags need to be pushed *explicitly* via `git push --tags`
+::: {.fragment}
+::: {.callout-note}
+Tags need to be pushed *explicitly* via `git push --tags`
+:::
+:::
 
-<!-- Optional: Practical - Creating a tag & release -->
-<!-- Optional: Practical: learngitbranching > "A Mixed Bag" > #4: Tags -->
+## *Optional Practicals*: Tags {background-color="black"}
 
-# Patches 🩹
+A) Creating a Release
+    1. Tag the latest commit in your copy of the website template repository
+    2. Push the tag to GitLab
+       - You do not need to make a new commit
+    3. Create a new release for the tag you pushed
+
+B) Go to [learngitbranching.js.org](https://learngitbranching.js.org)
+    1. Do Section `"A Mixed Bag"` > `#4: Tags`
+
+# Patches 🩹 {background-opacity="0.6" background-color="black" background-image="images/backgrounds/tape-slap.gif" background-position="center"}
+
+::: attribution
+Background: https://giphy.com/gifs/VeSvZhPrqgZxx2KpOA
+:::
 
 ## Patches 🩹
 
-Before platforms like GitLab/Hub existed, people collaborated by sending around **patches** via email. A patch is essentially a commit exported as a file.
+Before platforms like GitLab/Hub existed, people collaborated by sending around **patches** via email.
+
+A patch is essentially a commit exported as a file.
 
 - Create: `git format-patch <commit/branch>`
   - Will create `.patch` files for all commits till target
-- Apply: `git apply <patch-file>`
+- Apply: `git apply <patch-file(s)>`
 
 ## Example Patch
 
@@ -82,31 +115,39 @@ index 6c61bba..53a76bd 100644
 2.39.2 (Apple Git-143)
 ```
 
-## Practical: Creating Patches {background-color="black"}
+## *Practical*: Creating Patches {background-color="black"}
 
 1. Navigate to a local git repository of your choice
 2. Get the latest commit hash
 3. Use `git format-patch <id>` to create a patch for it
 4. Examine the generated patch
 
-## Working with Large Files / Data: git LFS
+## Working with Large Files / Data: 🦣 `git lfs`
 
 Git struggles with large binary files.
 
-- One possible solution: git lfs (large-file-storage)
+- One possible solution: `git lfs` (**l**arge **f**ile **s**torage)
 - Extension that needs to be installed separately
   - Install git lfs
   - Initialize once in each repository you want to use it in
   - Configure a pattern to specify which files should use it
+- Useful, but a bit annoying to use & debug
+  - Alternatives exist: e.g. [dvc](https://dvc.org/)
 
-# Stashing
+# Stashing 🗄️
 
-## What is Stashing?
+## What is Stashing? 🗄️
 
 - **Stashing** allows you to temporarily store changes that are not ready to be committed yet.
 - Useful when you need to switch branches or perform other operations without committing half-done work.
 
+## Illustration of Stashes
+
+![](images/drawings/git-areas-stashing.png)
+
 ## How to Use Stashes?
+
+![](images/drawings/git-areas-stashing.png)
 
 ```bash
 git stash         # Stash changes
@@ -115,16 +156,75 @@ git stash apply   # Apply the latest stash
 git stash pop     # Apply and remove the latest stash
 ```
 
-# Cherry Picking
+Or in a GUI e.g. VSCode (via GitLens)
 
-## Cherry Picking
+## Cherry Picking 🍒
 
-- Select specific commits
-- Apply to current branch
+- Apply a specific commit to your current branch
 - `git cherry-pick <commit-hash>`
 
-<!--
-  If extra time: https://learngitbranching.js.org/
-  Section 2 "Ramping up"
-  Section 3: Moving Work around #1 (cherry pick)
--->
+::: {.fragment}
+![Illustration of git chery-pick](images/drawings/cherry-pick.png){width=60%}
+:::
+
+## Cherry Picking 🍒
+
+::: {.nonincremental}
+- Apply a specific commit to your current branch
+- `git cherry-pick <commit-hash>`
+:::
+- Can be useful for e.g. hotfixes 🐛
+- Should not be overused
+  - Usually full merges are the preferred solution
+
+## Interactive Rebases 🔥
+
+Besides normal rebases, you can also do interactive ones, where you get to decide what happens with each commit.
+
+- `git rebase -i <target>`
+- Super powerful + super dangerous
+  - Easy to re-write history
+- Only use these when necessary or if you have a good backup
+
+## Interactive Rebases: Example 🧨
+
+```bash
+pick f7f3f6d Change my name a bit
+pick 310154e Update README formatting and add blame
+pick a5f4a0d Add cat-file
+
+# Rebase 710f0f8..a5f4a0d onto 710f0f8
+#
+# Commands:
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# b, break = stop here (continue rebase later with 'git rebase --continue')
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+#
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+# However, if you remove everything, the rebase will be aborted.
+#
+# Note that empty commits are commented out
+```
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+## *Optional Practicals*: 🍒🔥 {background-color="black"}
+
+1. Go to https://learngitbranching.js.org/
+3. Complete Section 3: `"Moving Work around"`
+   - #1: Cherry Pick
+   - #2: Interactive Rebase
