@@ -324,7 +324,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="images/backgrounds/pankaj-patel-ZV_64LdGoao-unsplash.jpg" data-background-opacity="0.3" class="quarto-title-block center">
+<section id="title-slide" data-background-color="black" data-background-image="images/backgrounds/taha-mazandarani-eLTEuvma_vw-unsplash.jpg" data-background-opacity="0.8" data-background-position="bottom" class="quarto-title-block center">
   <h1 class="title">Advanced <code>git</code></h1>
   <p class="subtitle">Block 2.2: Trunk Based Development</p>
 
@@ -339,12 +339,20 @@ Jan Simson
 </section>
 <section id="what-is-trunk-based-development" class="slide level2">
 <h2>What is Trunk-Based Development?</h2>
+<blockquote>
 <p>A source-control branching model, where developers collaborate on code in a single branch called ‘trunk’, resist any pressure to create other long-lived development branches by employing documented techniques. They therefore avoid merge hell, do not break the build, and live happily ever after.</p>
-<div class="attribution">
-<p>https://trunkbaseddevelopment.com/</p>
-</div>
+</blockquote>
+<p>From <a href="https://trunkbaseddevelopment.com/" class="uri">https://trunkbaseddevelopment.com/</a></p>
 </section>
 <section id="what-is-trunk-based-development-1" class="slide level2">
+<h2>What is Trunk-Based Development?</h2>
+<blockquote>
+<p>A source-control branching model, where developers collaborate on code in a <strong>single branch</strong> called ‘trunk’, <strong>resist any pressure to create other long-lived development branches</strong> by employing documented techniques.</p>
+<p>They therefore avoid merge hell, do not break the build, and <strong>live happily ever after</strong>.</p>
+</blockquote>
+<p>From <a href="https://trunkbaseddevelopment.com/" class="uri">https://trunkbaseddevelopment.com/</a></p>
+</section>
+<section id="what-is-trunk-based-development-2" class="slide level2">
 <h2>What is Trunk-Based Development?</h2>
 <ul>
 <li class="fragment">Development happens on a single main branch (trunk)
@@ -356,36 +364,41 @@ Jan Simson
 </ul>
 </section>
 <section id="brief-detour-ci-cd" class="slide level2">
-<h2>Brief Detour: CI / CD</h2>
+<h2>Brief Detour: CI / CD 🤖</h2>
 <ul>
-<li class="fragment">Continuous Integration (CI)
+<li class="fragment"><strong>Continuous Integration (CI)</strong>
 <ul>
 <li class="fragment">Integration of changes from multiple developers into shared repository with automated testing.</li>
 </ul></li>
-<li class="fragment">Continuous Delivery / Deployment (CD)
+<li class="fragment"><strong>Continuous Delivery / Deployment (CD)</strong>
 <ul>
 <li class="fragment">Automated deployment of changes if previous tests pass.</li>
 </ul></li>
-<li class="fragment">More on these later</li>
 </ul>
+<div class="fragment">
+<p>More on these later… ⏲️</p>
+</div>
 </section>
 <section id="how-to-get-started-with-trunk-based-development" class="slide level2">
 <h2>How to Get Started with Trunk-Based Development</h2>
 <ul>
-<li class="fragment">Avoid long-lived branches</li>
+<li class="fragment">Avoid long-lived branches
+<ul>
+<li class="fragment">Use a single <code>trunk</code> instead (doesn’t need to be called so)</li>
+</ul></li>
 <li class="fragment">Use feature-branches</li>
 <li class="fragment">Merge / pull / push often and regularly</li>
-<li class="fragment">Make sure that any changes you merge can run (!)</li>
-<li class="fragment">Set up a CI/CD pipeline</li>
+<li class="fragment">Make sure that any changes you merge can build / run (!)</li>
+<li class="fragment">Set up a CI/CD pipeline (⏲️)</li>
 </ul>
 </section>
 <section id="advantages-of-trunk-based-development" class="slide level2">
 <h2>Advantages of Trunk-Based Development</h2>
 <ol type="1">
-<li class="fragment"><strong>Faster Feedback</strong>: Immediate integration identifies conflicts early.</li>
-<li class="fragment"><strong>Reduced Merge Issues</strong>: Smaller, more frequent merges minimize conflicts.</li>
-<li class="fragment"><strong>Promotes Collaboration</strong>: Encourages teamwork and shared code ownership.</li>
-<li class="fragment"><strong>Simplified Deployment</strong>: Continuous integration allows for quicker releases.</li>
+<li class="fragment"><strong>Faster Feedback</strong>: Immediate integration identifies conflicts early</li>
+<li class="fragment"><strong>Reduced Merge Issues</strong>: Smaller, more frequent merges minimize conflicts</li>
+<li class="fragment"><strong>Promotes Collaboration</strong>: Encourages teamwork and shared code ownership</li>
+<li class="fragment"><strong>Simplified Deployment</strong>: Continuous integration allows for quicker releases</li>
 </ol>
 </section>
 <section id="best-practices-feature-branches" class="slide level2">
@@ -403,21 +416,22 @@ Jan Simson
 <section id="best-practices" class="slide level2">
 <h2>Best Practices</h2>
 <ul>
-<li class="fragment"><strong>Feature Toggles</strong>: Enable features selectively without affecting the main branch.</li>
-<li class="fragment"><strong>Code Reviews</strong>: Ensure high-quality code before merging to trunk.</li>
-<li class="fragment"><strong>Automated Testing</strong>: Comprehensive test suites to maintain code stability.</li>
-<li class="fragment"><strong>Monitoring and Rollbacks</strong>: Quickly identify issues and revert changes if necessary.</li>
+<li class="fragment"><strong>Feature Toggles</strong>: Enable features selectively without affecting the main branch</li>
+<li class="fragment"><strong>Code Reviews</strong>: Ensure high-quality code before merging to trunk</li>
+<li class="fragment"><strong>Automated Testing</strong>: Comprehensive test suites to maintain code stability</li>
+<li class="fragment"><strong>Monitoring and Rollbacks</strong>: Quickly identify issues and revert changes if necessary</li>
 </ul>
 </section>
 <section id="further-reading" class="slide level2">
-<h2>Further Reading</h2>
+<h2>Further Reading 📚️</h2>
 <ul>
-<li class="fragment">https://trunkbaseddevelopment.com/</li>
+<li class="fragment"><a href="https://trunkbaseddevelopment.com/" class="uri">https://trunkbaseddevelopment.com/</a></li>
+<li class="fragment"><a href="https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development" class="uri">https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development</a></li>
 </ul>
 </section>
 <section id="gitflow" class="slide level2">
-<h2>gitflow</h2>
-<p>Has fallen a bit out of fashion.</p>
+<h2>gitflow 🌊</h2>
+<p>Formerly highly popular workflow, now a bit out of fashion.</p>
 <ul>
 <li class="fragment">Development happens in <code>develop</code> branch</li>
 <li class="fragment">Only releases e.g.&nbsp;<code>v1.2.1</code> in main / master</li>
@@ -428,6 +442,9 @@ Jan Simson
 </ul></li>
 <li class="fragment">Many more active branches in general</li>
 </ul>
+</section>
+<section id="questions" class="title-slide slide level1 center" data-background-opacity="0.4" data-background-image="images/backgrounds/questions.gif" data-background-position="top">
+<h1>Questions?</h1>
 <div class="footer footer-default">
 
 </div>

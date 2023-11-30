@@ -531,19 +531,19 @@ Jan Simson
 </section>
 <section id="practical-branches-and-merging" class="slide level2" data-background-color="black">
 <h2>Practical: Branches and merging</h2>
+<div>
 <ol type="1">
-<li class="fragment">Go back to your Terminal in <code>git-exercise</code></li>
-<li class="fragment">Create a new branch called <code>new-feature</code></li>
-</ol>
+<li>Go back to your Terminal in <code>git-exercise</code></li>
+<li>Create a new branch called <code>new-feature</code>
 <ul>
-<li class="fragment">Make sure to also checkout that branch, you can check whether you’re on it with <code>git status</code></li>
-</ul>
-<ol start="3" type="1">
-<li class="fragment">Add a commit on that new branch</li>
-<li class="fragment">Go back to <code>main</code></li>
-<li class="fragment">Merge the <code>new-feature</code> branch into <code>main</code></li>
-<li class="fragment">Repeat all the above steps (with a different branch name &amp; commit) using a GUI</li>
+<li>Make sure to also checkout that branch, you can check whether you’re on it with <code>git status</code></li>
+</ul></li>
+<li>Add a commit on that new branch</li>
+<li>Go back to <code>main</code></li>
+<li>Merge the <code>new-feature</code> branch into <code>main</code></li>
+<li>Repeat all the above steps (with a different branch name &amp; commit) using a GUI</li>
 </ol>
+</div>
 </section></section>
 <section>
 <section id="the-ugly-side-of-git-merge-conflicts" class="title-slide slide level1 center" data-background-color="black" data-background-opacity="0.5" data-background-image="images/backgrounds/git-merge-cFkiFMDg3iFoI.gif">
@@ -596,9 +596,11 @@ Jan Simson
 </ul></li>
 </ul>
 </section></section>
-<section id="demo-resolving-merge-conflicts-in-vs-code" class="title-slide slide level1 center">
-<h1>DEMO: Resolving merge conflicts in VS Code</h1>
-
+<section id="optional-demo-resolving-merge-conflicts-in-vs-code" class="title-slide slide level1 center" data-background-color="black" data-background-opacity="0.5" data-background-image="images/backgrounds/iontelevision-fire-chicago-hose-qkTA7B5umJaEwnQ3bW.gif">
+<h1><em>OPTIONAL DEMO:</em> Resolving merge conflicts in VS Code</h1>
+<div class="attribution">
+<p>Background: https://giphy.com/gifs/iontelevision-fire-chicago-hose-qkTA7B5umJaEwnQ3bW</p>
+</div>
 </section>
 
 <section>
@@ -608,9 +610,10 @@ Jan Simson
 </section>
 <section id="practical-setup" class="slide level2" data-background-color="black">
 <h2>Practical: Setup</h2>
+<div>
 <ol type="1">
-<li class="fragment">Create a new file called <code>guessing_conflict.txt</code></li>
-<li class="fragment">Write the “Question” with the letters A to D into the file, with empty lines in between e.g.</li>
+<li>Create a new file called <code>guessing_conflict.txt</code></li>
+<li>Write the “Question” with the letters A to D into the file, with empty lines in between e.g.</li>
 </ol>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>Question A</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
@@ -619,16 +622,19 @@ Jan Simson
 <span id="cb4-5"><a href="#cb4-5"></a>Question C</span>
 <span id="cb4-6"><a href="#cb4-6"></a></span>
 <span id="cb4-7"><a href="#cb4-7"></a>Question D</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="practical-setup-1" class="slide level2" data-background-color="black">
 <h2>Practical: Setup</h2>
+<div>
 <ol start="3" type="1">
-<li class="fragment">Create a new branch called <code>guesses</code> and check it out
+<li>Create a new branch called <code>guesses</code> and check it out
 <ul>
-<li class="fragment">Double check whether you checked out the correct branch with <code>git status</code></li>
+<li>Double check whether you checked out the correct branch with <code>git status</code></li>
 </ul></li>
-<li class="fragment">We’re done with the preparations</li>
+<li>We’re done with the preparations</li>
 </ol>
+</div>
 </section>
 <section id="practical-guessing-game" class="slide level2" data-background-color="black">
 <h2>Practical: Guessing Game</h2>
@@ -636,18 +642,23 @@ Jan Simson
 <ol type="a">
 <li class="fragment">How many liters of Beer have been drunken at the Oktoberfest in Munich in 2019? 🍻</li>
 <li class="fragment">How many people live in Karlsruhe? (Exactly) 🏘️</li>
-<li class="fragment">What percentage of Americans asked in a survey in 2017, indicated that they believe in Astrology? 🌟 ## Practical: Guessing Game Answers {background-color=“black”}</li>
+<li class="fragment">What percentage of Americans asked in a survey in 2017, indicated that they believe in Astrology? 🌟</li>
 </ol>
+</section>
+<section id="practical-guessing-game-answers" class="slide level2" data-background-color="black">
+<h2>Practical: Guessing Game Answers</h2>
 <ol start="5" type="1">
 <li class="fragment">Check out the <code>main</code> branch again</li>
 <li class="fragment">Write down the actual answers below the letters in the now empty file again</li>
 </ol>
+<div class="fragment">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>Question A 🍻 Liters of beer [^1]</span>
 <span id="cb5-2"><a href="#cb5-2"></a>7,850,200</span>
 <span id="cb5-3"><a href="#cb5-3"></a>Question B 🏘️ People in Karlsruhe</span>
 <span id="cb5-4"><a href="#cb5-4"></a>313,092</span>
 <span id="cb5-5"><a href="#cb5-5"></a>Question C 🌟 % believing in Astrology [^2]</span>
 <span id="cb5-6"><a href="#cb5-6"></a>29%</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="practical-the-actual-conflcit" class="slide level2" data-background-color="black">
 <h2>Practical: The Actual Conflcit</h2>
@@ -657,8 +668,8 @@ Jan Simson
 <li class="fragment">Resolve the merge conflict</li>
 </ol>
 </section>
-<section id="practical-learngitbranching" class="slide level2" data-background-color="black">
-<h2>Practical: <em>learngitbranching</em></h2>
+<section id="optional-practical-learngitbranching" class="slide level2" data-background-color="black">
+<h2>Optional Practical: <em>learngitbranching</em></h2>
 <ol type="1">
 <li class="fragment">Go to https://learngitbranching.js.org/</li>
 <li class="fragment">Finish Lessons 1, 2 and 3 on the website</li>
@@ -675,36 +686,38 @@ Jan Simson
 </ul></li>
 <li class="fragment">Use with caution</li>
 </ul>
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1 center" data-background-opacity="0.4" data-background-image="images/backgrounds/questions.gif" data-background-position="top">
+<h1>Questions?</h1>
 <div class="attribution">
 <p>More Info: <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing" class="uri">https://www.atlassian.com/git/tutorials/merging-vs-rebasing</a></p>
 </div>
 </section>
-<section id="rebasing-the-alternative-to-merging-1" class="slide level2">
+<section id="rebasing-the-alternative-to-merging-1" class="slide level2" data-background-color="#5cbcfc">
 <h2>Rebasing: The Alternative to Merging</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column fragment" style="width:50%;">
 <p>Merging</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/screenshots/learngitbranching/merged.png"></p>
-<p></p><figcaption>Example of a merged repository history</figcaption><p></p>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
+<p><img data-src="images/screenshots/learngitbranching/merged.png" style="width:65.0%"></p>
+</div><div class="column fragment" style="width:50%;">
 <p>Rebasing</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/screenshots/learngitbranching/rebased.png"></p>
-<p></p><figcaption>Example of a rebased repository history</figcaption><p></p>
-</figure>
-</div>
+<p><img data-src="images/screenshots/learngitbranching/rebased.png" style="width:65.0%"></p>
 </div>
 </div>
 </section>
-<section id="practical-learngitbranching-1" class="slide level2" data-background-color="black">
+<section id="practical-learngitbranching" class="slide level2" data-background-color="black">
 <h2>Practical: <em>learngitbranching</em></h2>
 <ol type="1">
-<li class="fragment">Finish Lessons 4 on https://learngitbranching.js.org/</li>
+<li class="fragment">Go to https://learngitbranching.js.org/</li>
+<li class="fragment"><em>Merging</em> (If not yet done)
+<ul>
+<li class="fragment">Finish Lessons 1, 2 and 3 on the website</li>
+</ul></li>
+<li class="fragment"><em>Rebasing</em>
+<ul>
+<li class="fragment">Finish Lesson 4 on the website</li>
+</ul></li>
 </ol>
 <div class="footer footer-default">
 

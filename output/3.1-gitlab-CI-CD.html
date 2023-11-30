@@ -388,7 +388,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" data-background-image="images/backgrounds/pankaj-patel-ZV_64LdGoao-unsplash.jpg" data-background-opacity="0.3" class="quarto-title-block center">
+<section id="title-slide" data-background-color="black" data-background-image="images/backgrounds/ralph-80s-cartoons-richie-rich-1nR6fu93A17vWZbO9c.gif" data-background-opacity="0.4" class="quarto-title-block center">
   <h1 class="title">Advanced <code>git</code></h1>
   <p class="subtitle">Block 3.1: GitLab CI / CD</p>
 
@@ -402,46 +402,48 @@ Jan Simson
 
 </section>
 <section id="from-before-ci-cd" class="slide level2">
-<h2>From before: CI / CD</h2>
+<h2>From before: CI / CD 🤖</h2>
+<div>
 <ul>
-<li class="fragment">Continuous Integration (CI)
+<li><strong>Continuous Integration (CI)</strong>
 <ul>
-<li class="fragment">Integration of changes from multiple developers into shared repository with automated testing.</li>
+<li>Integration of changes from multiple developers into shared repository with automated testing.</li>
 </ul></li>
-<li class="fragment">Continuous Delivery / Deployment (CD)
+<li><strong>Continuous Delivery / Deployment (CD)</strong>
 <ul>
-<li class="fragment">Automated deployment of changes if previous tests pass.</li>
+<li>Automated deployment of changes if previous tests pass.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section id="continuous-integration-ci" class="slide level2">
-<h2>Continuous Integration (CI)</h2>
-<p>Ensuring the quality of all code that makes it into the main branch.</p>
+<h2>Continuous Integration (CI) ✅</h2>
+<p>Ensuring the quality of all code that makes it into the <code>main</code> branch.</p>
 <ul>
-<li class="fragment">Automatically check
+<li class="fragment">Automatically check…
 <ul>
 <li class="fragment">different forms of tests</li>
 <li class="fragment">formatting</li>
 <li class="fragment">building / compilation</li>
-<li class="fragment">…</li>
+<li class="fragment">… anything!</li>
 </ul></li>
 <li class="fragment">Only allow merging if tests pass</li>
 </ul>
 </section>
 <section id="continuous-delivery-deployment-cd" class="slide level2">
-<h2>Continuous Delivery / Deployment (CD)</h2>
+<h2>Continuous Delivery / Deployment (CD) 🚀</h2>
 <p>Automatically deploy the latest state upon merge.</p>
 <ul>
 <li class="fragment">Build &amp; deploy the latest version
 <ul>
-<li class="fragment">If tests pass</li>
+<li class="fragment">If tests in CI pass ✅</li>
 </ul></li>
 <li class="fragment">Helps streamlining deployment</li>
 <li class="fragment">Easier to roll-back changes</li>
 </ul>
 </section>
 <section id="artifacts" class="slide level2">
-<h2>Artifacts</h2>
+<h2>Artifacts 🏺</h2>
 <p>Save / export files from your CI / CD pipeline.</p>
 <ul>
 <li class="fragment">Typically more related to CD, but not necessarily</li>
@@ -450,7 +452,23 @@ Jan Simson
 <ul>
 <li class="fragment">e.g.&nbsp;upload a plot from a failed test as artifact</li>
 </ul></li>
+<li class="fragment">Example: <em>JOSS</em> renders &amp; exports papers via artifacts 📜</li>
 </ul>
+<div class="fragment">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Be mindful when exporting / storing artifacts as they usually count towards a storage allowance.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section>
 <section id="ci-cd-on-gitlab" class="title-slide slide level1 center">
@@ -458,70 +476,90 @@ Jan Simson
 
 </section>
 <section id="ci-cd-on-gitlab-pipelines-jobs" class="slide level2">
-<h2>CI / CD on GitLab: Pipelines &amp; Jobs</h2>
-<p>GitLab’s CI/CD system is organized into pipelines which contain one or more jobs.</p>
+<h2>CI / CD on GitLab: Pipelines &amp; Jobs 🚰</h2>
+<p>GitLab’s CI/CD system is organized into <code>pipelines</code> which contain one or more <code>jobs</code>.</p>
 <ul>
-<li class="fragment">Each job performs a task</li>
-<li class="fragment">Multiple jobs can be chained / combined in a pipeline</li>
-<li class="fragment">There is no clear distinction between CI/CD, it’s all jobs</li>
+<li class="fragment">Each <code>job</code> performs a <em>task</em></li>
+<li class="fragment">Multiple <code>jobs</code> can be chained / combined in a <code>pipeline</code></li>
+<li class="fragment">There is no clear distinction between CI/CD, it’s all <code>jobs</code></li>
 </ul>
 </section>
 <section id="ci-cd-on-gitlab-pipelines-jobs-1" class="slide level2">
-<h2>CI / CD on GitLab: Pipelines &amp; Jobs</h2>
+<h2>CI / CD on GitLab: Pipelines &amp; Jobs 🚰</h2>
 
 <img data-src="images/screenshots/gitlab/gl-pipeline.png" class="r-stretch quarto-figure-center"><p class="caption">Part of the pipeline that’s being run for gitlab itself.</p><div class="attribution">
 <p>Repository: <a href="https://gitlab.com/gitlab-org/gitlab" class="uri">https://gitlab.com/gitlab-org/gitlab</a></p>
 </div>
 </section>
 <section id="ci-cd-on-gitlab-runners" class="slide level2">
-<h2>CI / CD on GitLab: Runners</h2>
+<h2>CI / CD on GitLab: Runners 🏃</h2>
 <ul>
-<li class="fragment">Jobs run in Docker containers (more later)</li>
+<li class="fragment">Jobs run in Docker containers (more later ⏲️)</li>
 <li class="fragment">These need to run <em>somewhere</em>: runners</li>
 <li class="fragment">Runners are separate from the gitlab instance itself
 <ul>
-<li class="fragment">We’ll use gitlab.com here, which provides a certain amount of free “minutes”</li>
+<li class="fragment">We’ll use gitlab.com here, which provides a certain amount of free “runner minutes”</li>
 </ul></li>
 <li class="fragment">KIT does not provide runners by default
 <ul>
-<li class="fragment">But you can provide your own</li>
+<li class="fragment">But you can provide / configure your own</li>
 </ul></li>
 </ul>
 </section>
-<section id="testing-ci-cd-pipelines" class="slide level2">
-<h2>Testing CI / CD Pipelines</h2>
+<section id="developing-ci-cd-pipelines" class="slide level2">
+<h2>Developing CI / CD Pipelines</h2>
 <ul>
 <li class="fragment">Option 1: Make changes, push, repeat ♻️</li>
-<li class="fragment">Option 2: Use tools to test locally
+<li class="fragment">Option 2: Use tools to test locally 🏡
 <ul>
 <li class="fragment"><a href="https://docs.gitlab.com/runner/install/"><code>gitlab-runner exec</code></a></li>
 <li class="fragment"><a href="https://github.com/firecow/gitlab-ci-local"><code>gitlab-ci-local</code></a></li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1 center" data-background-opacity="0.4" data-background-image="images/backgrounds/questions.gif" data-background-position="top">
+<h1>Questions?</h1>
+
 </section>
 <section id="practical-deploying-a-website" class="slide level2" data-background-color="black">
 <h2>Practical: Deploying a Website</h2>
-<p>You can deploy your own website on gitlab.com using GitLab Pages.</p>
+<p>You can deploy your own website on gitlab.com using GitLab Pages and powered by GitLab CI / CD.</p>
 <ol type="1">
 <li class="fragment">Go to the fork of the website template (<a href="https://gitlab.com/jansim/website-template">jansim/website-template</a>) you made earlier.</li>
-<li class="fragment">Make at least one commit to let the CI run (should have happened already)</li>
+<li class="fragment">Make at least one commit to let the CI run</li>
 <li class="fragment">Go to <code>Build</code> &gt; <code>Pipelines</code> on the left to check whether everything ran correctly</li>
 <li class="fragment">Go to <code>Deploy</code> &gt; <code>Pages</code> to check whether the configuration for deployments was correct</li>
 <li class="fragment">The deployment should look roughly like <a href="https://jansim.gitlab.io/website-template">this</a>.</li>
 </ol>
 </section></section>
 <section>
-<section id="going-deeper-.gitlab-ci.yml" class="title-slide slide level1 center">
+<section id="going-deeper-.gitlab-ci.yml" class="title-slide slide level1 center" data-background-color="black" data-background-opacity="0.4" data-background-image="images/backgrounds/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi.gif" data-background-position="top">
 <h1>Going Deeper: <br> <code>.gitlab-ci.yml</code></h1>
-
+<div class="attribution">
+<p>Background: https://giphy.com/gifs/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi</p>
+</div>
 </section>
 <section id="detour-docker-containers" class="slide level2">
 <h2>Detour: (Docker) Containers 🐋</h2>
 <ul>
 <li class="fragment">Collection of software and its dependencies</li>
 <li class="fragment">Kind of like a mini-virtual machine</li>
-<li class="fragment">Identified by an image name e.g.&nbsp;<code>ubuntu:20.04</code>, <code>postgres:14</code>, <code>...</code></li>
-<li class="fragment">Docker is the biggest company in the space, but open-source implementations exist</li>
+<li class="fragment">Identified by an image name (+ version) e.g.&nbsp;<code>ubuntu:20.04</code>, <code>postgres:14</code>, <code>...</code></li>
+<li class="fragment">Docker is the biggest company in the space, but open-source alternatives exist</li>
+<li class="fragment">Really useful for reproducible environments &amp; deployments</li>
+</ul>
+<div class="fragment">
+<p>➡️ GitLab CI / CD jobs run in Docker containers</p>
+</div>
+</section>
+<section id="the-magic-file" class="slide level2">
+<h2>The magic file ✨</h2>
+<p>GitLab CI / CD pipelines are almost completely configured via a single file called <code>.gitlab-ci.yml</code>.</p>
+<ul>
+<li class="fragment"><code>.gitlab-ci.yml</code> is just a normal file in the repository and tracked via <code>git</code></li>
+<li class="fragment">Only a few administrative settings are made outside of this</li>
+<li class="fragment">The GitLab UI has some helpful UI to create one from a template</li>
 </ul>
 </section>
 <section id="the-magic-file-.gitlab-ci.yml" class="slide level2">
@@ -561,7 +599,7 @@ Jan Simson
 <span id="cb1-33"><a href="#cb1-33"></a><span class="at">    </span><span class="kw">-</span><span class="at"> echo "Application successfully deployed."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="a-more-complicated-example" class="slide level2">
-<h2>A more complicated example</h2>
+<h2>A more complicated example 🧙</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># .gitlab-ci.yml</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">stages</span><span class="kw">:</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="at">  </span><span class="kw">-</span><span class="at"> build</span></span>
@@ -621,15 +659,17 @@ Jan Simson
 </section>
 <section id="major-practical-creating-your-own-real-world-pipeline" class="slide level2" data-background-color="black">
 <h2>Major Practical: Creating your own real-world Pipeline</h2>
+<div>
 <ol type="1">
-<li class="fragment">Build teams of 3 or more people</li>
-<li class="fragment">Create a new repository and set up a sample CI/CD pipeline in a language you work with on a day-to-day basis</li>
-<li class="fragment">Ideally, this is a stepping stone for a CI/CD you’ll use in production</li>
+<li>Build teams of ~ 3 people</li>
+<li>Create a new repository and set up a sample CI/CD pipeline in a language you work with on a day-to-day basis</li>
+<li>Ideally, this is a stepping stone for a CI/CD you’ll use in production</li>
 </ol>
 <ul>
-<li class="fragment">Reference: https://docs.gitlab.com/ee/ci/yaml/</li>
-<li class="fragment">Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates</li>
+<li>Reference: https://docs.gitlab.com/ee/ci/yaml/</li>
+<li>Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates</li>
 </ul>
+</div>
 <div class="footer footer-default">
 
 </div>

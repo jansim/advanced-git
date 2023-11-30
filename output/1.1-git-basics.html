@@ -326,7 +326,7 @@
 
 <section id="title-slide" data-background-color="black" data-background-image="images/backgrounds/pankaj-patel-ZV_64LdGoao-unsplash.jpg" data-background-opacity="0.3" class="quarto-title-block center">
   <h1 class="title">Advanced <code>git</code></h1>
-  <p class="subtitle">Block 1.1: Reviewing git Basics</p>
+  <p class="subtitle">Block 1.1: Reviewing <code>git</code> Basics</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -353,9 +353,14 @@ Jan Simson
 <li class="fragment">Similar to “track changes” in Microsoft Word / LibreOffice</li>
 </ul></li>
 </ul>
-<p>:::</p>
-
-<img data-src="images/carpentries/play-changes.svg" class="r-stretch quarto-figure-center"><p class="caption">Git only looks at and tracks the <em>changes</em> in a file</p><p>:::</p>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/carpentries/play-changes.svg"></p>
+<p></p><figcaption>Git only looks at and tracks the <em>changes</em> in a file</figcaption><p></p>
+</figure>
+</div>
+</div>
 </section>
 <section id="what-is-git-strengths-weaknesses" class="slide level2">
 <h2>What is git? <em>Strengths</em> &amp; Weaknesses</h2>
@@ -405,7 +410,7 @@ Jan Simson
 </section>
 <section id="git-commands" class="slide level2" data-background-color="black">
 <h2><code>git</code> commands</h2>
-<p>Which of these git commands / actions are have you used already? Have you used any that are not on this list?</p>
+<p>Which of these git commands / actions have you used already? Have you used any that are not on this list?</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -418,7 +423,7 @@ Jan Simson
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><code>git checkout</code> n</li>
+<li class="fragment"><code>git checkout</code></li>
 <li class="fragment"><code>git branch</code></li>
 <li class="fragment"><code>git switch</code></li>
 <li class="fragment"><code>git merge</code></li>
@@ -436,17 +441,26 @@ Jan Simson
 <section id="the-3-levels-of-changes-in-git" class="slide level2">
 <h2>The 3 Levels of Changes in git</h2>
 
-<img data-src="images/carpentries/git-staging-area.svg" class="r-stretch quarto-figure-center"><p class="caption">Changes can be either unstaged, staged or commited.</p><ul>
+<img data-src="images/drawings/git-areas.png" class="r-stretch quarto-figure-center"><p class="caption">Changes can be either unstaged, staged or commited.</p><ul>
 <li class="fragment">When we first make a change it is <em>unstaged</em></li>
 <li class="fragment">Once we <code>add</code> the change to the staging area it is <em>staged</em></li>
 <li class="fragment">We can then <code>commit</code> all <em>staged</em> changes</li>
-<li class="fragment">We can <code>restore</code> the commited version (and remove any <em>unstaged</em> changes)</li>
 </ul>
+</section>
+<section id="the-3-levels-of-changes-in-git-1" class="slide level2">
+<h2>The 3 Levels of Changes in git</h2>
+
+<img data-src="images/drawings/git-areas.png" class="r-stretch quarto-figure-center"><p class="caption">Changes can be either unstaged, staged or commited.</p><div>
+<ul>
+<li>We can <code>restore</code> the commited version (and remove any <em>unstaged</em> changes)</li>
+</ul>
+</div>
 </section>
 <section id="practical-git-command-library-1" class="slide level2" data-background-color="black">
 <h2>Practical: git Command Library (1)</h2>
 <ol type="1">
-<li class="fragment">Create an ew directory called <code>git-example</code></li>
+<li class="fragment">Create a new directory called <code>git-example</code></li>
+<li class="fragment">Initialize a git repository in the new directory</li>
 <li class="fragment">Create a new file <code>library.txt</code> in your <code>git-example</code> directory</li>
 <li class="fragment">Run <code>git init -h</code> and copy the output into your <code>library.txt</code></li>
 <li class="fragment">Commit the changes</li>
@@ -457,8 +471,8 @@ Jan Simson
 <h2>Demo: Tracking Changes in VSCode</h2>
 
 <img data-src="images/screenshots/vscode-git.png" class="r-stretch quarto-figure-center"><p class="caption">Since VSCode is primarily a text editor, git functionality is hidden in the sidebar</p><ul>
-<li class="fragment">Demo!</li>
-<li class="fragment">Feature: staging partial changes</li>
+<li class="fragment">Demo: Default git features in VSCode</li>
+<li class="fragment">Demo: Advanced features via gitLens</li>
 </ul>
 </section>
 <section id="practical-git-command-library-2" class="slide level2" data-background-color="black">

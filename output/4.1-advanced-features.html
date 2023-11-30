@@ -402,42 +402,67 @@ Jan Simson
 
 </section>
 <section id="amending-commits" class="slide level2">
-<h2>Amending Commits</h2>
+<h2>Amending Commits ⏳️</h2>
 <ul>
-<li class="fragment">Modify the last commit: Change commit message or content</li>
+<li class="fragment">Modify the last commit
+<ul>
+<li class="fragment">Modify the commit message</li>
+<li class="fragment">Modify the commited changes</li>
+</ul></li>
 <li class="fragment"><code>git commit --amend</code></li>
-<li class="fragment"><strong>DANGER: Never do this if you already pushed the commit</strong></li>
+<li class="fragment">VSCode: Possible via GitLens
+<ul>
+<li class="fragment"><em>Demo</em></li>
+</ul></li>
 </ul>
+<div class="fragment">
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Danger</strong></p>
+</div>
+<div class="callout-content">
+<p>Never do this if you already pushed the commit, as it will re-write history</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="staging-parts-instead-of-full-files" class="slide level2">
-<h2>Staging Parts Instead of full Files</h2>
-<p>Instead of staging complete files, you can also stage just parts of them.</p>
+<h2>Staging Parts Instead of Full Files 🧩</h2>
+<p>Instead of staging complete files, you can also stage just a section or selection of your changes.</p>
 <ul>
-<li class="fragment">CLI
+<li class="fragment">CLI: Interactive Staging
 <ul>
 <li class="fragment"><code>git add --patch &lt;file&gt;</code></li>
 <li class="fragment"><code>git add -p &lt;file&gt;</code></li>
 </ul></li>
-<li class="fragment">VSCode: “Stage selected range”
+<li class="fragment">VSCode: “Stage selected ranges”
 <ul>
-<li class="fragment">Demo</li>
+<li class="fragment"><em>Demo</em></li>
 </ul></li>
 </ul>
 </section>
 <section>
-<section id="tags" class="title-slide slide level1 center">
-<h1>Tags</h1>
-
+<section id="tags" class="title-slide slide level1 center" data-background-opacity="0.6" data-background-image="images/backgrounds/stop-motion-experience-3oriNYjm7cl8MjpszK.gif" data-background-position="center">
+<h1>Tags 🏷️</h1>
+<div class="attribution">
+<p>Background: https://giphy.com/gifs/stop-motion-experience-3oriNYjm7cl8MjpszK</p>
+</div>
 </section>
 <section id="what-is-a-tag" class="slide level2">
 <h2>What is a tag? 🏷️</h2>
 <p>You can <em>tag</em> a single commit in git.</p>
 <ul>
-<li class="fragment">Creates a named reference to this commit</li>
-<li class="fragment">Useful for versioning / releases e.g.&nbsp;<code>v1.2.3</code>
+<li class="fragment">Creates a named reference to this commit
 <ul>
-<li class="fragment">Course material: <code>SS23</code>, <code>WS23</code></li>
+<li class="fragment">Useful for versioning / releases e.g.&nbsp;<code>v1.2.3</code></li>
+<li class="fragment">also e.g.&nbsp;course material: <code>SS23</code>, <code>WS23</code></li>
 </ul></li>
+<li class="fragment">Can be checked out via <code>git checkout &lt;tag&gt;</code></li>
 <li class="fragment">You can create a specific <strong>release</strong> for a tag
 <ul>
 <li class="fragment">Attach changelog or artifacts</li>
@@ -449,26 +474,62 @@ Jan Simson
 <h2>Creating a tag</h2>
 <ul>
 <li class="fragment">CLI: <code>git tag -a v1.2.3</code></li>
-<li class="fragment">VSCode: Demo</li>
+<li class="fragment">VSCode: Commit &gt; Create Tag (GitLens)
+<ul>
+<li class="fragment"><em>Demo</em></li>
+</ul></li>
 </ul>
-<p>Note: Tags need to be pushed <em>explicitly</em> via <code>git push --tags</code></p>
-<!-- Optional: Practical - Creating a tag & release -->
-<!-- Optional: Practical: learngitbranching > "A Mixed Bag" > #4: Tags -->
+<div class="fragment">
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Tags need to be pushed <em>explicitly</em> via <code>git push --tags</code></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-practicals-tags" class="slide level2" data-background-color="black">
+<h2><em>Optional Practicals</em>: Tags</h2>
+<ol type="A">
+<li class="fragment">Creating a Release
+<ol type="1">
+<li class="fragment">Tag the latest commit in your copy of the website template repository</li>
+<li class="fragment">Push the tag to GitLab
+<ul>
+<li class="fragment">You do not need to make a new commit</li>
+</ul></li>
+<li class="fragment">Create a new release for the tag you pushed</li>
+</ol></li>
+<li class="fragment">Go to <a href="https://learngitbranching.js.org">learngitbranching.js.org</a>
+<ol type="1">
+<li class="fragment">Do Section <code>"A Mixed Bag"</code> &gt; <code>#4: Tags</code></li>
+</ol></li>
+</ol>
 </section></section>
 <section>
-<section id="patches" class="title-slide slide level1 center">
+<section id="patches" class="title-slide slide level1 center" data-background-opacity="0.6" data-background-color="black" data-background-image="images/backgrounds/tape-slap.gif" data-background-position="center">
 <h1>Patches 🩹</h1>
-
+<div class="attribution">
+<p>Background: https://giphy.com/gifs/VeSvZhPrqgZxx2KpOA</p>
+</div>
 </section>
 <section id="patches-1" class="slide level2">
 <h2>Patches 🩹</h2>
-<p>Before platforms like GitLab/Hub existed, people collaborated by sending around <strong>patches</strong> via email. A patch is essentially a commit exported as a file.</p>
+<p>Before platforms like GitLab/Hub existed, people collaborated by sending around <strong>patches</strong> via email.</p>
+<p>A patch is essentially a commit exported as a file.</p>
 <ul>
 <li class="fragment">Create: <code>git format-patch &lt;commit/branch&gt;</code>
 <ul>
 <li class="fragment">Will create <code>.patch</code> files for all commits till target</li>
 </ul></li>
-<li class="fragment">Apply: <code>git apply &lt;patch-file&gt;</code></li>
+<li class="fragment">Apply: <code>git apply &lt;patch-file(s)&gt;</code></li>
 </ul>
 </section>
 <section id="example-patch" class="slide level2">
@@ -500,7 +561,7 @@ Jan Simson
 <span id="cb1-25"><a href="#cb1-25"></a><span class="dt">2.39.2 (Apple Git-143)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="practical-creating-patches" class="slide level2" data-background-color="black">
-<h2>Practical: Creating Patches</h2>
+<h2><em>Practical</em>: Creating Patches</h2>
 <ol type="1">
 <li class="fragment">Navigate to a local git repository of your choice</li>
 <li class="fragment">Get the latest commit hash</li>
@@ -509,54 +570,137 @@ Jan Simson
 </ol>
 </section>
 <section id="working-with-large-files-data-git-lfs" class="slide level2">
-<h2>Working with Large Files / Data: git LFS</h2>
+<h2>Working with Large Files / Data: 🦣 <code>git lfs</code></h2>
 <p>Git struggles with large binary files.</p>
 <ul>
-<li class="fragment">One possible solution: git lfs (large-file-storage)</li>
+<li class="fragment">One possible solution: <code>git lfs</code> (<strong>l</strong>arge <strong>f</strong>ile <strong>s</strong>torage)</li>
 <li class="fragment">Extension that needs to be installed separately
 <ul>
 <li class="fragment">Install git lfs</li>
 <li class="fragment">Initialize once in each repository you want to use it in</li>
 <li class="fragment">Configure a pattern to specify which files should use it</li>
 </ul></li>
+<li class="fragment">Useful, but a bit annoying to use &amp; debug
+<ul>
+<li class="fragment">Alternatives exist: e.g.&nbsp;<a href="https://dvc.org/">dvc</a></li>
+</ul></li>
 </ul>
 </section></section>
 <section>
 <section id="stashing" class="title-slide slide level1 center">
-<h1>Stashing</h1>
+<h1>Stashing 🗄️</h1>
 
 </section>
 <section id="what-is-stashing" class="slide level2">
-<h2>What is Stashing?</h2>
+<h2>What is Stashing? 🗄️</h2>
 <ul>
 <li class="fragment"><strong>Stashing</strong> allows you to temporarily store changes that are not ready to be committed yet.</li>
 <li class="fragment">Useful when you need to switch branches or perform other operations without committing half-done work.</li>
 </ul>
 </section>
+<section id="illustration-of-stashes" class="slide level2">
+<h2>Illustration of Stashes</h2>
+
+<img data-src="images/drawings/git-areas-stashing.png" class="r-stretch"></section>
 <section id="how-to-use-stashes" class="slide level2">
 <h2>How to Use Stashes?</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> stash         <span class="co"># Stash changes</span></span>
+
+<img data-src="images/drawings/git-areas-stashing.png" class="r-stretch"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> stash         <span class="co"># Stash changes</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">git</span> stash list    <span class="co"># List stashes</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="fu">git</span> stash apply   <span class="co"># Apply the latest stash</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="fu">git</span> stash pop     <span class="co"># Apply and remove the latest stash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section></section>
-<section>
-<section id="cherry-picking" class="title-slide slide level1 center">
-<h1>Cherry Picking</h1>
-
+<p>Or in a GUI e.g.&nbsp;VSCode (via GitLens)</p>
 </section>
-<section id="cherry-picking-1" class="slide level2">
-<h2>Cherry Picking</h2>
+<section id="cherry-picking" class="slide level2">
+<h2>Cherry Picking 🍒</h2>
 <ul>
-<li class="fragment">Select specific commits</li>
-<li class="fragment">Apply to current branch</li>
+<li class="fragment">Apply a specific commit to your current branch</li>
 <li class="fragment"><code>git cherry-pick &lt;commit-hash&gt;</code></li>
 </ul>
-<!--
-  If extra time: https://learngitbranching.js.org/
-  Section 2 "Ramping up"
-  Section 3: Moving Work around #1 (cherry pick)
--->
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/drawings/cherry-pick.png" style="width:60.0%"></p>
+<p></p><figcaption>Illustration of git chery-pick</figcaption><p></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="cherry-picking-1" class="slide level2">
+<h2>Cherry Picking 🍒</h2>
+<div>
+<ul>
+<li>Apply a specific commit to your current branch</li>
+<li><code>git cherry-pick &lt;commit-hash&gt;</code></li>
+</ul>
+</div>
+<ul>
+<li class="fragment">Can be useful for e.g.&nbsp;hotfixes 🐛</li>
+<li class="fragment">Should not be overused
+<ul>
+<li class="fragment">Usually full merges are the preferred solution</li>
+</ul></li>
+</ul>
+</section>
+<section id="interactive-rebases" class="slide level2">
+<h2>Interactive Rebases 🔥</h2>
+<p>Besides normal rebases, you can also do interactive ones, where you get to decide what happens with each commit.</p>
+<ul>
+<li class="fragment"><code>git rebase -i &lt;target&gt;</code></li>
+<li class="fragment">Super powerful + super dangerous
+<ul>
+<li class="fragment">Easy to re-write history</li>
+</ul></li>
+<li class="fragment">Only use these when necessary or if you have a good backup</li>
+</ul>
+</section>
+<section id="interactive-rebases-example" class="slide level2">
+<h2>Interactive Rebases: Example 🧨</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">pick</span> f7f3f6d Change my name a bit</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="ex">pick</span> 310154e Update README formatting and add blame</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="ex">pick</span> a5f4a0d Add cat-file</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Rebase 710f0f8..a5f4a0d onto 710f0f8</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Commands:</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># p, pick &lt;commit&gt; = use commit</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># e, edit &lt;commit&gt; = use commit, but stop for amending</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co"># f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># b, break = stop here (continue rebase later with 'git rebase --continue')</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co"># d, drop &lt;commit&gt; = remove commit</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co"># l, label &lt;label&gt; = label current HEAD with a name</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co"># t, reset &lt;label&gt; = reset HEAD to a label</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co"># .       create a merge commit using the original merge commit's</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co"># .       message (or the oneline, if no original merge commit was</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co"># .       specified). Use -c &lt;commit&gt; to reword the commit message.</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co"># These lines can be re-ordered; they are executed from top to bottom.</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co"># If you remove a line here THAT COMMIT WILL BE LOST.</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="co">#</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a><span class="co"># However, if you remove everything, the rebase will be aborted.</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a><span class="co">#</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="co"># Note that empty commits are commented out</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="questions" class="title-slide slide level1 center" data-background-opacity="0.4" data-background-image="images/backgrounds/questions.gif" data-background-position="top">
+<h1>Questions?</h1>
+
+</section>
+<section id="optional-practicals" class="slide level2" data-background-color="black">
+<h2><em>Optional Practicals</em>: 🍒🔥</h2>
+<ol type="1">
+<li class="fragment">Go to https://learngitbranching.js.org/</li>
+<li class="fragment">Complete Section 3: <code>"Moving Work around"</code>
+<ul>
+<li class="fragment">#1: Cherry Pick</li>
+<li class="fragment">#2: Interactive Rebase</li>
+</ul></li>
+</ol>
 <div class="footer footer-default">
 
 </div>

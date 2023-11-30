@@ -32,11 +32,12 @@ Computing (SCC).
 
 ### Supporting Documents
 
-- Supplementary [student information
-  sheet](output/resources/student-info/student-info.pdf)
 - How to Setup SSH authentication for GitLab
   [\[PDF\]](output/resources/ssh/how-to-setup-gitlab-ssh.pdf)
   [\[HTML\]](output/resources/ssh/how-to-setup-gitlab-ssh.html)
+- GitLab CI / CD Example Files 🤖
+  - [Simple](resources/CI-CD-examples/simple.gitlab-ci.yml)
+  - [Complex](resources/CI-CD-examples/complex.gitlab-ci.yml)
 - Git Cheatsheet [\[PDF\]](resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
@@ -52,19 +53,16 @@ Computing (SCC).
     GitHub](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/)
   - [The Carpentries: Version Control with
     Git](https://swcarpentry.github.io/git-novice/)
-- Further reading (beyond the contents of the course)
-  - [Trunk Based
-    Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development),
-    a popular and advanced workflow of using git (currently concidered a
-    best-practice)
-  - Using git with data
-    - [dvc](https://dvc.org/): Data Version Control
-    - [git lfs](https://git-lfs.github.com/): Git Large File Storage
-  - If you have a problem
-    - [ohshitgit.com](https://ohshitgit.com/)
-      [(🇩🇪)](https://ohshitgit.com/de)
-    - Google: Just googling your problem is often the most useful
-      solution
+- Trunk Based Development
+  - <https://trunkbaseddevelopment.com/>
+  - <https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development>
+- Using git with data
+  - [dvc](https://dvc.org/): Data Version Control
+  - [git lfs](https://git-lfs.github.com/): Git Large File Storage
+- If you have a problem
+  - [ohshitgit.com](https://ohshitgit.com/)
+    [(🇩🇪)](https://ohshitgit.com/de)
+  - Google: Just googling your problem is often the most useful solution
 
 ## License
 
