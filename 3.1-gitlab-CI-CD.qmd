@@ -238,3 +238,13 @@ pages:
 - Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates
 
 :::
+
+## *End of Block* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Block]](./4.1-advanced-features.html) 

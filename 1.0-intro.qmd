@@ -60,3 +60,13 @@ Quick Round of Introductions
   - *gitLens*: An extension for VS Code enhancing it's git capabilities
 
 - *gitlab.com Account*: SaaS version of GitLab
+
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Section]](./1.1-git-basics.html) 

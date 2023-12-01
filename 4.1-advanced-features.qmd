@@ -228,3 +228,13 @@ pick a5f4a0d Add cat-file
 3. Complete Section 3: `"Moving Work around"`
    - #1: Cherry Pick
    - #2: Interactive Rebase
+
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Section]](./4.2-final_notes.html) 

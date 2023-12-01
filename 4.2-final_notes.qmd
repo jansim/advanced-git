@@ -24,3 +24,13 @@ subtitle: "Block 4.2: Final Bits"
 - [ohshitgit.com](https://ohshitgit.com/) [(🇩🇪)](https://ohshitgit.com/de)
 - LLMs e.g. ChatGPT
 - Google
+
+## *End of Block* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Outro]](./5.0-outro.html)

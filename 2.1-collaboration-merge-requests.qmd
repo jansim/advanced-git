@@ -176,3 +176,13 @@ Repository: <https://gitlab.com/gitlab-org/gitlab>
 2. Clone your forked repository
 3. Add an alumni page by following the instructions in `docs/alumni/index.md`
 4. Push your changes to GitLab and create a MR to add yourself as an alumni
+
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Section]](./2.2-trunk-based-development.html) 

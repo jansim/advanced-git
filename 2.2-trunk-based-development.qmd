@@ -90,3 +90,13 @@ Formerly highly popular workflow, now a bit out of fashion.
 - Many more active branches in general
 
 # Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+## *End of Block* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Block]](./3.1-gitlab-CI-CD.html) 

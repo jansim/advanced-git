@@ -258,3 +258,13 @@ Rebasing
       - Finish Lessons 1, 2 and 3 on the website
 3. *Rebasing*
       - Finish Lesson 4 on the website
+
+## *End of Block* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Block]](./2.1-collaboration-merge-requests.html) 

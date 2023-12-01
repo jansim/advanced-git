@@ -124,3 +124,12 @@ Which of these git commands / actions have you used already? Have you used any t
 4. Repeat steps 2. - 4. for **2 of the commands** we learned so far, using separate commits each time
 5. Delete the `library.txt` and restore it
 
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Section]](./1.2-branches_merging.html) 
