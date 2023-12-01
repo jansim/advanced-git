@@ -3,8 +3,8 @@ Advanced `git`
 Jan Simson
 
 This repository contains the course materials for a one-day workshop
-titled “Advaned `git`” which I first gave at the Steinbruch Center for
-Computing (SCC).
+titled “Advaned `git`” which I first gave at the Scientific Computing
+Center (SCC) in Karlsruhe.
 
 ## Contents
 
