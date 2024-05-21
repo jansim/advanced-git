@@ -53,7 +53,7 @@ This repository contains the course materials for a one-day workshop titled "Adv
 - Guides to review & refresh your knowledge
   - <https://gitimmersion.com>
   - <https://github.com/git-guides>
-  - [Introduction to RStudio Git & GitHub](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/)
+  - [Introduction to RStudio Git & GitHub](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)
   - [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - Trunk Based Development
   - <https://trunkbaseddevelopment.com/>

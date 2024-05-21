@@ -21,7 +21,7 @@ This course uses materials from, builds upon and is inspired by the following re
 
 - git documentation
 - [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
-- https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/
+- https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/
 - https://gitimmersion.com
 - https://trunkbaseddevelopment.com
 - Atlassian git guides
