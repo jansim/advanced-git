@@ -109,7 +109,7 @@ Example: <https://github.com/pcottle/learnGitBranching>
   - <https://github.com/microsoft/vscode>
   - <https://github.com/iterative/dvc>
 
-## *End of Block* 🎉 {background-color="black"}
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?

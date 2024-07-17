@@ -398,7 +398,7 @@ I've never written a workflow file from scratch, you can either start with a sta
 
 :::
 
-## *End of Block* 🎉 {background-color="black"}
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?

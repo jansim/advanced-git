@@ -243,7 +243,7 @@ Rebasing
 3. Create a medium complex graph, by playing around with commits, branches, merging and rebasing
 4. Reconstruct the graph created by your partner (and vice versa)
 
-## *End of Block* 🎉 {background-color="black"}
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?

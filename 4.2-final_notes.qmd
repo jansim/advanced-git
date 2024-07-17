@@ -48,7 +48,7 @@ Most of the information in these guides, we already covered, but they can be gre
   - [git lfs](https://git-lfs.github.com/)
   - [dvc](https://dvc.org/): Data Version Control
 
-## *End of Block* 🎉 {background-color="black"}
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?

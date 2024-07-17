@@ -17,7 +17,7 @@ subtitle: "Bonus Block: Deploying a Website"
 5. Configure `gitprofile.config.ts`
 
 
-## *End of Block* 🎉 {background-color="black"}
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?

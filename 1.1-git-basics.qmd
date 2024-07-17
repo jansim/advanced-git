@@ -123,7 +123,7 @@ Which of these git commands / actions have you used already? Have you used any t
 3. Explore the repo status & history
 4. Add a second recipe step by step
 
-## *End of Section* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
+## *End of Section* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
 Any Questions?

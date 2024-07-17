@@ -195,7 +195,7 @@ Repository: <https://github.com/microsoft/vscode>
 4. Push the branch to GitHub
 5. Merge the changes by creating a Pull Request 
 
-## *End of Section* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
+## *End of Section* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
 Any Questions?
