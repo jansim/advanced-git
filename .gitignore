@@ -6,6 +6,6 @@
 /.quarto/
 untracked/
 
-/output/
+output/
 *.html
 *_files/
