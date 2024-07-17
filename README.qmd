@@ -10,7 +10,7 @@ format:
   gfm:
     toc: false
     output-file: README.md
-format-links: []
+format-links: false
 ---
 
 This repository contains the course materials for a one-day workshop titled "Advaned `git`", developed for the Scientific Computing Center (SCC) and Houce of Competence (HOC) at the Karlsruhe Institute of Technology (KIT).
