@@ -42,11 +42,12 @@ Technology (KIT).
 ### Supporting Documents
 
 - How to Setup SSH authentication for GitHub
-  [\[PDF\]](https://simson.io/intro-to-git/https://simson.io/advanced-git/resources/ssh/how-to-setup-github-ssh.pdf)
+  [\[PDF\]](https://simson.io/intro-to-git/resources/ssh/how-to-setup-github-ssh.pdf)
   [\[HTML\]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
 - [CI / CD Example Files
   🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
-- Git Cheatsheet [\[PDF\]](resources/git-cheat-sheet-education.pdf)
+- Git Cheatsheet
+  \[\[PDF\]\]((https://simson.io/intro-to-git/resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
 ## Links

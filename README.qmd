@@ -10,6 +10,7 @@ format:
   gfm:
     toc: false
     output-file: README.md
+format-links: []
 ---
 
 This repository contains the course materials for a one-day workshop titled "Advaned `git`", developed for the Scientific Computing Center (SCC) and Houce of Competence (HOC) at the Karlsruhe Institute of Technology (KIT).
@@ -44,9 +45,9 @@ This repository contains the course materials for a one-day workshop titled "Adv
 
 ### Supporting Documents
 
-- How to Setup SSH authentication for GitHub [[PDF]](https://simson.io/intro-to-git/https://simson.io/advanced-git/resources/ssh/how-to-setup-github-ssh.pdf) [[HTML]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
+- How to Setup SSH authentication for GitHub [[PDF]](https://simson.io/intro-to-git/resources/ssh/how-to-setup-github-ssh.pdf) [[HTML]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
 - [CI / CD Example Files 🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
-- Git Cheatsheet [[PDF]](resources/git-cheat-sheet-education.pdf)
+- Git Cheatsheet [[PDF]]((https://simson.io/intro-to-git/resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
 ## Links
