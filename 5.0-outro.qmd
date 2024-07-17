@@ -23,4 +23,4 @@ This course uses materials from, builds upon and is inspired by the following re
 - https://trunkbaseddevelopment.com
 - Atlassian git guides
 
-# The End, Thank You!
+# The End, Thank You! 🙏
