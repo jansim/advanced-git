@@ -1,0 +1,19 @@
+name: Spellcheck Action
+
+# When should this action be run?
+on: push
+
+jobs:
+  build:
+    # Name of this job
+    name: Spellcheck
+    # Which container / platform to run on?
+    runs-on: ubuntu-latest
+    # The different steps in this job
+    steps:
+    # These can either be direct commands or use existing actions
+    # https://github.com/actions/checkout/tree/v3/
+    - uses: actions/checkout@v3
+    # https://github.com/rojopolis/spellcheck-github-actions/tree/v0/
+    - uses: rojopolis/spellcheck-github-actions@v0
+      name: Spellcheck

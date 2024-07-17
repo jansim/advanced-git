@@ -21,7 +21,7 @@ subtitle: "Course Introduction"
 - 11:30 - 11:45 *Pause* ☕️
 - 11:45 - 13:00 **Block 2:** Best Practices: MR/PRs, TBD (1:15)
 - 13:00 - 14:00 *Lunchbreak* 🍲
-- 14:00 - 15:15 **Block 3:** CI / CD with gitlab (1:15)
+- 14:00 - 15:15 **Block 3:** CI / CD with GitHub (1:15)
 - 15:15 - 15:30 *Pause* ☕️
 - 15:30 - 17:00 **Block 4:** Stashes, Patches & more (1:30)
 
@@ -46,11 +46,15 @@ Quick Round of Introductions
 
 ::: {.nonincremental}
 
+- How many of you have taken the intro course? (yesterday)
 - Your name
 - What do you wish to learn from this course?
-- How much experience do you have with `git`?
 
 :::
+
+## Introductions: Administration 📜
+
+- Is everyone registered for the course?
 
 ## Prerequisites
 
@@ -59,7 +63,7 @@ Quick Round of Introductions
   - *Visual Studio Code*: A text editor, which also allows using git via its GUI
   - *gitLens*: An extension for VS Code enhancing it's git capabilities
 
-- *gitlab.com Account*: SaaS version of GitLab
+- *GitHub*: Website to collaborate via git
 
 ## *End of Section* 🎉 {background-color="black"}
 

@@ -91,6 +91,24 @@ Formerly highly popular workflow, now a bit out of fashion.
 
 # Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
 
+## Speaking of Best Practices: READMEs 📑
+
+- First touch point for anyone coming to your project
+- Markdown formatted file named `README`(`.md`) in root
+- Should (almost) always be present
+  - Even if only used by you
+
+Example: <https://github.com/pcottle/learnGitBranching>
+
+## Practical: README 📚️ {background-color="black"}
+
+1. Add a `README` to your `git-example` repository
+
+- Examples
+  - <https://github.com/pcottle/learnGitBranching>
+  - <https://github.com/microsoft/vscode>
+  - <https://github.com/iterative/dvc>
+
 ## *End of Block* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
@@ -99,4 +117,4 @@ Any Questions?
 
 [[🏡 Back to Overview]](../index.html)
 
-[[⏩️ Next Block]](./3.1-gitlab-CI-CD.html) 
+[[⏩️ Next Block]](./3.1-github-CI-CD.html) 

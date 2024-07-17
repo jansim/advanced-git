@@ -14,6 +14,6 @@ format:
 revealjs-plugins:
   - attribution
 title-slide-attributes:
-    data-background-image: images/backgrounds/pankaj-patel-ZV_64LdGoao-unsplash.jpg
+    data-background-image: images/backgrounds/screenshot_repo.jpg
     data-background-color: black
-    data-background-opacity: "0.3"
+    data-background-opacity: "0.9"

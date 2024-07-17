@@ -1,0 +1,50 @@
+---
+title: "Transfer Assignment"
+subtitle: "Advanced `git`"
+author: "Jan Simson"
+format:
+  pdf
+---
+
+Thank you for participating in the workshop "Data Literacy: Advanced `git`".
+
+Please finish this transfer assignment within the next month to complete the workshop. If you also took part in the "Intro to `git`" course this term, you can submit both transfer assignments at once in the same repository. In this case you only need to do any overlapping tasks (such as creating the repository) once.
+
+## Task 1: Creating the Respository 🆕
+
+1. Create a new GitHub repository named **`transfer-assignment`**. This repository can be either public or private, but if it is private you will have to add me as a collaborator to the repository so I can see it. My username on GitHub is `jansim`.
+2. Clone the repository onto your machine to be able to start working in it. Please make sure to use proper commit messages in all of your commits for the following tasks.
+
+## Task 2: Spellchecking ✍️
+
+Add automatic spellchecking to your transfer-assignment repository via GitHub Actions.
+
+You can make use of the files that I provided as part of the course at
+<https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples>.
+
+## Task 3: Creative Writing ✨
+
+1. Create a new branch called `feature/my-story`
+2. On this branch, create a new file `story.md`
+3. Write a short story into `story.md` that somehow includes the mention of `git` (feel free to get creative). The content of the story is not that important and you are welcome to use LLM tools such as ChatGPT or Claude to help with the writing. Make sure to have a properly formatted heading and add a new commit for each paragraph. There should be at least 3 commits.
+4. Push the branch onto GitHub and create a pull request.
+5. Make sure that the spellchecker is happy with your story, else make adjustments as needed.
+6. Merge or rebase the pull request into your `main` branch.
+
+:::{.callout-note}
+I'm assuming that the default branch of your repository is called `main`, which is the case in recent versions of `git` now. If the default branch is called `master` on your machine, just use that in place of `main` here.
+:::
+
+## Task 4: Release 🚀
+
+1. Once you're done with the other tasks, create a new tag called `final`.
+2. Push the tag to GitHub.
+3. On GitHub, create a new release based on your tag.
+
+## Task 5: Tell me you're finished 🎉
+
+1. Send me an e-mail to notify me that you finished the task. Make sure to
+  - (1) put either `"Advanced git: Transfer Assignment"` or `"Intro + Advanced git: Transfer Assignment"` as your subject in the e-mail (depending on whether it's just for this or both courses)
+  - (2) include your name and martrikelnumber in the e-mail
+  - (3) to also include the link to your repository on GitHub in the e-mail.
+2. Thank you for participating and lot's of success with git (and beyond) in the future!

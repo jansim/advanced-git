@@ -62,7 +62,7 @@ Tags need to be pushed *explicitly* via `git push --tags`
 
 A) Creating a Release
     1. Tag the latest commit in your copy of the website template repository
-    2. Push the tag to GitLab
+    2. Push the tag to GitHub
        - You do not need to make a new commit
     3. Create a new release for the tag you pushed
 
@@ -218,6 +218,24 @@ pick a5f4a0d Add cat-file
 # However, if you remove everything, the rebase will be aborted.
 #
 # Note that empty commits are commented out
+```
+
+## Taking a Closer Look: git bisect 🧐
+
+- You provide two references:
+  - Last known commit where everything was well
+  - Earliest commit that has the issue
+- Automatic search between both points
+- Great for pinpointing which commit introduced a bug 🐛
+
+## Taking a Closer Look: git bisect 🔍️
+
+```bash
+git bisect start
+# Current version is bad
+git bisect bad
+# 84571cf is known to be good
+git bisect good 84571cf
 ```
 
 # Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}

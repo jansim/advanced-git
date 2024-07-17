@@ -12,7 +12,7 @@ format:
     output-file: README.md
 ---
 
-This repository contains the course materials for a one-day workshop titled "Advaned `git`" which I first gave at the Scientific Computing Center (SCC) in Karlsruhe.
+This repository contains the course materials for a one-day workshop titled "Advaned `git`", developed for the Scientific Computing Center (SCC) and Houce of Competence (HOC) at the Karlsruhe Institute of Technology (KIT).
 
 ## Contents
 
@@ -24,11 +24,11 @@ This repository contains the course materials for a one-day workshop titled "Adv
   - 1.2 Branches & Merging [[slides]](1.2-branches_merging.html)
 
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based Development
-  - 2.1 Collaboration & Merge Requests [[slides]](output/2.1-collaboration-merge-requests.html)
+  - 2.1 Collaboration & Pull Requests [[slides]](output/2.1-collaboration-pull-requests.html)
   - 2.2 Trunk Based Development [[slides]](output/2.2-trunk-based-development.html)
 
-- Block 3: CI / CD with gitlab
-  - 3.1 GitLab CI / CD [[slides]](output/3.1-gitlab-CI-CD.html)
+- Block 3: CI / CD with GitHub
+  - 3.1 GitHub CI / CD [[slides]](output/3.1-github-CI-CD.html)
 
 - Block 4: Stashes, Cherry Picking, Patches & more
   - 4.1 Advanced Features of git [[slides]](output/4.1-advanced-features.html)
@@ -39,17 +39,13 @@ This repository contains the course materials for a one-day workshop titled "Adv
 
 ### Supporting Documents
 
-- How to Setup SSH authentication for GitLab [[PDF]](output/resources/ssh/how-to-setup-gitlab-ssh.pdf) [[HTML]](output/resources/ssh/how-to-setup-gitlab-ssh.html)
-- GitLab CI / CD Example Files 🤖
-  - [Simple](resources/CI-CD-examples/simple.gitlab-ci.yml)
-  - [Complex](resources/CI-CD-examples/complex.gitlab-ci.yml)
+- How to Setup SSH authentication for GitHub [[PDF]](https://simson.io/intro-to-git/output/resources/ssh/how-to-setup-github-ssh.pdf) [[HTML]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
+- [CI / CD Example Files 🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
 - Git Cheatsheet [[PDF]](resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
 ## Links
 
-- Repositories used in the Course
-  - [GitLab Website Template](https://gitlab.com/jansim/website-template)
 - Guides to review & refresh your knowledge
   - <https://gitimmersion.com>
   - <https://github.com/git-guides>
@@ -64,6 +60,7 @@ This repository contains the course materials for a one-day workshop titled "Adv
 - If you have a problem
   - [ohshitgit.com](https://ohshitgit.com/) [(🇩🇪)](https://ohshitgit.com/de)
   - Google: Just googling your problem is often the most useful solution
+- Introductory course: <http://simson.io/intro-to-git/>
 
 ## License
 

@@ -1,0 +1,6 @@
+spellchecker: aspell
+matrix:
+- name: Text Files
+  sources:
+  - "**/*.txt"
+  - "**/*.md"

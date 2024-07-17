@@ -1,0 +1,330 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 3.1: CI / CD & GitHub Actions"
+title-slide-attributes:
+    # Background by <https://giphy.com/gifs/ralph-80s-cartoons-richie-rich-1nR6fu93A17vWZbO9c>
+    data-background-image: images/backgrounds/ralph-80s-cartoons-richie-rich-1nR6fu93A17vWZbO9c.gif
+    data-background-color: black
+    data-background-opacity: "0.4"
+---
+
+## From before: CI / CD 🤖
+
+::: {.nonincremental}
+
+- **Continuous Integration (CI)**
+  - Integration of changes from multiple developers into shared repository with automated testing.
+- **Continuous Delivery / Deployment (CD)**
+  - Automated deployment of changes if previous tests pass.
+
+:::
+
+## Continuous Integration (CI) ✅
+
+Ensuring the quality of all code that makes it into the `main` branch.
+
+- Automatically check...
+  - different forms of tests
+  - formatting
+  - building / compilation
+  - ... anything!
+- Only allow merging if tests pass
+
+## Continuous Delivery / Deployment (CD) 🚀
+
+Automatically deploy the latest state upon merge.
+
+- Build & deploy the latest version
+  - If tests in CI pass ✅
+- Helps streamlining deployment
+- Easier to roll-back changes
+
+## Artifacts 🏺
+
+Save / export files from your CI / CD pipeline.
+
+- Typically more related to CD, but not necessarily
+- Build, package and release your software
+- Can help to debug failing tests
+  - e.g. upload a plot from a failed test as artifact
+- Example: *JOSS* renders & exports papers via artifacts 📜
+
+:::{.fragment}
+:::{.callout-note}
+Be mindful when exporting / storing artifacts as they usually count towards a storage allowance.
+:::
+:::
+
+# GitHub Actions
+
+## CI / CD on GitHub: Workflows & Jobs ⚒️
+
+GitHub's CI/CD system is called GitHub Actions and organized into `workflows` which contain one or more `jobs`.
+
+- Each `job` performs multiple *tasks*
+- Multiple `jobs` can be chained / combined in a `workflow`
+- There is no clear distinction between CI/CD, it's all `jobs`
+
+## CI / CD on GitHub: Workflows & Jobs ⚒️
+
+![A CI/CD workflow to deploy a website to GitHub Pages.](images/screenshots/github/gh-actions.png)
+
+::: attribution
+Repository: <https://GitHub.com/world-wide-lab/world-wide-lab>
+:::
+
+## Developing CI / CD Workflows
+
+- Option 1: Make changes, push, repeat ♻️
+  - Running on private repositories costs money!
+- Option 2: Use tools to test locally 🏡
+  - [`act`](https://github.com/nektos/act) (mediocre experiences so far)
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+# Going Deeper: <br> `.github/` {background-color="black" background-opacity="0.4" background-image="images/backgrounds/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi.gif" background-position="top"}
+
+::: attribution
+Background: https://giphy.com/gifs/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi
+:::
+
+## Detour: (Docker) Containers 🐋
+
+- Collection of software and its dependencies
+- Kind of like a mini-virtual machine
+- Identified by an image name (+ version) e.g. `ubuntu:20.04`, `postgres:14`, `...`
+- Docker is the biggest company in the space, but open-source alternatives exist
+- Really useful for reproducible environments & deployments
+
+:::{.fragment}
+➡️ GitHub CI / CD jobs run in Docker containers
+:::
+
+## The magic directory: `.github` ✨
+
+GitHub CI / CD pipelines are almost completely configured via `.yml` files in `.github/workflows`.
+
+- `.github` holds special files
+  - `.github/workflows/` for CI/CD
+- Just normal files in the repository and tracked via `git`
+- Only a few administrative settings are made outside of this
+
+## The magic files: Workflows`.yml` ✨
+
+```yml
+# .github/workflows/spellcheck.yml
+
+name: Spellcheck Action
+
+# When should this action be run?
+on: push
+
+jobs:
+  build:
+    # Name of this job
+    name: Spellcheck
+    # Which container / platform to run on?
+    runs-on: ubuntu-latest
+    # The different steps in this job
+    steps:
+    # These can either be direct commands or use existing actions
+    # https://github.com/actions/checkout/tree/v3/
+    - uses: actions/checkout@v3
+    # https://github.com/rojopolis/spellcheck-github-actions/tree/v0/
+    - uses: rojopolis/spellcheck-github-actions@v0
+      name: Spellcheck
+```
+
+## Another example workflow 🐍
+
+```yml
+# .github/workflows/create-animation.yml
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create_anim:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Platane/snk@v3
+      with:
+        # github user name to read the contribution graph from (**required**)
+        # using action context var `github.repository_owner` or specified user
+        github_user_name: ${{ github.repository_owner }}
+
+        # list of files to generate.
+        # one file per line. Each output can be customized with options as query string.
+        outputs: |
+          dist/github-snake.svg
+          dist/github-snake.gif
+    # Upload generated files
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: animations
+        path: |
+          dist
+```
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+## Practical: Putting it into *Action* {background-color="black"}
+
+1. Open <https://github.com/jansim/advanced-git>
+2. Go to `resources/CI-CD-examples/` (keep this open!)
+3. Copy the `create-animation.yml` into `.github/workflows/` in your `git-example` repository
+4. Push the workflow to your repository
+5. On GitHub, go to actions and trigger the workflow
+6. Check out the results 🐍
+
+## A more complicated example 🧙
+
+```yml
+# .github/workflows/deploy-docs.yml
+
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/deploy-docs.yml'
+      # Changes to reference packages
+      - 'packages/client/**'
+      - 'packages/integration-jsPsych/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install docs dependencies
+        working-directory: ./docs
+        run: npm ci
+
+      - name: Build with VitePress
+        working-directory: ./docs
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+# Protecting Branches {background-opacity="0.6" background-image="images/backgrounds/you-shall-not-pass.webp" background-position="bottom"}
+
+## Protecting Branches
+
+You can require checks to pass before people are allowed to merge changes into a particular branch.
+
+![Only when all checks are passing, can the PR be merged.](images/screenshots/github/gh-pr-require-checks.png)
+
+# DEMO: Where to find Branch Protection on GitHub
+
+## Practical: You shall not Pass (1/3) 🧙 {background-color="black"}
+
+1. Return to `resources/CI-CD-examples/`
+3. Copy the `spellcheck.yml` into `.github/workflows/` in your `git-example` repository
+4. Push the workflow to your repository
+5. Check the workflow output
+
+## Practical: You shall not Pass (2/3) 🧙 {background-color="black"}
+
+Something's missing: the spellcheck configuration ⚙️
+
+1. Copy the `.spellcheck.yml` from `resources/CI-CD-examples/extra/` into the root of `git-example`
+2. Push your changes and check the workflow output again
+3. Fix any typos, until the workflow is "happy" ✅
+
+## Practical: You shall not Pass (2/3) 🧙 {background-color="black"}
+
+Let's protect our main branch and not allow in any typos anymore!
+
+1. On GitHub, go to `Settings` > `Branches` and add a rule to "Require status checks to pass before merging"
+2. Create a new branch in your local repository
+3. Add a new recipe to your `cookbook.md`, make sure you have horrible spelling!
+4. Push your new branch and create a pull request to merge the new recipe - check out the workflow output there.
+5. Only then fix your spelling mistakes and merge the branch.
+
+## Creating new workflows
+
+I've never written a workflow file from scratch, you can either start with a starter template or get matching ones for specific tasks.
+
+![GitHub provides easy starter templates for new workflows](images/screenshots/github/gh-new-workflow.png)
+
+## Further Reading
+
+- GitHub
+  - Reference: https://docs.github.com/en/actions
+  - Actions: https://github.com/marketplace?type=actions
+- GitLab
+  - Reference: https://docs.gitlab.com/ee/ci/yaml/
+  - Templates: https://docs.gitlab.com/ee/ci/examples/#cicd-templates
+
+## Optional Major Practical: Creating your own real-world Workflow{background-color="black"}
+
+::: {.nonincremental}
+
+1. Build teams of ~ 3 people
+2. Come up with potential use-cases for CI/CD pipelines, that would be useful FOR YOU!
+3. Try and create a first prototype of your own workflow together!
+
+:::
+
+## *End of Block* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](../index.html)
+
+[[⏩️ Next Block]](./4.1-advanced-features.html) 

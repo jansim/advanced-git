@@ -3,14 +3,14 @@ title: "Advanced `git`"
 subtitle: "Block 4.2: Final Bits"
 ---
 
-## Advanced GitLab
+## Advanced GitHub/Lab
 
 - You can easily start an in-browser version of VSCode
-  - Just press the `.` key, inside a repository on GitLab
+  - Just press the `.` key, inside a repository
 - You can mark who is responsible for which parts of a repository
   - `CODEOWNERS` file
   - Similar to `.gitignore` patterns, associated with usernames
-- These also work on GitHub
+- These work on both GitHub & GitLab
 
 ## Making your Repository Citeable
 
@@ -24,6 +24,29 @@ subtitle: "Block 4.2: Final Bits"
 - [ohshitgit.com](https://ohshitgit.com/) [(🇩🇪)](https://ohshitgit.com/de)
 - LLMs e.g. ChatGPT
 - Google
+
+# Going Beyond
+
+## Guides to Re-Visit
+
+Most of the information in these guides, we already covered, but they can be great if you want to re-visit anything.
+
+- <https://learngitbranching.js.org/>
+- <https://github.com/git-guides>
+- [Introduction to RStudio Git & GitHub](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)
+- [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
+- <https://gitimmersion.com>
+
+## Git Game
+
+[![](images/screenshots/ohmygit.png)](https://ohmygit.org/)
+
+## Further Reading
+
+- Popular Workflow: [Trunk Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
+- Using git with data
+  - [git lfs](https://git-lfs.github.com/)
+  - [dvc](https://dvc.org/): Data Version Control
 
 ## *End of Block* 🎉 {background-color="black"}
 

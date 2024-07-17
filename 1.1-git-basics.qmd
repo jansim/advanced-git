@@ -100,14 +100,14 @@ Which of these git commands / actions have you used already? Have you used any t
 - We can `restore` the commited version (and remove any *unstaged* changes)
 :::
 
-## Practical: git Command Library (1) {background-color="black"}
+## Practical: Cookbook (1) {background-color="black"}
 
 1. Create a new directory called `git-example`
 2. Initialize a git repository in the new directory
-3. Create a new file `library.txt` in your `git-example` directory
-4. Run `git init -h` and copy the output into your `library.txt`
+3. Create a new file `cookbook.md` in your `git-example` directory
+4. Search for your favorite recipe online and copy the title into the file
 5. Commit the changes
-6. Delete the `library.txt` and restore it
+6. Add the ingredients into the file and commit them, too
 
 ## Demo: Tracking Changes in VSCode
 
@@ -118,11 +118,10 @@ Which of these git commands / actions have you used already? Have you used any t
 
 ## Practical: git Command Library (2) {background-color="black"}
 
-1. Run `git <command> -h` and copy the output into your `library.txt`
-2. Explore the repo status *using the VSCode*
-3. Commit the changes (with a good commit message)
-4. Repeat steps 2. - 4. for **2 of the commands** we learned so far, using separate commits each time
-5. Delete the `library.txt` and restore it
+1. Add the cooking steps into the file and commit them
+2. Delete the `cookbook.md` and restore it
+3. Explore the repo status & history
+4. Add a second recipe step by step
 
 ## *End of Section* 🎉 {background-color="black"}
 

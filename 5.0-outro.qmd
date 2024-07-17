@@ -3,16 +3,13 @@ title: "Intro to `git`"
 subtitle: "Course Outro"
 ---
 
-## Evaluation / Feedback
-
-![](images/qr-codes/qr-code-feedback.svg)
-
-https://forms.gle/aYESK8xXLWqGkESx8
+# Evaluation
 
 ## Feedback
 
-- Did you feel like you understood all the topics we covered?
+- This was the first iteration of this course (for students)
 - Would you have wanted more focus on a particular topic?
+- Were any topics missing?
 - Do you have any other feedback? Ideas for improvements?
 
 ## Sources
