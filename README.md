@@ -36,6 +36,8 @@ Technology (KIT).
   - 4.2 Final Notes
     [\[slides\]](https://simson.io/advanced-git/4.2-final_notes.html)
   - *Outro*
+- Bonus Practical
+  [\[slides\]](https://simson.io/advanced-git/6.0-bonus-practical.html)
 
 <!-- *: Since they have to be manually generated, the PDF version of slides may be slightly outdated. Please refer to [this guide](https://revealjs.com/pdf-export/), on how to export your own PDF version from the online slides. -->
 
