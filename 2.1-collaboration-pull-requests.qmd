@@ -201,6 +201,6 @@ Repository: <https://github.com/microsoft/vscode>
 Any Questions?
 :::
 
-[[🏡 Back to Overview]](../index.html)
+[[🏡 Back to Overview]](./index.html)
 
 [[⏩️ Next Section]](./2.2-trunk-based-development.html) 

@@ -129,6 +129,6 @@ Which of these git commands / actions have you used already? Have you used any t
 Any Questions?
 :::
 
-[[🏡 Back to Overview]](../index.html)
+[[🏡 Back to Overview]](./index.html)
 
 [[⏩️ Next Section]](./1.2-branches_merging.html) 

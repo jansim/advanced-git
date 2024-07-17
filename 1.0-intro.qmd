@@ -71,6 +71,6 @@ Quick Round of Introductions
 Any Questions?
 :::
 
-[[🏡 Back to Overview]](../index.html)
+[[🏡 Back to Overview]](./index.html)
 
 [[⏩️ Next Section]](./1.1-git-basics.html) 

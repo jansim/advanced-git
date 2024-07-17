@@ -404,6 +404,6 @@ I've never written a workflow file from scratch, you can either start with a sta
 Any Questions?
 :::
 
-[[🏡 Back to Overview]](../index.html)
+[[🏡 Back to Overview]](./index.html)
 
 [[⏩️ Next Block]](./4.1-advanced-features.html) 

@@ -115,6 +115,6 @@ Example: <https://github.com/pcottle/learnGitBranching>
 Any Questions?
 :::
 
-[[🏡 Back to Overview]](../index.html)
+[[🏡 Back to Overview]](./index.html)
 
 [[⏩️ Next Block]](./3.1-github-CI-CD.html) 
