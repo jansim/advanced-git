@@ -247,7 +247,7 @@ git bisect good 84571cf
    - #1: Cherry Pick
    - #2: Interactive Rebase
 
-## *End of Section* 🎉 {background-color="black"}
+## *End of Section* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
 Any Questions?
