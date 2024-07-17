@@ -14,32 +14,37 @@ format:
 
 This repository contains the course materials for a one-day workshop titled "Advaned `git`", developed for the Scientific Computing Center (SCC) and Houce of Competence (HOC) at the Karlsruhe Institute of Technology (KIT).
 
+<!--
+  To update the README, render this file directly via
+  quarto render README.qmd --to=gfm
+-->
+
 ## Contents
 
 ### Slides
 
 - Block 1: Intro, Recap & Merging
-  - 1.0 Intro [[slides]](output/1.0-intro.html)
-  - 1.1 Basics of git [[slides]](output/1.1-git-basics.html)
+  - 1.0 Intro [[slides]](https://simson.io/advanced-git/1.0-intro.html)
+  - 1.1 Basics of git [[slides]](https://simson.io/advanced-git/1.1-git-basics.html)
   - 1.2 Branches & Merging [[slides]](1.2-branches_merging.html)
 
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based Development
-  - 2.1 Collaboration & Pull Requests [[slides]](output/2.1-collaboration-pull-requests.html)
-  - 2.2 Trunk Based Development [[slides]](output/2.2-trunk-based-development.html)
+  - 2.1 Collaboration & Pull Requests [[slides]](https://simson.io/advanced-git/2.1-collaboration-pull-requests.html)
+  - 2.2 Trunk Based Development [[slides]](https://simson.io/advanced-git/2.2-trunk-based-development.html)
 
 - Block 3: CI / CD with GitHub
-  - 3.1 GitHub CI / CD [[slides]](output/3.1-github-CI-CD.html)
+  - 3.1 GitHub CI / CD [[slides]](https://simson.io/advanced-git/3.1-github-CI-CD.html)
 
 - Block 4: Stashes, Cherry Picking, Patches & more
-  - 4.1 Advanced Features of git [[slides]](output/4.1-advanced-features.html)
-  - 4.2 Final Notes [[slides]](output/4.2-final_notes.html)
+  - 4.1 Advanced Features of git [[slides]](https://simson.io/advanced-git/4.1-advanced-features.html)
+  - 4.2 Final Notes [[slides]](https://simson.io/advanced-git/4.2-final_notes.html)
   - *Outro*
 
 <!-- *: Since they have to be manually generated, the PDF version of slides may be slightly outdated. Please refer to [this guide](https://revealjs.com/pdf-export/), on how to export your own PDF version from the online slides. -->
 
 ### Supporting Documents
 
-- How to Setup SSH authentication for GitHub [[PDF]](https://simson.io/intro-to-git/output/resources/ssh/how-to-setup-github-ssh.pdf) [[HTML]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
+- How to Setup SSH authentication for GitHub [[PDF]](https://simson.io/intro-to-git/https://simson.io/advanced-git/resources/ssh/how-to-setup-github-ssh.pdf) [[HTML]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
 - [CI / CD Example Files 🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
 - Git Cheatsheet [[PDF]](resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)

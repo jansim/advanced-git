@@ -1,56 +1,61 @@
-Advanced `git`
-================
+# Advanced `git`
 Jan Simson
 
 This repository contains the course materials for a one-day workshop
-titled “Advaned `git`” which I first gave at the Scientific Computing
-Center (SCC) in Karlsruhe.
+titled “Advaned `git`”, developed for the Scientific Computing Center
+(SCC) and Houce of Competence (HOC) at the Karlsruhe Institute of
+Technology (KIT).
+
+<!--
+  To update the README, render this file directly via
+  quarto render README.qmd --to=gfm
+-->
 
 ## Contents
 
 ### Slides
 
 - Block 1: Intro, Recap & Merging
-  - 1.0 Intro [\[slides\]](output/1.0-intro.html)
-  - 1.1 Basics of git [\[slides\]](output/1.1-git-basics.html)
+  - 1.0 Intro
+    [\[slides\]](https://simson.io/advanced-git/1.0-intro.html)
+  - 1.1 Basics of git
+    [\[slides\]](https://simson.io/advanced-git/1.1-git-basics.html)
   - 1.2 Branches & Merging [\[slides\]](1.2-branches_merging.html)
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based
   Development
-  - 2.1 Collaboration & Merge Requests
-    [\[slides\]](output/2.1-collaboration-merge-requests.html)
+  - 2.1 Collaboration & Pull Requests
+    [\[slides\]](https://simson.io/advanced-git/2.1-collaboration-pull-requests.html)
   - 2.2 Trunk Based Development
-    [\[slides\]](output/2.2-trunk-based-development.html)
-- Block 3: CI / CD with gitlab
-  - 3.1 GitLab CI / CD [\[slides\]](output/3.1-gitlab-CI-CD.html)
+    [\[slides\]](https://simson.io/advanced-git/2.2-trunk-based-development.html)
+- Block 3: CI / CD with GitHub
+  - 3.1 GitHub CI / CD
+    [\[slides\]](https://simson.io/advanced-git/3.1-github-CI-CD.html)
 - Block 4: Stashes, Cherry Picking, Patches & more
   - 4.1 Advanced Features of git
-    [\[slides\]](output/4.1-advanced-features.html)
-  - 4.2 Final Notes [\[slides\]](output/4.2-final_notes.html)
+    [\[slides\]](https://simson.io/advanced-git/4.1-advanced-features.html)
+  - 4.2 Final Notes
+    [\[slides\]](https://simson.io/advanced-git/4.2-final_notes.html)
   - *Outro*
 
 <!-- *: Since they have to be manually generated, the PDF version of slides may be slightly outdated. Please refer to [this guide](https://revealjs.com/pdf-export/), on how to export your own PDF version from the online slides. -->
 
 ### Supporting Documents
 
-- How to Setup SSH authentication for GitLab
-  [\[PDF\]](output/resources/ssh/how-to-setup-gitlab-ssh.pdf)
-  [\[HTML\]](output/resources/ssh/how-to-setup-gitlab-ssh.html)
-- GitLab CI / CD Example Files 🤖
-  - [Simple](resources/CI-CD-examples/simple.gitlab-ci.yml)
-  - [Complex](resources/CI-CD-examples/complex.gitlab-ci.yml)
+- How to Setup SSH authentication for GitHub
+  [\[PDF\]](https://simson.io/intro-to-git/https://simson.io/advanced-git/resources/ssh/how-to-setup-github-ssh.pdf)
+  [\[HTML\]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
+- [CI / CD Example Files
+  🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
 - Git Cheatsheet [\[PDF\]](resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
 ## Links
 
-- Repositories used in the Course
-  - [GitLab Website
-    Template](https://gitlab.com/jansim/website-template)
 - Guides to review & refresh your knowledge
   - <https://gitimmersion.com>
   - <https://github.com/git-guides>
   - [Introduction to RStudio Git &
-    GitHub](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/)
+    GitHub](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)
   - [The Carpentries: Version Control with
     Git](https://swcarpentry.github.io/git-novice/)
 - Trunk Based Development
@@ -63,6 +68,7 @@ Center (SCC) in Karlsruhe.
   - [ohshitgit.com](https://ohshitgit.com/)
     [(🇩🇪)](https://ohshitgit.com/de)
   - Google: Just googling your problem is often the most useful solution
+- Introductory course: <http://simson.io/intro-to-git/>
 
 ## License
 
