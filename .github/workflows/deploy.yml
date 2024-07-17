@@ -26,7 +26,7 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
 
       - name: Render README / index.html
-        run: quarto render --to=html --output-dir=output README.qmd
+        run: quarto render README.qmd --to=html --output-dir=output
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
