@@ -238,6 +238,27 @@ git bisect bad
 git bisect good 84571cf
 ```
 
+## Working Trees 🌲🌳🌴
+
+With git working trees, you can have different different branches from one repository checked out *at the same time* — each in a different directory
+
+```bash
+git worktree add <path>
+```
+
+- `<path>` will be automatically checked for a matching branch / commit / tag
+  - If none is found one is created
+
+::: {.fragment}
+
+```bash
+# Create a new directory *next* to the repository
+# either checkout or create a branch my-feature
+git worktree add ../my-feature
+```
+
+:::
+
 # Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
 
 ## *Optional Practicals*: 🍒🔥 {background-color="black"}
