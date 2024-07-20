@@ -88,18 +88,6 @@ Repository: <https://GitHub.com/world-wide-lab/world-wide-lab>
 Background: https://giphy.com/gifs/leonardo-dicaprio-inception-inceptionedit-4nF0gVfYYIGdi
 :::
 
-## Detour: (Docker) Containers 🐋
-
-- Collection of software and its dependencies
-- Kind of like a mini-virtual machine
-- Identified by an image name (+ version) e.g. `ubuntu:20.04`, `postgres:14`, `...`
-- Docker is the biggest company in the space, but open-source alternatives exist
-- Really useful for reproducible environments & deployments
-
-:::{.fragment}
-➡️ GitHub CI / CD jobs run in Docker containers
-:::
-
 ## The magic directory: `.github` ✨
 
 GitHub CI / CD pipelines are almost completely configured via `.yml` files in `.github/workflows`.
@@ -378,6 +366,18 @@ I've never written a workflow file from scratch, you can either start with a sta
 ## Development of Workflows
 
 ![Creating a new Workflow is often a bit of trial and error](images/screenshots/github/gh-actions-developing.png)
+
+## Detour: (Docker) Containers 🐋
+
+- Collection of software and its dependencies
+- Kind of like a mini-virtual machine
+- Identified by an image name (+ version) e.g. `ubuntu:20.04`, `postgres:14`, `...`
+- Docker is the biggest company in the space, but open-source alternatives exist
+- Really useful for reproducible environments & deployments
+
+:::{.fragment}
+➡️ GitHub CI / CD jobs can run in Docker containers
+:::
 
 ## Further Reading
 
