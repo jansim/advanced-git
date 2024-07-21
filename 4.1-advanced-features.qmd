@@ -48,7 +48,7 @@ You can *tag* a single commit in git.
 
 ## Creating a tag
 
-- CLI: `git tag -a v1.2.3`
+- CLI: `git tag v1.2.3`
 - VSCode: Commit > Create Tag (GitLens)
   - *Demo*
 
