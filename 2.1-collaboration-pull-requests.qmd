@@ -86,7 +86,7 @@ git remote -h
 
 You first `pull` the latest changes from the remote and then `push` your own changes
 
-![](images/drawings/pull-push.svg)
+![](images/drawings/pull-push.png)
 
 ## Getting Changes: `git pull`
 
