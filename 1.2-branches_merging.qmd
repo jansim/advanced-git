@@ -69,7 +69,7 @@ You can also use `git switch my-branch`, but this command is still experimental 
 - `git merge my-branch`
   - You will merge the branch that you name in the command *into* the one you are currently on
   - In most cases you will want to be on the `main` branch when using `git merge` (but not always!)
-- Merging will create a new "merge" commit
+- Merging will (usually) create a new "merge" commit
 
 ## Bringig it all together: Merging
 
@@ -81,9 +81,37 @@ Only branches with a shared history can be merged, but this should (almost) alwa
 
 ![Example of a merged repository history](images/screenshots/learngitbranching/merged.png)
 
-::: attribution
-Background: https://giphy.com/gifs/berlin-demo-govid-loAFGkJxYzgxu3NKnZ
+## Squashing it all together 🤏
+
+You can also *squash* all commits from another branch together when merging.
+
+`git merge --squash <branch>`
+
+- Only a single commit will be added from the merge
+- Loss of history
+  - Harder to understand the origin of changes in commit
+
+## Squashing it all together 🤏 {background-color="#5cbcfc"}
+
+:::: {.columns}
+
+::: {.column .fragment width="50%"}
+
+Merging
+
+![](images/screenshots/learngitbranching/merged.png){width=65%}
+
 :::
+
+::: {.column .fragment width="50%"}
+
+Merged (`--squash`)
+
+![](images/screenshots/learngitbranching/squashed.png){width=65%}
+
+:::
+
+::::
 
 ## Practical: Branches and merging {background-color="black"}
 
@@ -207,6 +235,8 @@ scissors ✂️
   - This alters the affected commits ‼️
   - Leads to a single history
 - Use with caution
+- Not a remedy for merge conflicts
+  - Can actually be more painful to handle
 
 # Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
 
