@@ -173,6 +173,7 @@ Or in a GUI e.g. VSCode (via GitLens)
 - Apply a specific commit to your current branch
 - `git cherry-pick <commit-hash>`
 :::
+- Typically when branches are not merged
 - Can be useful for e.g. hotfixes 🐛
 - Should not be overused
   - Usually full merges are the preferred solution
