@@ -1,6 +1,7 @@
 ---
 title: "Advanced `git`"
 subtitle: "Block 1.2: Branches, Merging & More"
+resources: images/screenshots/learngitbranching/rebase.mp4
 ---
 
 # Alternate Realities: <br> `git branches` {background-color="black" background-opacity="0.7" background-image="images/backgrounds/suganth-V1YEEItoOTE-unsplash.jpg"}
@@ -234,15 +235,35 @@ scissors ✂️
 - When rebasing, all extra commits on your current branch will be moved to the target branch
   - This alters the affected commits ‼️
   - Leads to a single history
-- Use with caution
 - Not a remedy for merge conflicts
   - Can actually be more painful to handle
 
-# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+## Rebasing: The Alternative to Merging {background-color="#5cbcfc"}
 
-::: attribution
-More Info: <https://www.atlassian.com/git/tutorials/merging-vs-rebasing>
+:::: {.columns}
+
+::: {.column .fragment width="50%"}
+
+Starting situation
+
+![](images/screenshots/learngitbranching/branched.png){width=90%}
+
 :::
+
+::: {.column .fragment width="50%"}
+
+Rebasing
+
+<video
+  data-autoplay
+  loop
+  width="90%"
+  src="images/screenshots/learngitbranching/rebase.mp4"
+></video>
+
+:::
+
+::::
 
 ## Rebasing: The Alternative to Merging {background-color="#5cbcfc"}
 
@@ -265,6 +286,34 @@ Rebasing
 :::
 
 ::::
+
+## Rebasing to *update* branches {background-color="#5cbcfc"}
+
+:::: {.columns}
+
+::: {.column .fragment width="50%"}
+
+Rebasing into `main` 🙅
+
+![](images/screenshots/learngitbranching/rebased.png){width=65%}
+
+:::
+
+::: {.column .fragment width="50%"}
+
+Rebasing into `feature` 💁
+
+![](images/screenshots/learngitbranching/rebase-into-feature.png){width=65%}
+
+:::
+
+::::
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+::: attribution
+More Info: <https://www.atlassian.com/git/tutorials/merging-vs-rebasing>
+:::
 
 ## Practical: *learngitbranching* {background-color="black"}
 
