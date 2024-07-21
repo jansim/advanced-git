@@ -347,7 +347,7 @@ Something's missing: the spellcheck configuration ⚙️
 2. Push your changes and check the workflow output again
 3. Fix any typos, until the workflow is "happy" ✅
 
-## Practical: You shall not Pass (2/3) 🧙 {background-color="black"}
+## Practical: You shall not Pass (3/3) 🧙 {background-color="black"}
 
 Let's protect our main branch and not allow in any typos anymore!
 
