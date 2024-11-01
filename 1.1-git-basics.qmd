@@ -131,4 +131,4 @@ Any Questions?
 
 [[🏡 Back to Overview]](./index.html)
 
-[[⏩️ Next Section]](./1.2-branches_merging.html) 
+[[⏩️ Next Section]](./1.2-history.html) 

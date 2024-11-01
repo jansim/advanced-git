@@ -1,6 +1,6 @@
 ---
 title: "Advanced `git`"
-subtitle: "Block 1.2: Branches, Merging & More"
+subtitle: "Block 1.3: Branches, Merging & More"
 resources: images/screenshots/learngitbranching/rebase.mp4
 ---
 

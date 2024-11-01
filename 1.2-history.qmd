@@ -1,0 +1,86 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 1.2: History & Time-Travel"
+---
+
+## Seeing History: `git log`
+
+We can see the history of our committed changes, called `commits` using `git log`.
+
+```bash
+git log
+# commit ed226e022f60d9f578265c2c246367f5f07756de (HEAD -> main)
+# Author: Jan Simson <git@simson.io>
+# Date:   Fri Sep 16 17:00:03 2022 +0200
+
+#     Edit hello.txt
+
+# commit 795780d123f6eeedaa09734005c08d1ad89c1976
+# Author: Jan Simson <git@simson.io>
+# Date:   Fri Sep 16 16:59:45 2022 +0200
+
+# Adding hello.txt
+
+# lines 1-9
+```
+
+You can move up and down with the arrow keys and leave the log view by pressing `q`.
+
+# *Properly* Traveling Through Time: <br> `git checkout`  {background-color="black" background-opacity="0.5" background-image="images/backgrounds/back-to-the-future-travel.gif"}
+
+::: attribution
+Background: https://giphy.com/gifs/back-to-the-future-xsF1FSDbjguis
+:::
+
+## Living History: `git checkout`
+
+You can go back to any previous commit (and many other things!) with `git checkout`.
+
+```bash
+# Full hash
+git checkout 795780d123f6eeedaa09734005c08d1ad89c1976
+# Short hash
+git checkout 795780d
+# Relative
+git checkout HEAD~2
+```
+
+## Going Meta: `git reflog`
+
+Git tracks where your HEAD has been and what you do in your repository. This history can be seen via `git reflog`.
+
+- This includes moving around via `git checkout`
+- Local to your computer (not synched via `push` / `pull`)
+- Mini-Practical: *Try it out in your current repository*
+
+## Practical: Murder Mystery (Setup) 👮 {background-color="black"  background-opacity="0.3" background-image="images/backgrounds/murder-mystery.jpg"}
+
+::: {.nonincremental}
+
+1. Clone the git-murder-mystery:
+
+:::
+
+`git clone https://github.com/open-teaching/git-murder-mystery.git`
+
+## Practical: git Murder Mystery 🕵️ {background-color="black"  background-opacity="0.3" background-image="images/backgrounds/murder-mystery.jpg"}
+
+1. Unravel the murder case.
+   - Use `git log` to see the history of the repository
+   - Use `git checkout` to go to the past
+2. There are four suspects:
+   - butler 🛎️
+   - gardener 🌳
+   - barber ✂️
+   - carpenter 🪓
+3. Look at the `git reflog` after you solved the case
+
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](./index.html)
+
+[[⏩️ Next Section]](./1.3-branches_merging.html) 
