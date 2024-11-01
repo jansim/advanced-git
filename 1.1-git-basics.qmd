@@ -43,10 +43,10 @@ Background: https://unsplash.com/photos/842ofHC6MaI
 
 - `git` itself is a CLI program
 - But, many GUIs are available
-  - Sourcetree
-  - Visual Studio Code*
-  - Rstudio*
-  - Github Desktop
+  - [Sourcetree](https://www.sourcetreeapp.com/)
+  - [Visual Studio Code](https://code.visualstudio.com/)*
+  - [Rstudio](https://posit.co/download/rstudio-desktop/)*
+  - [GitButler](https://gitbutler.com/)
   - ... (full list: <https://git-scm.com/downloads/guis>)
 
 ::: {.fragment}
@@ -106,6 +106,7 @@ Which of these git commands / actions have you used already? Have you used any t
 2. Initialize a git repository in the new directory
 3. Create a new file `cookbook.md` in your `git-example` directory
 4. Search for your favorite recipe online and copy the title into the file
+   - Tip: Use english language recipes
 5. Commit the changes
 6. Add the ingredients into the file and commit them, too
 
@@ -116,7 +117,7 @@ Which of these git commands / actions have you used already? Have you used any t
 - Demo: Default git features in VSCode
 - Demo: Advanced features via gitLens
 
-## Practical: git Command Library (2) {background-color="black"}
+## Practical: Cookbook (2) {background-color="black"}
 
 1. Add the cooking steps into the file and commit them
 2. Delete the `cookbook.md` and restore it
