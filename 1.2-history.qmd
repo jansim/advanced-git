@@ -62,7 +62,7 @@ Git tracks where your HEAD has been and what you do in your repository. This his
 
 :::
 
-`git clone https://github.com/open-teaching/git-murder-mystery.git`
+`git clone https://github.com/jansim/git-murder-mystery.git`
 
 ## Practical: git Murder Mystery 🕵️ {background-color="black"  background-opacity="0.3" background-image="images/backgrounds/murder-mystery.jpg"}
 
