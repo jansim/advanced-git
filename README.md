@@ -20,7 +20,8 @@ Technology (KIT).
     [\[slides\]](https://simson.io/advanced-git/1.0-intro.html)
   - 1.1 Basics of git
     [\[slides\]](https://simson.io/advanced-git/1.1-git-basics.html)
-  - 1.2 Branches & Merging [\[slides\]](1.2-branches_merging.html)
+  - 1.2 History [\[slides\]](1.2-history.html)
+  - 1.3 Branches & Merging [\[slides\]](1.3-branches_merging.html)
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based
   Development
   - 2.1 Collaboration & Pull Requests
@@ -36,8 +37,10 @@ Technology (KIT).
   - 4.2 Final Notes
     [\[slides\]](https://simson.io/advanced-git/4.2-final_notes.html)
   - *Outro*
-- Bonus Practical
-  [\[slides\]](https://simson.io/advanced-git/6.0-bonus-practical.html)
+- Bonus Practical: GitHub Pages
+  [\[slides\]](https://simson.io/advanced-git/6.1-bonus-pages.html)
+- Bonus Practical: Profile Readme
+  [\[slides\]](https://simson.io/advanced-git/6.2-bonus-profile-readme.html)
 
 <!-- *: Since they have to be manually generated, the PDF version of slides may be slightly outdated. Please refer to [this guide](https://revealjs.com/pdf-export/), on how to export your own PDF version from the online slides. -->
 
@@ -49,7 +52,7 @@ Technology (KIT).
 - [CI / CD Example Files
   🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
 - Git Cheatsheet
-  \[\[PDF\]\]((https://simson.io/intro-to-git/resources/git-cheat-sheet-education.pdf)
+  [\[PDF\]](https://simson.io/intro-to-git/resources/git-cheat-sheet-education.pdf)
   - By [GitHub Education](https://education.github.com/)
 
 ## Links
