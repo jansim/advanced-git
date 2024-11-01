@@ -57,7 +57,8 @@ Git tracks where your HEAD has been and what you do in your repository. This his
 
 ::: {.nonincremental}
 
-1. Clone the git-murder-mystery:
+1. Create a new VS Code / Terminal window
+2. Clone the git-murder-mystery:
 
 :::
 
