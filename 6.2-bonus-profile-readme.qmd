@@ -1,0 +1,30 @@
+---
+title: "Advanced `git`"
+subtitle: "Bonus Block: Adding a README to your Profile"
+---
+
+## Adding a profile README
+
+- You can provide some extra information about yourself using a special `README` on GitHub
+- This will be displayed on your user profile
+- Special repository that exactly matches your username
+  - `<username>/<username>`
+  - My username is `jansim`, so the repository has to be named `jansim` as well
+- Only visible if repo is public
+- Inspiration: <bit.ly/awesome-gh>
+
+## Practical: Your Own Website {background-color="black"}
+
+1. Create a new repository matching your username
+2. Add a `README` to the repository
+3. Play around a bit with how it looks on your GitHub user profile
+
+- Feel free to also use <https://rahuldkjain.github.io/gh-profile-readme-generator/>
+
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](./index.html)
