@@ -35,5 +35,5 @@ git add .
 git commit -m "Add README / Instructions to Solve Mystery"
 
 # Optional: Push to github (Note the force push here, so tread with caution!)
-# git remote add origin git@github.com:open-teaching/git-murder-mystery.git
+# git remote add origin git@github.com:jansim/git-murder-mystery.git
 # git push --force --set-upstream origin main
