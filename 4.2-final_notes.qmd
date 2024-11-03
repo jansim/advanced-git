@@ -47,6 +47,7 @@ Most of the information in these guides, we already covered, but they can be gre
 - Using git with data
   - [git lfs](https://git-lfs.github.com/)
   - [dvc](https://dvc.org/): Data Version Control
+- [📺️ So You Think You Know Git](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
 
 ## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
