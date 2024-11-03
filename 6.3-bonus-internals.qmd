@@ -1,0 +1,50 @@
+---
+title: "Advanced `git`"
+subtitle: "Bonus Block: `git` Internals"
+---
+
+# Anatomy of a Repository {background-color="black" background-opacity="0.5" background-image="images/backgrounds/head-medical-phrenology-yAUuzHD05hftq7D2T2.webp"}
+
+## The Anatomy of a `git` Repository 🫀
+
+Inside `.git/`.
+
+- `objects/`: Actual data / contents
+- `refs/`: Points to commits (e.g. `branches`, `tags`)
+- `logs/`: History for `reflog`
+- `HEAD`: Points to the current HEAD e.g. a branch or commit
+- `config`: Repository-specific configuration settings
+- `index`: Staging area
+
+## Let's look at it in practice! 👀
+
+Demo: Looking inside `.git/` (including index/staging).
+
+::: {.callout-warning}
+Messing with a git repository has a high chance of ruining it. Only do this with repositories that you have plenty of backups of or ones that are not important.
+:::
+
+```sh
+# Helper to decompress binary files
+alias deflate="perl -MCompress::Zlib -e 'undef $/; print uncompress(<>)'"
+```
+
+## Practical: Look inside! 👀 {background-color="black"}
+
+1. Look inside the `.git` folder of your cookbook repository.
+2. Stage files and look at the index changing (in size)
+2. Make a new commit and see whether you can notice some changes
+
+## More Info & Sources
+
+- [FreeCodeCamp: git internals](https://www.freecodecamp.org/news/git-internals-objects-branches-create-repo/)
+- [📺️ Git Internals by John Britton of GitHub](https://www.youtube.com/watch?v=lG90LZotrpo)
+- [📘 git Book: Chapter 10 - Git Internals](https://git-scm.com/book/en/v2/Git-Internals-Plumbing-and-Porcelain)
+
+## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](./index.html)

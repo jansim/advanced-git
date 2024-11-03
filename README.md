@@ -41,6 +41,8 @@ Technology (KIT).
   [\[slides\]](https://simson.io/advanced-git/6.1-bonus-pages.html)
 - Bonus Practical: Profile Readme
   [\[slides\]](https://simson.io/advanced-git/6.2-bonus-profile-readme.html)
+- Bonus Practical: git Internals
+  [\[slides\]](https://simson.io/advanced-git/6.3-bonus-internals.html)
 
 <!-- *: Since they have to be manually generated, the PDF version of slides may be slightly outdated. Please refer to [this guide](https://revealjs.com/pdf-export/), on how to export your own PDF version from the online slides. -->
 
