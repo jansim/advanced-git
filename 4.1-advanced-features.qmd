@@ -233,10 +233,20 @@ pick a5f4a0d Add cat-file
 
 ```bash
 git bisect start
+
 # Current version is bad
 git bisect bad
+
 # 84571cf is known to be good
 git bisect good 84571cf
+
+# We get moved to a commit and examine it, it's bad
+git bisect bad
+
+# ... repeat with good / bad till we found the culprit ...
+
+# End the git bisect session
+git bisect reset
 ```
 
 ## Working Trees 🌲🌳🌴
