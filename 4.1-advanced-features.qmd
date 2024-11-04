@@ -274,7 +274,7 @@ git worktree add ../my-feature
 
 ## *Optional Practicals*: 🍒🔥 {background-color="black"}
 
-1. Go to https://learngitbranching.js.org/
+1. Go to <https://learngitbranching.js.org/>
 3. Complete Section 3: `"Moving Work around"`
    - #1: Cherry Pick
    - #2: Interactive Rebase
