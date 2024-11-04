@@ -61,7 +61,7 @@ Tags need to be pushed *explicitly* via `git push --tags`
 ## *Optional Practicals*: Tags {background-color="black"}
 
 A) Creating a Release
-    1. Tag the latest commit in your copy of the website template repository
+    1. Tag the latest commit in your repository
     2. Push the tag to GitHub
        - You do not need to make a new commit
     3. Create a new release for the tag you pushed
