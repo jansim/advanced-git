@@ -55,9 +55,9 @@ Background: https://unsplash.com/photos/842ofHC6MaI
 
 :::
 
-## `git` commands  {background-color="black"}
+## `git` commands
 
-Which of these git commands / actions have you used already? Have you used any that are not on this list?
+I hope some of these git commands sound familiar to you.
 
 :::: {.columns}
 
