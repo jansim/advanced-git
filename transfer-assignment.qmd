@@ -10,6 +10,8 @@ Thank you for participating in the workshop "Data Literacy: Advanced `git`".
 
 Please finish this transfer assignment within the next month to complete the workshop. If you also took part in the "Intro to `git`" course this term, you can submit both transfer assignments at once in the same repository. In this case you only need to do any overlapping tasks (such as creating the repository) once.
 
+Please note that since I receive solutions spread around the month, I usually only grade them after the deadline has passed. If you need to receive your credit(s) by a specific time, please let me know in a *separate email*.
+
 ## Task 1: Creating the Respository 🆕
 
 1. Create a new GitHub repository named **`transfer-assignment`**. This repository can be either public or private, but if it is private you will have to add me as a collaborator to the repository so I can see it. My username on GitHub is `jansim`.
@@ -20,7 +22,7 @@ Please finish this transfer assignment within the next month to complete the wor
 Add automatic spellchecking to your transfer-assignment repository via GitHub Actions.
 
 You can make use of the files that I provided as part of the course at
-<https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples>.
+<https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples>, but you don't have to.
 
 ## Task 3: Creative Writing ✨
 
