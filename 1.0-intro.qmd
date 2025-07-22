@@ -62,6 +62,7 @@ Quick Round of Introductions
   - *git*: The tool itself
   - *Visual Studio Code*: A text editor, which also allows using git via its GUI
   - *gitLens*: An extension for VS Code enhancing it's git capabilities
+    - Tip: *gitless*, an older & leaner version of gitLens
 
 - *GitHub*: Website to collaborate via git
 
