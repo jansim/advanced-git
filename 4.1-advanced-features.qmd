@@ -132,7 +132,7 @@ Git struggles with large binary files.
   - Initialize once in each repository you want to use it in
   - Configure a pattern to specify which files should use it
 - Useful, but a bit annoying to use & debug
-  - Alternatives exist: e.g. [dvc](https://dvc.org/)
+  - Alternatives exist: e.g. [dvc](https://dvc.org/), [git-annex](https://git-annex.branchable.com/)
 
 # Stashing 🗄️
 
