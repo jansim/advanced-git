@@ -100,6 +100,23 @@ I hope some of these git commands sound familiar to you.
 - We can `restore` the commited version (and remove any *unstaged* changes)
 :::
 
+## A small `add`endum: `git add -i`
+
+You can also *interactively* add changes with `-i`.
+
+```bash
+git add -i
+#            staged     unstaged path
+#   1:    unchanged        +4/-0 1.1-git-basics.qmd
+
+# *** Commands ***
+#   1: status       2: update       3: revert       4: add untracked
+#   5: patch        6: diff         7: quit         8: help
+# What now> 
+```
+
+There's also an [extension](https://github.com/cwarden/git-add--interactive) available.
+
 ## Practical: Cookbook (1) {background-color="black"}
 
 1. Create a new directory called `git-example`
