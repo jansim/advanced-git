@@ -124,6 +124,15 @@ I hope some of these git commands sound familiar to you.
 3. Explore the repo status & history
 4. Add a second recipe step by step
 
+## Expanding on `.gitgnore`
+
+- Old news: You can ignore files by adding them to `.gitignore` 📰
+- Maybe new: You can reverse ignored files with a `!`
+  - e.g. `dir/**` and `!dir/.gitkeep`
+- Ignoring a directory: `dir/` vs. `dir/**`
+  - **Q:** What will with `dir/` and `!dir/.gitkeep`?
+  - ❗️ With `dir/`, the whole directory is ignored and *git will not scan it at all*
+
 ## *End of Section* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
