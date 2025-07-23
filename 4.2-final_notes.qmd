@@ -27,6 +27,26 @@ subtitle: "Block 4.2: Final Bits"
 
 # Going Beyond
 
+## Visualizing Repositories
+
+Several tools exist to visualize `git` repositories. These can be useful to get a quick overview of a git repository.
+
+- 🚚 [git-truck](https://github.com/git-truck/git-truck)
+- 🐙 [GitHub Repo Visualizer](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=jansim%2Fadvanced-git) ([Article](https://githubnext.com/projects/repo-visualization))
+- 🌸 [gource](https://gource.io/)
+
+## Visualization Example: `git-truck`
+
+![A screenshot of git-truck, showing how many line changes have happened in files.](./images/screenshots/git-truck/readme1.png)
+
+## Visualization Example: `git-truck`
+
+![A screenshot of git-truck, showing who has primarily edited a file.](./images/screenshots/git-truck/readme2.png)
+
+## Visualization Example: gource 🌸
+
+{{< video https://www.youtube.com/embed/NjUuAuBcoqs width="100%" height="80%" >}}
+
 ## Beyond `git`
 
 - `jujutsu`: A git-compatible alternative
