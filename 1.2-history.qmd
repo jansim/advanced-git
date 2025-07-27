@@ -76,6 +76,14 @@ Git tracks where your HEAD has been and what you do in your repository. This his
    - carpenter 🪓
 3. Look at the `git reflog` after you solved the case
 
+## Git Submodules: A repo inside a repo! 🪆
+
+- You can have repositories inside repositories, these are called *submodules*
+- Add one with `git submodule add <repo-url> <path>` (similar to a clone)
+- Your main project just stores the submodule's path and its current commit hash
+  - The repository tracks its own (separate) history
+- In practice their usefulness can be limited
+
 ## *End of Section* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
