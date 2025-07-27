@@ -132,7 +132,7 @@ There's also an [extension](https://github.com/cwarden/git-add--interactive) ava
 ![Since VSCode is primarily a text editor, git functionality is hidden in the sidebar](images/screenshots/vscode-git.png)
 
 - Demo: Default git features in VSCode
-- Demo: Advanced features via gitLens
+- Demo: Advanced features via gitLens / gitLess
 
 ## Practical: Cookbook (2) {background-color="black"}
 
