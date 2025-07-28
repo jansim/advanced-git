@@ -191,7 +191,6 @@ Repository: <https://github.com/microsoft/vscode>
 2. Create a new branch `feature/vegan`
    - Make sure to also checkout that branch, you can check whether you're on it with `git status`
 3. Add a commit (with a new vegan recipe) on that new branch
-   - Make sure to use the number of the commit (#1) in the commit message
 4. Push the branch to GitHub
 5. Merge the changes by creating a Pull Request 
 
