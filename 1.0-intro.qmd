@@ -46,7 +46,7 @@ Quick Round of Introductions
 
 ::: {.nonincremental}
 
-- How many of you have taken the intro course? (yesterday)
+- How many of you have taken the intro course?
 - Your name
 - What do you wish to learn from this course?
 
