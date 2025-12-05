@@ -315,13 +315,6 @@ Rebasing into `feature` 💁
 More Info: <https://www.atlassian.com/git/tutorials/merging-vs-rebasing>
 :::
 
-## Practical: *learngitbranching* {background-color="black"}
-
-1. Form teams of 2 people each
-2. Open <https://learngitbranching.js.org/?NODEMO> (the last part is important)
-3. Create a medium complex graph, by playing around with commits, branches, merging and rebasing
-4. Reconstruct the graph created by your partner (and vice versa)
-
 ## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
 :::{.r-fit-text}
@@ -330,4 +323,4 @@ Any Questions?
 
 [[🏡 Back to Overview]](./index.html)
 
-[[⏩️ Next Block]](./2.1-collaboration-pull-requests.html) 
+[[⏩️ Next Section]](./1.4-filters_and_hooks.html) 

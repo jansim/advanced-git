@@ -34,6 +34,7 @@ This repository contains the course materials for a one-day workshop titled "Adv
   - 1.1 Basics of git [[slides]](https://simson.io/advanced-git/1.1-git-basics.html)
   - 1.2 History [[slides]](1.2-history.html)
   - 1.3 Branches & Merging [[slides]](1.3-branches_merging.html)
+  - 1.4 Filters & Hooks [[slides]](1.4-filters_and_hooks.html)
 
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based Development
   - 2.1 Collaboration & Pull Requests [[slides]](https://simson.io/advanced-git/2.1-collaboration-pull-requests.html)

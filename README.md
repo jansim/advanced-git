@@ -20,8 +20,9 @@ Technology (KIT).
     [\[slides\]](https://simson.io/advanced-git/1.0-intro.html)
   - 1.1 Basics of git
     [\[slides\]](https://simson.io/advanced-git/1.1-git-basics.html)
-  - 1.2 History [\[slides\]](1.2-history.html)
-  - 1.3 Branches & Merging [\[slides\]](1.3-branches_merging.html)
+  - 1.2 History [\[slides\]](https://simson.io/advanced-git/1.2-history.html)
+  - 1.3 Branches & Merging [\[slides\]](https://simson.io/advanced-git/1.3-branches_merging.html)
+  - 1.4 Filters & Hooks [\[slides\]](https://simson.io/advanced-git/1.4-filters_and_hooks.html)
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based
   Development
   - 2.1 Collaboration & Pull Requests

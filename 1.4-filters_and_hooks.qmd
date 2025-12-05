@@ -1,0 +1,201 @@
+---
+title: "Advanced `git`"
+subtitle: "Block 1.4: Filters and Hooks"
+---
+
+# Automation & Control: <br> Git Filters & Hooks {background-color="black" background-opacity="0.7" background-image="images/backgrounds/suganth-V1YEEItoOTE-unsplash.jpg"}
+
+::: attribution
+Background: https://unsplash.com/photos/V1YEEItoOTE
+:::
+
+## What are Git Hooks? 🪝
+
+- Git hooks are scripts that run automatically at specific points in your git workflow
+- They allow you to automate tasks and enforce policies
+- Can be used to:
+  - Check code quality before commits
+  - Validate commit messages
+  - Run tests before pushing
+  - ...
+
+## Types of Git Hooks 🪝
+
+- `pre-commit`: Before commit is created ⭐️
+- `prepare-commit-msg`: Before commit editor opens
+- `commit-msg`: After commit message is entered
+- `post-commit`: After commit is created
+- `pre-push`: Before pushing to remote
+
+## Where do hooks live? 🪝
+
+- Hooks are stored in `.git/hooks/` directory
+- `.git` is an invisible directory that stores all the git information
+  - If you delete it, you lose the local git history 🚨
+- Sample hooks are provided (with `.sample` extension)
+
+:::{.callout-warning}
+Hooks in `.git/hooks/` are not tracked by git itself!
+:::
+
+## Example: A Simple pre-commit Hook
+
+```bash
+#!/bin/sh
+# .git/hooks/pre-commit
+
+# Check if there are any TODO comments
+if git grep -q 'TODO' -- '*.py' '*.js'; then
+    echo "Error: Found TODO comments in staged files"
+    echo "Please resolve TODOs before committing"
+    exit 1
+fi
+
+exit 0
+```
+
+:::{.callout-note}
+A non-zero exit code will abort the git operation
+:::
+
+## The `pre-commit` Framework 🐍 {background-color="black"}
+
+Python tool to manage and maintain (multi-language) pre-commit hooks.
+
+https://pre-commit.com/
+
+- Managing git hooks manually is tedious
+- The `pre-commit` framework makes it easy:
+  - Manage hooks via configuration file
+  - Share hooks across team via git
+  - Use hooks from the community
+  - Run hooks automatically
+
+## Installing pre-commit
+
+```bash
+# Install pre-commit itself
+pip install pre-commit
+
+# Install the git hook scripts
+pre-commit install
+```
+
+:::{.callout-note}
+After `pre-commit install`, hooks run automatically on `git commit`
+:::
+
+## Configuring pre-commit
+
+Create a `.pre-commit-config.yaml` file in your repository:
+
+```yaml
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+```
+
+## Popular pre-commit Hooks
+
+- **Code formatting**
+  - `black` (Python), `styler` (R), `prettier` (JS)
+- **Linting**
+  - `ruff` (Python), `lintr` (R)
+- **Security**
+  - `detect-secrets`, `bandit`
+- **General**
+  - `trailing-whitespace`, `check-merge-conflict`
+  - `mixed-line-ending`
+
+## Running pre-commit Manually
+
+```bash
+# Run on all files
+pre-commit run --all-files
+
+# Run specific hook
+pre-commit run black --all-files
+
+# Run only on staged files
+pre-commit run
+```
+
+:::{.callout-tip}
+Use `--all-files` when first setting up or updating hooks
+:::
+
+## Skipping Hooks (When Necessary)
+
+Sometimes you need to bypass hooks:
+
+```bash
+# Skip all hooks
+git commit --no-verify -m "Emergency fix"
+
+# Skip specific hook with pre-commit
+SKIP=black git commit -m "Skip formatting for now"
+```
+
+## Hooks: Tips
+
+1. **Start small**: Add hooks gradually
+2. **Run fast**: Keep hooks quick (< 10 seconds)
+
+# Git Filters 🔍 {background-color="black"}
+
+## What are Git Filters?
+
+- Filters process file content when moving between the working directory and git
+- Two types:
+  - **Clean filters**: Process files before staging (working dir → index (git))
+  - **Smudge filters**: Process files after checkout (index (git) → working dir)
+- Useful for:
+  - Removing sensitive data before commits
+  - Normalizing file formats
+  - Handling generated content
+
+## Filter Example: Cleaning up Notebooks
+
+```bash
+# .git/config
+[filter "nbstrip"]
+    clean = jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+    smudge = Catch
+```
+
+```bash
+# .gitattributes
+*.ipynb filter=nbstrip
+```
+
+:::{.callout-warning}
+Filters can be complex, but often tools offer to set them up for you!
+:::
+
+# Questions? {background-opacity="0.4" background-image="images/backgrounds/questions.gif" background-position="top"}
+
+::: attribution
+More Info: <https://pre-commit.com/> | <https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks>
+:::
+
+## Bonus Practical: *Branching Chaos* {background-color="black"}
+
+1. Form teams of 2 people each
+2. Open <https://learngitbranching.js.org/?NODEMO> (the last part is important)
+3. Create a medium complex graph, by playing around with commits, branches, merging and rebasing
+4. Reconstruct the graph created by your partner (and vice versa)
+
+## *End of Section* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](./index.html)
+
+[[⏩️ Next Block]](./2.1-collaboration-pull-requests.html) 

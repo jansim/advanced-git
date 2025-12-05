@@ -17,7 +17,7 @@ subtitle: "Course Introduction"
 
 ::: {.nonincremental}
 
-- 10:00 - 11:30 **Block 1:** Intro, Recap & Merging (1:30)
+- 10:00 - 11:30 **Block 1:** Intro, Merging, Hooks (1:30)
 - 11:30 - 11:45 *Pause* ☕️
 - 11:45 - 13:00 **Block 2:** Best Practices: MR/PRs, TBD (1:15)
 - 13:00 - 14:00 *Lunchbreak* 🍲
