@@ -141,10 +141,13 @@ git commit --no-verify -m "Emergency fix"
 SKIP=black git commit -m "Skip formatting for now"
 ```
 
-## Hooks: Tips
+## Hooks: More Info
 
-1. **Start small**: Add hooks gradually
-2. **Run fast**: Keep hooks quick (< 10 seconds)
+- Tips
+  1. **Start small**: Add hooks gradually
+  2. **Run fast**: Keep hooks quick (< 10 seconds)
+- [🔗 Discussion of Pros and Cons](https://yeldirium.de/2025/10/09/pre-commit-hooks/index.html)
+- [🔗 `hk`](https://hk.jdx.dev/): New alternative tool for managing git hooks
 
 # Git Filters 🔍 {background-color="black"}
 
