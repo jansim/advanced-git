@@ -7,80 +7,6 @@ subtitle: "Block 1.1: Reviewing `git` Basics"
 Background: https://unsplash.com/photos/842ofHC6MaI
 :::
 
-## What is git?
-
-- Version Control System (VCS)
-  - Looks at the changes in your files
-  - Records all changes over time to give you a full history
-  - Similar to "track changes" in Microsoft Word / LibreOffice
-
-::: {.fragment}
-
-![Git only looks at and tracks the *changes* in a file](images/carpentries/play-changes.svg)
-
-:::
-
-## What is git? *Strengths* & Weaknesses
-
-- Strengths 💪
-  - Very hard to lose files with git
-  - Great for collaboration
-  - Fast (like, really fast)
-  - History allows you to go back and understand changes or revert when there are problems
-  - Reproducibility
-
-## What is git? Strengths & *Weaknesses*
-
-- Weaknesses 😢
-  - Can be a bit complicated to use (esp. at first)
-  - History takes up file space (but only little)
-  - Struggles with binary (i.e. non-text) files
-  - Struggles with large files
-    - Not good for storing data!
-  - You do need to *explicitly* use it i.e. it doesn't just work in the background
-
-## CLI vs. GUI: `git`
-
-- `git` itself is a CLI program
-- But, many GUIs are available
-  - [Sourcetree](https://www.sourcetreeapp.com/)
-  - [Visual Studio Code](https://code.visualstudio.com/)*
-  - [Rstudio](https://posit.co/download/rstudio-desktop/)*
-  - [GitButler](https://gitbutler.com/)
-  - ... (full list: <https://git-scm.com/downloads/guis>)
-
-::: {.fragment}
-
-*: These programs have a different main purpose, but also offer the option of using git via their GUI.
-
-:::
-
-## `git` commands
-
-I hope some of these git commands sound familiar to you.
-
-:::: {.columns}
-
-::: {.column width="50%"}
-- `git status`
-- `git init`
-- `git add`
-- `git commit`
-- `git restore`
-- `git stash`
-:::
-
-::: {.column width="50%"}
-- `git checkout`
-- `git branch`
-- `git switch`
-- `git merge`
-- `git pull / push`
-- `git cherry-pick`
-:::
-
-::::
-
 # The Classic Git Flow
 
 ## The 3 Levels of Changes in git
@@ -126,13 +52,6 @@ There's also an [extension](https://github.com/cwarden/git-add--interactive) ava
    - Tip: Use english language recipes
 5. Commit the changes
 6. Add the ingredients into the file and commit them, too
-
-## Demo: Tracking Changes in VSCode
-
-![Since VSCode is primarily a text editor, git functionality is hidden in the sidebar](images/screenshots/vscode-git.png)
-
-- Demo: Default git features in VSCode
-- Demo: Advanced features via gitLens / gitLess
 
 ## Practical: Cookbook (2) {background-color="black"}
 
