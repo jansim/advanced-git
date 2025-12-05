@@ -68,6 +68,7 @@ Technology (KIT).
     Git](https://swcarpentry.github.io/git-novice/)
 - Pretty comprehensive guide: [Beej’s Guide to
   Git](https://beej.us/guide/bggit/html/split/)
+ - The official documentation: <https://git-scm.com/doc>
 - Trunk Based Development
   - <https://trunkbaseddevelopment.com/>
   - <https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development>
