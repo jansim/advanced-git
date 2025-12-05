@@ -37,33 +37,6 @@ git checkout -b my-branch
 # Switched to a new branch 'my-branch'
 ```
 
-## Working on branches
-
-- So far we have been working on a single branch: `main`
-- Nothing changes when working with multiple branches, you just have to keep an eye on your current branch
-
-```bash
-git status
-# On branch my-branch
-# nothing to commit, working tree clean
-```
-
-## Switching branches
-
-You can switch branches with `git checkout` (as we've already done earlier)
-
-```bash
-git checkout my-branch
-```
-
-:::{.callout-tip}
-There's no more `-b` when the branch already exists
-:::
-
-:::{.callout-note}
-You can also use `git switch my-branch`, but this command is still experimental right now and may change.
-:::
-
 ## Bringig it all together: Merging
 
 - You can combine two different branches by merging them with each other
@@ -114,16 +87,26 @@ Merged (`--squash`)
 
 ::::
 
-## Practical: Branches and merging {background-color="black"}
+# There's More to Branches than just Merging 🌲🌳🌴
 
-::: {.nonincremental}
+## Worktrees 🌲🌳🌴
 
-1. Go back to your Terminal in `git-example`
-2. Create a new branch called `feature/vegeterian`
-    - Make sure to also checkout that branch, you can check whether you're on it with `git status`
-3. Add a commit (with a new vegetarian recipe) on that new branch
-4. Go back to `main`
-5. Merge the `feature/vegeterian` branch into `main`
+With git worktrees, you can have different different branches from one repository checked out *at the same time* — each in a different directory
+
+```bash
+git worktree add <path>
+```
+
+- `<path>` will be automatically checked for a matching branch / commit / tag
+  - If none is found one is created
+
+::: {.fragment}
+
+```bash
+# Create a new directory *next* to the repository
+# either checkout or create a branch my-feature
+git worktree add ../my-feature
+```
 
 :::
 
@@ -221,7 +204,7 @@ scissors ✂️
 
 :::
 
-## Practical: The Actual Conflcit {background-color="black"}
+## Practical: The Actual Conflict {background-color="black"}
 
 7. Use `git merge` to merge the `my-turn` branch into your `main` branch
 8. Explore the files in the resulting merge conflict
