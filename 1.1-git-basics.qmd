@@ -60,7 +60,7 @@ There's also an [extension](https://github.com/cwarden/git-add--interactive) ava
 3. Explore the repo status & history
 4. Add a second recipe step by step
 
-## Expanding on `.gitgnore`
+## Expanding on `.gitignore`
 
 - Old news: You can ignore files by adding them to `.gitignore` 📰
 - Maybe new: You can reverse ignored files with a `!`
@@ -74,7 +74,7 @@ There's also an [extension](https://github.com/cwarden/git-add--interactive) ava
 - git only tracks *files*, not *directories*
 - If we want git to create a directory, but ignore all files it needs to track a file in there
 - Common convention: Ignore all files except an empty `.gitkeep`
-- Better: Create a `.gitgnore` file in the directory with `*` and `!.gitignore`
+- Better: Create a `.gitignore` file in the directory with `*` and `!.gitignore`
 
 ::: attribution
 https://adamj.eu/tech/2023/09/18/git-dont-create-gitkeep/
