@@ -58,7 +58,7 @@ exit 0
 A non-zero exit code will abort the git operation
 :::
 
-## The `pre-commit` Framework 🐍 {background-color="black"}
+## The `pre-commit` Framework 🐍
 
 Python tool to manage and maintain (multi-language) pre-commit hooks.
 
@@ -149,7 +149,7 @@ SKIP=black git commit -m "Skip formatting for now"
 - [🔗 Discussion of Pros and Cons](https://yeldirium.de/2025/10/09/pre-commit-hooks/index.html)
 - [🔗 `hk`](https://hk.jdx.dev/): New alternative tool for managing git hooks
 
-# Git Filters 🔍 {background-color="black"}
+# Git Filters 🔍
 
 ## What are Git Filters?
 
