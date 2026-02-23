@@ -23,7 +23,7 @@ subtitle: "Course Introduction"
 - 13:00 - 14:00 *Lunchbreak* 🍲
 - 14:00 - 15:15 **Block 3:** CI / CD with GitHub (1:15)
 - 15:15 - 15:30 *Pause* ☕️
-- 15:30 - 17:00 **Block 4:** Stashes, Patches & more (1:30)
+- 15:30 - 16:45 **Block 4:** Stashes, Patches & more (1:30)
 
 :::
 
@@ -31,14 +31,18 @@ subtitle: "Course Introduction"
 
 ## Introductions: Who am I? 🙋🏼‍♂️
 
+::: {.nonincremental}
+
 - Jan Simson
-- Doing PhD at Ludwig-Maximilian University München
 - Background
   - Computer Science (Ausbildung)
   - BSc Psychology (Konstanz)
   - MSc Behavioural Data Science (Amsterdam)
-  - Worked in research & startup before
+  - PhD Statistics (München)
+  - Worked at research lab & startup before
 - Worked with `git` for a couple of years
+
+:::
 
 ## Introductions: Who are you? 🙋🏻‍♀️🙋🏽‍♂️🙋  {background-color="black"}
 
