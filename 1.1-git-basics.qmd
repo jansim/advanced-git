@@ -69,6 +69,17 @@ There's also an [extension](https://github.com/cwarden/git-add--interactive) ava
   - **Q:** What will happen with `dir/` and `!dir/.gitkeep`?
 - ❗️ With `dir/`, the whole directory is ignored and *git will not scan it at all*
 
+## Empty directories: `.gitignore` > `.gitkeep` 📂
+
+- git only tracks *files*, not *directories*
+- If we want git to create a directory, but ignore all files it needs to track a file in there
+- Common convention: Ignore all files except an empty `.gitkeep`
+- Better: Create a `.gitgnore` file in the directory with `*` and `!.gitignore`
+
+::: attribution
+https://adamj.eu/tech/2023/09/18/git-dont-create-gitkeep/
+:::
+
 ## *End of Section* 🎉 {background-color="black"}
 
 :::{.r-fit-text}
