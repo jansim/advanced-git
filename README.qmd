@@ -74,6 +74,8 @@ This repository contains the course materials for a one-day workshop titled "Adv
 - Trunk Based Development
   - <https://trunkbaseddevelopment.com/>
   - <https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development>
+- Branching Patterns
+  - [Branching Patterns](https://martinfowler.com/articles/branching-patterns.html) by Martin Fowler
 - Using git with data
   - [dvc](https://dvc.org/): Data Version Control
   - [git lfs](https://git-lfs.github.com/): Git Large File Storage
