@@ -32,6 +32,8 @@ Technology (KIT).
 - Block 3: CI / CD with GitHub
   - 3.1 GitHub CI / CD
     [\[slides\]](https://simson.io/advanced-git/3.1-github-CI-CD.html)
+  - 3.2 git-bug
+    [\[slides\]](https://simson.io/advanced-git/3.2-git-bug.html)
 - Block 4: Stashes, Cherry Picking, Patches & more
   - 4.1 Advanced Features of git
     [\[slides\]](https://simson.io/advanced-git/4.1-advanced-features.html)
