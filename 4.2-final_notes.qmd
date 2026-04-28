@@ -73,6 +73,7 @@ Most of the information in these guides, we already covered, but they can be gre
 
 - Popular Workflow: [Trunk Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development)
 - Good guide: [Beej's Guide to Git](https://beej.us/guide/bggit/html/split/)
+- Keeping git performant: [Git Perf Book](https://gitperf.com/)
 - Using git with data
   - [git lfs](https://git-lfs.github.com/)
   - [dvc](https://dvc.org/): Data Version Control

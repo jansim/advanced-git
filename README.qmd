@@ -69,6 +69,7 @@ This repository contains the course materials for a one-day workshop titled "Adv
   - [Introduction to RStudio Git & GitHub](https://lmu-osc.github.io/Introduction-RStudio-Git-GitHub/)
   - [The Carpentries: Version Control with Git](https://swcarpentry.github.io/git-novice/)
 - Pretty comprehensive guide: [Beej's Guide to Git](https://beej.us/guide/bggit/html/split/)
+- Keeping git performant: [Git Perf Book](https://gitperf.com/)
 - The official documentation: <https://git-scm.com/doc>
 - Trunk Based Development
   - <https://trunkbaseddevelopment.com/>
