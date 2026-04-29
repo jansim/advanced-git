@@ -3,95 +3,15 @@ title: "Advanced `git`"
 subtitle: "Block 3.2: git-bug"
 ---
 
-# `git-bug` 🐛
+## `git-bug` 🐛
 
-## What is `git-bug`?
+[`git-bug`](https://github.com/git-bug/git-bug) is a **distributed, offline-first bug tracker** embedded directly in your `git` repository.
 
-[`git-bug`](https://github.com/git-bug/git-bug) is a **distributed, offline-first bug tracker** that is embedded directly in your `git` repository.
-
-- Issue tracking without a central server
-- Bugs are stored as `git` objects alongside your code
-- Works completely offline ✈️
-- No extra accounts or services needed
-
-## How does it work?
-
-`git-bug` uses `git`'s own object model to store bugs.
-
-- Bugs are stored in a special `git` namespace (`refs/bugs/`)
-- Not regular commits, so they don't pollute your history
-- Pushed and pulled together with your code
-- Edits are tracked and can be merged like code
-
-## Key Features 🌟
-
-- Full bug lifecycle management
-  - Open, comment, label, close bugs
-- Works fully offline
-- Built-in bridges to sync with external trackers
-  - GitHub Issues, GitLab Issues, Jira, ...
-- Multiple interfaces available
-  - Command line, terminal UI (TUI), and web UI
-
-## Interfaces
-
-```bash
-# Command line
-git bug add
-git bug ls
-git bug show <id>
-git bug comment add <id>
-
-# Terminal UI
-git bug termui
-
-# Web UI
-git bug webui
-```
-
-## Bridges to GitHub / GitLab 🌉
-
-`git-bug` can sync issues with GitHub and GitLab.
-
-```bash
-# Configure a GitHub bridge
-git bug bridge configure
-
-# Import issues from GitHub
-git bug bridge pull
-
-# Push local bugs to GitHub
-git bug bridge push
-```
-
-## Why `git-bug`?
-
-:::{.nonincremental}
-
-| | GitHub Issues | `git-bug` |
-|---|---|---|
-| Offline | ❌ | ✅ |
-| Embedded in repo | ❌ | ✅ |
-| Central server | Required | Optional |
-| Sync with GitHub | ✅ | ✅ (via bridge) |
-
-:::
-
-## Installation
-
-```bash
-# Via go install
-go install github.com/git-bug/git-bug@latest
-
-# Or download a pre-built binary from:
-# https://github.com/git-bug/git-bug/releases
-```
-
-Alternatively, package managers like `brew`, `nix`, `scoop`, etc.
-
-## Further Reading
-
-- Repository & Documentation: <https://github.com/git-bug/git-bug>
+- Bugs are stored as `git` objects (not commits) alongside your code
+- Works completely **offline** ✈️ — no central server required
+- Pushed & pulled together with your repository
+- Bridges to sync with GitHub Issues, GitLab, Jira, ...
+- Multiple interfaces: CLI, terminal UI, web UI
 
 ## *End of Block* 🎉 {background-color="black" background-opacity="0.2" background-image="images/backgrounds/kaiser.jpg"}
 
