@@ -1,0 +1,188 @@
+---
+title: "Advanced `git`"
+subtitle: "`git` & GitHub Refresher"
+format:
+  revealjs:
+    incremental: false
+---
+
+::: attribution
+Background: https://unsplash.com/photos/842ofHC6MaI
+:::
+
+# Local `git` Basics
+
+## The 3 Levels of Changes in `git`
+
+![Changes can be either unstaged, staged or committed.](images/drawings/git-areas.png)
+
+## The 3 Levels of Changes in `git`
+
+![Changes can be either unstaged, staged or committed.](images/drawings/git-areas.png)
+
+- When we first make a change it is *unstaged*
+- Once we `add` the change to the staging area it is *staged*
+- We can then `commit` all *staged* changes
+- We can `restore` the committed version and remove *unstaged* changes
+
+## The Essential Local Workflow
+
+```bash
+# Create a repository once
+git init
+
+# Inspect, stage, and save a change
+git status
+git add <file>
+git commit -m "Describe the change"
+
+# No need to remember all the command names
+# git status will suggest many
+git status
+```
+
+## `.gitignore` and Empty Directories
+
+::: {.nonincremental}
+
+- Ignore files by adding patterns to `.gitignore`
+- Reverse an ignored pattern with `!`
+- `git` tracks *files*, not directories
+- To retain an otherwise empty directory, commonly use:
+
+:::
+
+```gitignore
+# in dir/.gitignore
+*
+!.gitignore
+```
+
+# Demo: *Local `git`* in Vscode
+
+# Branches and Merging
+
+## What Are `git` Branches? 🌳
+
+- Branches allow different versions of your code within one repository
+- You can switch between branches and merge changes back into `main`
+- The default branch used to be called `master`; many repositories now use
+  `main`
+
+## Illustration 🌲
+
+![Example of a repository history with branching](images/screenshots/learngitbranching/branched.png)
+
+## Creating and Merging Branches
+
+```bash
+# Create a branch and switch to it
+git checkout -b my-branch
+
+# Switch back to the main branch
+git checkout main
+
+# Merge my-branch into the current branch
+git merge my-branch
+```
+
+- `git merge <branch>` merges the named branch *into the branch you are on*
+- Merging usually creates a merge commit
+
+# Demo: *Branches* in Vscode
+
+## Merge Conflicts
+
+- A conflict occurs when `git` cannot decide how to combine changes
+- They usually arise when two branches change the same part of a file
+- Resolve every conflict, stage the resolution, then commit it
+- Merge often to keep conflicts small and easier to resolve
+
+## Merge Conflicts
+
+![The merge conflict arises because both change the same line](images/drawings/merge-conflict-end.svg)
+
+## Feature Branches
+
+- Work in a separate branch for each feature or fix
+- Keep feature branches short-lived
+- Merge or rebase regularly to incorporate current `main`
+- Common names: `feat-xyz` or `<username>/feat-xyz`
+
+# Collaboration with GitHub
+
+## Remotes 📺
+
+- A *remote* links your local repository to a hosted repository
+- A remote also has branches
+- The conventional default remote name is `origin`
+- `git clone` creates the repository and links `origin` automatically
+
+```bash
+# Link an existing local repository to GitHub
+git remote add origin git@github.com:OWNER/REPOSITORY.git
+```
+
+## Syncing Changes
+
+You first `pull` the latest changes from the remote and then `push` your own
+changes.
+
+![](images/drawings/pull-push.png)
+
+## Fetch, Pull, and Push
+
+```bash
+# Download remote changes without changing your branch
+git fetch
+
+# Fetch and merge the tracked remote branch
+git pull
+
+# Send commits on the tracked branch to the remote
+git push
+
+# Publish a new branch and set its upstream
+git push -u origin my-branch
+```
+
+- Pull before pushing when teammates may have added changes
+- Resolve and commit any resulting merge conflicts before pushing
+
+# Pull Requests
+
+## Pull / Merge Requests (PRs / MRs)
+
+- A request to review and merge a branch's changes
+- GitHub calls them *Pull Requests*; GitLab calls them *Merge Requests*
+- PRs provide a place for discussion, review, automated checks, and merging
+
+## A Typical Pull-Request Workflow
+
+1. Create an issue describing the work.
+2. Create and check out a short-lived feature branch.
+3. Make focused commits and push the branch to GitHub.
+4. Open a pull request against `main`.
+5. Review, address feedback and checks, then merge the PR.
+
+## Pull Requests: Overview
+
+![Overview of the pull requests page in a GitHub repository](images/screenshots/github/gh-prs.png)
+
+::: attribution
+Repository: <https://github.com/CorrelAid/datenguideR>
+:::
+
+## Working Together Safely
+
+- Pull frequently and push small, focused changes
+- Keep branches short-lived to avoid merge conflicts
+- Review changes before merging and let automated checks run
+
+## *End of Refresher* 🎉 {background-color="black"}
+
+:::{.r-fit-text}
+Any Questions?
+:::
+
+[[🏡 Back to Overview]](./index.html)
