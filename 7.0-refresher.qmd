@@ -6,10 +6,6 @@ format:
     incremental: false
 ---
 
-::: attribution
-Background: https://unsplash.com/photos/842ofHC6MaI
-:::
-
 # Local `git` Basics
 
 ## The 3 Levels of Changes in `git`
@@ -41,14 +37,23 @@ git commit -m "Describe the change"
 git status
 ```
 
-## `.gitignore` and Empty Directories
+## Writing Good Commit Messages
+
+- Write a short, meaningful summary of the change
+- Start with a verb in the imperative mood
+  - `Add data-cleaning pipeline`
+  - `Fix missing-value handling in regression model`
+- Keep unrelated changes in separate commits
+- Add a longer explanation in the commit body when the *why* is not obvious
+
+## `.gitignore`
 
 ::: {.nonincremental}
 
 - Ignore files by adding patterns to `.gitignore`
 - Reverse an ignored pattern with `!`
 - `git` tracks *files*, not directories
-- To retain an otherwise empty directory, commonly use:
+- To retain an otherwise empty directory, use:
 
 :::
 
@@ -69,7 +74,7 @@ git status
 - The default branch used to be called `master`; many repositories now use
   `main`
 
-## Illustration 🌲
+## Illustration 🌲 {background-color="#5cbcfc"}
 
 ![Example of a repository history with branching](images/screenshots/learngitbranching/branched.png)
 
@@ -89,6 +94,28 @@ git merge my-branch
 - `git merge <branch>` merges the named branch *into the branch you are on*
 - Merging usually creates a merge commit
 
+## Visual Example of Merging {background-color="#5cbcfc"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Before merging
+
+![](images/screenshots/learngitbranching/branched.png){width=70%}
+
+:::
+
+::: {.column width="50%"}
+
+After merging
+
+![](images/screenshots/learngitbranching/merged.png){width=65%}
+
+:::
+
+::::
+
 # Demo: *Branches* in Vscode
 
 ## Merge Conflicts
@@ -101,6 +128,42 @@ git merge my-branch
 ## Merge Conflicts
 
 ![The merge conflict arises because both change the same line](images/drawings/merge-conflict-end.svg)
+
+## Practical: Rock-Paper-Scissors 🪨📜✂️ {background-color="black"}
+
+1. Create a new directory, enter it, and initialize a git repository
+2. Create a new file called `conflict.txt` with the following contents:
+
+```text
+Round 1
+
+Round 2
+
+Round 3
+
+🏁
+```
+::: {.incremental}
+
+3. Add and commit the file.
+4. Create and check out a branch called `my-turn`.
+
+:::
+
+## Practical: Resolving the Conflict {background-color="black"}
+
+::: {.incremental}
+
+5. On `my-turn`, add your choice of rock, paper, or scissors for each round,
+   then commit the change.
+6. Check out `main`, add your own choices for each round, and commit them.
+7. Merge `my-turn` into `main`: `git merge my-turn`
+
+8. Explore the resulting conflict markers in `conflict.txt`.
+9. For each round, keep both choices and add who won.
+10. Stage the resolved file and commit the merge.
+
+:::
 
 ## Feature Branches
 
@@ -178,6 +241,15 @@ Repository: <https://github.com/CorrelAid/datenguideR>
 - Pull frequently and push small, focused changes
 - Keep branches short-lived to avoid merge conflicts
 - Review changes before merging and let automated checks run
+
+## Further Exploration 📚
+
+- Practice branching and merging interactively:
+  <https://learngitbranching.js.org/>
+- You can use `worktrees` to check out multiple branches from one
+  repository at the same time, each in its own directory
+- Find practical guides at <https://github.com/git-guides>
+- Recover from common mistakes with <https://ohshitgit.com/>
 
 ## *End of Refresher* 🎉 {background-color="black"}
 
