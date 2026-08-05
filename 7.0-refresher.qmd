@@ -242,6 +242,20 @@ Repository: <https://github.com/CorrelAid/datenguideR>
 - Keep branches short-lived to avoid merge conflicts
 - Review changes before merging and let automated checks run
 
+## Git Filters: Clean Jupyter Notebooks
+
+- Filters transform file contents as they move between the working directory and `git`
+- [`nbstripout`](https://github.com/kynan/nbstripout) removes cell output and
+  metadata from Jupyter notebooks before they are committed
+
+```bash
+# Set up filter in current repository
+nbstripout --install
+```
+
+- This keeps notebook diffs small and prevents large output cells from being
+  committed accidentally
+
 ## Further Exploration 📚
 
 - Practice branching and merging interactively:
