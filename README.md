@@ -20,9 +20,12 @@ Technology (KIT).
     [\[slides\]](https://simson.io/advanced-git/1.0-intro.html)
   - 1.1 Basics of git
     [\[slides\]](https://simson.io/advanced-git/1.1-git-basics.html)
-  - 1.2 History [\[slides\]](https://simson.io/advanced-git/1.2-history.html)
-  - 1.3 Branches & Merging [\[slides\]](https://simson.io/advanced-git/1.3-branches_merging.html)
-  - 1.4 Filters & Hooks [\[slides\]](https://simson.io/advanced-git/1.4-filters_and_hooks.html)
+  - 1.2 History
+    [\[slides\]](https://simson.io/advanced-git/1.2-history.html)
+  - 1.3 Branches & Merging
+    [\[slides\]](https://simson.io/advanced-git/1.3-branches_merging.html)
+  - 1.4 Filters & Hooks
+    [\[slides\]](https://simson.io/advanced-git/1.4-filters_and_hooks.html)
 - Block 2: Best Practices: Pull / Merge Requests, Trunk-Based
   Development
   - 2.1 Collaboration & Pull Requests
@@ -51,7 +54,7 @@ Technology (KIT).
 
 - How to Setup SSH authentication for GitHub
   [\[PDF\]](https://simson.io/intro-to-git/resources/ssh/how-to-setup-github-ssh.pdf)
-  [\[HTML\]](https://malikaihle.github.io/Introduction-RStudio-Git-GitHub/SSH.html)
+  [\[HTML\]](https://simson.io/intro-to-git/resources/ssh/)
 - [CI / CD Example Files
   🤖](https://github.com/jansim/advanced-git/tree/main/resources/CI-CD-examples)
 - Git Cheatsheet
@@ -69,10 +72,15 @@ Technology (KIT).
     Git](https://swcarpentry.github.io/git-novice/)
 - Pretty comprehensive guide: [Beej’s Guide to
   Git](https://beej.us/guide/bggit/html/split/)
- - The official documentation: <https://git-scm.com/doc>
+- Keeping git performant: [Git Perf Book](https://gitperf.com/)
+- The official documentation: <https://git-scm.com/doc>
 - Trunk Based Development
   - <https://trunkbaseddevelopment.com/>
   - <https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development>
+- Branching Patterns
+  - [Branching
+    Patterns](https://martinfowler.com/articles/branching-patterns.html)
+    by Martin Fowler
 - Using git with data
   - [dvc](https://dvc.org/): Data Version Control
   - [git lfs](https://git-lfs.github.com/): Git Large File Storage
