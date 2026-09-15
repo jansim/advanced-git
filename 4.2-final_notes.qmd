@@ -47,6 +47,10 @@ Several tools exist to visualize `git` repositories. These can be useful to get 
 
 {{< video https://www.youtube.com/embed/NjUuAuBcoqs width="100%" height="80%" >}}
 
+## Other Cool Little Tools
+
+- 🔪 [git-knife](https://github.com/TheRealYT/git-knife): Inspect git objects directly from the command line
+
 ## Beyond `git`
 
 - `jujutsu`: A git-compatible alternative
